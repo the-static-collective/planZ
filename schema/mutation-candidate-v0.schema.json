@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/the-static-collective/planZ/schema/mutation-candidate-v0.schema.json",
+  "title": "planZ MutationCandidate v0",
+  "type": "object",
+  "required": [
+    "schema",
+    "candidateId",
+    "chamber",
+    "sourcePlanIds",
+    "proposal",
+    "residuals",
+    "authority",
+    "selection"
+  ],
+  "properties": {
+    "schema": {
+      "const": "static-collective/planz-mutation-candidate/v0"
+    },
+    "candidateId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chamber": {
+      "enum": [
+        "REANIMATE",
+        "RECONSTITUTE",
+        "GRAFT",
+        "PROBE",
+        "PRESSURE",
+        "CROSS",
+        "PRUNE",
+        "HOLD"
+      ]
+    },
+    "sourcePlanIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "hinge": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "proposal": {
+      "type": "string"
+    },
+    "residuals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority": {
+      "const": "none"
+    },
+    "selection": {
+      "const": "NONE"
+    }
+  },
+  "additionalProperties": false
+}
