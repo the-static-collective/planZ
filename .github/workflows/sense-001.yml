@@ -50,8 +50,27 @@ jobs:
           if (run.authority !== "none" || run.selection !== "NONE") process.exit(1);
           NODE
 
+      - name: Run explicit-hinge DOOR-001
+        run: |
+          node 002/bin/door-001.mjs > .sense-witness/door-001.json
+          node --input-type=module - <<'NODE'
+          import fs from "node:fs";
+          const door=JSON.parse(fs.readFileSync(".sense-witness/door-001.json","utf8"));
+          console.log(JSON.stringify({
+            doorId:door.doorId,
+            sourcePlanIds:door.sourcePlanIds,
+            chamber:door.candidate.chamber,
+            authority:door.authority,
+            selection:door.selection,
+            heart:door.heart,
+            semanticSha256:door.semanticSha256
+          },null,2));
+          if (door.candidate.chamber !== "CROSS") process.exit(1);
+          if (door.authority !== "none" || door.selection !== "NONE" || door.heart !== "NOT_BEATEN") process.exit(1);
+          NODE
+
       - name: Upload exact witness
         uses: actions/upload-artifact@v4
         with:
           name: sense-001-global-witness
-          path: .sense-witness/global-sense.json
+          path: .sense-witness/
