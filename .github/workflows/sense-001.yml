@@ -1,0 +1,76 @@
+name: SENSE-001 exact witness
+
+on:
+  push:
+    branches:
+      - feat/census-senses-mutation-002
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sense:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Constitutional tests
+        run: node --test 002/tests/senses-engine.test.mjs
+
+      - name: Run global census senses
+        run: |
+          mkdir -p .sense-witness
+          node 002/bin/sense-global.mjs \
+            registry/seed-plan-records.jsonl \
+            registry/provisional-global-pass-001.jsonl \
+            > .sense-witness/global-sense.json
+
+      - name: Report bounded summary
+        run: |
+          node --input-type=module - <<'NODE'
+          import fs from "node:fs";
+          const run=JSON.parse(fs.readFileSync(".sense-witness/global-sense.json","utf8"));
+          console.log(JSON.stringify({
+            schema:run.schema,
+            inputs:run.inputs,
+            dedupedRecordCount:run.dedupedRecordCount,
+            signalCounts:run.signalCounts,
+            chamberCounts:run.chamberCounts,
+            authority:run.authority,
+            selection:run.selection,
+            semanticSha256:run.semanticSha256
+          },null,2));
+          if (run.authority !== "none" || run.selection !== "NONE") process.exit(1);
+          NODE
+
+      - name: Run explicit-hinge DOOR-001
+        run: |
+          node 002/bin/door-001.mjs > .sense-witness/door-001.json
+          node --input-type=module - <<'NODE'
+          import fs from "node:fs";
+          const door=JSON.parse(fs.readFileSync(".sense-witness/door-001.json","utf8"));
+          console.log(JSON.stringify({
+            doorId:door.doorId,
+            sourcePlanIds:door.sourcePlanIds,
+            chamber:door.candidate.chamber,
+            authority:door.authority,
+            selection:door.selection,
+            heart:door.heart,
+            semanticSha256:door.semanticSha256
+          },null,2));
+          if (door.candidate.chamber !== "CROSS") process.exit(1);
+          if (door.authority !== "none" || door.selection !== "NONE" || door.heart !== "NOT_BEATEN") process.exit(1);
+          NODE
+
+      - name: Upload exact witness
+        uses: actions/upload-artifact@v4
+        with:
+          name: sense-001-global-witness
+          path: .sense-witness/

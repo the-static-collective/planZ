@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/the-static-collective/planZ/schema/sense-frame-v0.schema.json",
+  "title": "planZ SenseFrame v0",
+  "type": "object",
+  "required": [
+    "schema",
+    "planId",
+    "signals",
+    "authority",
+    "selection"
+  ],
+  "properties": {
+    "schema": {
+      "const": "static-collective/planz-sense-frame/v0"
+    },
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signals": {
+      "type": "object",
+      "required": [
+        "gap",
+        "stranding",
+        "lineage",
+        "ambiguity",
+        "recoverability",
+        "compositionPressure"
+      ],
+      "properties": {
+        "gap": {
+          "$ref": "#/$defs/signal"
+        },
+        "stranding": {
+          "$ref": "#/$defs/signal"
+        },
+        "lineage": {
+          "$ref": "#/$defs/signal"
+        },
+        "ambiguity": {
+          "$ref": "#/$defs/signal"
+        },
+        "recoverability": {
+          "$ref": "#/$defs/signal"
+        },
+        "compositionPressure": {
+          "$ref": "#/$defs/signal"
+        }
+      },
+      "additionalProperties": false
+    },
+    "basisRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority": {
+      "const": "none"
+    },
+    "selection": {
+      "const": "NONE"
+    }
+  },
+  "$defs": {
+    "signal": {
+      "type": "object",
+      "required": [
+        "present",
+        "reasons"
+      ],
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
