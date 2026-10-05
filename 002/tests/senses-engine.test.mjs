@@ -6,7 +6,7 @@ import {
   crossMutation,
   pressureMutation,
   stableStringify
-} from "../002/src/senses-engine.mjs";
+} from "../src/senses-engine.mjs";
 
 const stranded={
   schema:"static-collective/planz-plan-record/v0",
