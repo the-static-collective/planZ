@@ -1,0 +1,847 @@
+{
+  "schema": "static-collective/planz-provisional-census-cut/v0",
+  "capturedAt": "2026-10-05",
+  "method": "PLANZ-001 Query Manifest v0 strong-signal pass",
+  "candidateCount": 81,
+  "repositoryCount": 21,
+  "carrierCounts": {
+    "pr": 51,
+    "issue": 30
+  },
+  "warning": "Candidate != unfinished plan. Every unresolved candidate requires descendant tracing before present disposition is upgraded from UNKNOWN.",
+  "repositoryCandidateCounts": {
+    "the-static-collective/ALEX.2": 10,
+    "the-static-collective/autodiscography-vault": 1,
+    "the-static-collective/corpus-os": 3,
+    "the-static-collective/Dogram": 2,
+    "the-static-collective/full-measure-world-layer": 2,
+    "the-static-collective/GHoT": 1,
+    "the-static-collective/jublEchat": 2,
+    "the-static-collective/King-sCup": 1,
+    "the-static-collective/LOADOUT": 1,
+    "the-static-collective/national-treasure": 3,
+    "the-static-collective/project0": 9,
+    "the-static-collective/reLATTE": 3,
+    "the-static-collective/static-live": 1,
+    "the-static-collective/the-daily-slice": 1,
+    "the-static-collective/the-haunted-blender": 2,
+    "the-static-collective/the-haunted-phonography": 3,
+    "the-static-collective/the-haunted-pol-ish-roids": 2,
+    "the-static-collective/the-haunted-toaster": 18,
+    "the-static-collective/tranchnode": 8,
+    "the-static-collective/Upper-room": 1,
+    "the-static-collective/What-is-the-static-collective-": 7
+  },
+  "candidates": [
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 1,
+      "title": "Lay the ALEX evidence floor",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/1",
+      "score": 3,
+      "signal": "- TODO/TBD scaffold scan from the original design pass: clear",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 4,
+      "title": "Define ALEX × LOADOUT runtime boundary",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/4",
+      "score": 2,
+      "signal": "- Blind Crucible becomes the first executable gate: CASE/ORACLE separation plus metamorphic siblings.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 16,
+      "title": "Build Gate 4 BOOKROOM-001",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/16",
+      "score": 4,
+      "signal": "- [ ] Task 6+ — remain pending exactly as specified by the approved Gate-4 implementation plan",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 17,
+      "title": "Design: projection invariance frontier",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/17",
+      "score": 2,
+      "signal": "## First executable target",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 19,
+      "title": "Design: mathal runtime harvest across LOADOUT × 3rdi × ALEX",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/19",
+      "score": 2,
+      "signal": "- no placeholders or TODOs;",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 22,
+      "title": "Implement MEDIATED-SUPPORT-001; hold counterfactual rectangle",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/22",
+      "score": 2,
+      "signal": "- reconciled design, implementation plan, and Crucible documentation",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 23,
+      "title": "feat: add LOADIN.STEAD door router m0",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/23",
+      "score": 2,
+      "signal": "The first executable slice consumes a typed eCODE route bit plus a declared door registry and returns a canonical `ROUTED | AMBIGUOUS | UNROUTABLE` route proposal.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 31,
+      "title": "Design FAR-SIDE-PASS-001 Gestalt recursion practice",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/31",
+      "score": 2,
+      "signal": "## Design + implementation plan",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 32,
+      "title": "Plan BINOCULAR-RECURSION-001 implementation",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/32",
+      "score": 2,
+      "signal": "Adds the implementation plan for the approved `BINOCULAR-RECURSION-001` research formation and one narrow normative amendment that exposes two fields already required by the approved terminal semantics:",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/ALEX.2",
+      "number": 41,
+      "title": "Design Research Formation Spine v0 + CHRONOBODY-001",
+      "url": "https://github.com/the-static-collective/ALEX.2/pull/41",
+      "score": 2,
+      "signal": "### First proof — fully time-addressed",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/autodiscography-vault",
+      "number": 8,
+      "title": "Phase B2C: prove one full-song WAV preservation path",
+      "url": "https://github.com/the-static-collective/autodiscography-vault/issues/8",
+      "score": 2,
+      "signal": "ti-song Download All flow that can create a ZIP for the chosen file type; that path is deliberately deferred until the one-WAV gate passes.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/corpus-os",
+      "number": 20,
+      "title": "Prove Lawful Reachability / Constituted Reality from balanced causal history",
+      "url": "https://github.com/the-static-collective/corpus-os/issues/20",
+      "score": 2,
+      "signal": "usal Accounting reconciliation is on `main`. #19 merged the approved Lawful Reachability design and implementation plan. This issue is unblocked and implemented in ready-for-review PR #22.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/corpus-os",
+      "number": 23,
+      "title": "Prove Latent Reachability without consuming authority",
+      "url": "https://github.com/the-static-collective/corpus-os/issues/23",
+      "score": 2,
+      "signal": "Implementation plan: `docs/superpowers/plans/2026-08-15-latent-reachability.md`",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/corpus-os",
+      "number": 19,
+      "title": "docs: design lawful reachability and constituted reality",
+      "url": "https://github.com/the-static-collective/corpus-os/pull/19",
+      "score": 2,
+      "signal": "Adds the approved Lawful Reachability / Constituted Reality design **and implementation plan** as a downstream proof after Linear Authority / Causal Accounting (#17).",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/Dogram",
+      "number": 1,
+      "title": "Build Dogram v0 for MutatedMathal pressure",
+      "url": "https://github.com/the-static-collective/Dogram/pull/1",
+      "score": 2,
+      "signal": "tile verification was completed on head `8559cef027cf0b50f680ca34e8f55e27b08a673e` before the later docs-only frontier commit:",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/Dogram",
+      "number": 30,
+      "title": "Design: Ω-CYCLE-001 first lawful metaoscillation",
+      "url": "https://github.com/the-static-collective/Dogram/pull/30",
+      "score": 2,
+      "signal": "- `NoChange` / `Stop` deferred so Ω1 has only one proposal semantics;",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/full-measure-world-layer",
+      "number": 2,
+      "title": "Design Boot the House federated world encounter loop v0.1",
+      "url": "https://github.com/the-static-collective/full-measure-world-layer/pull/2",
+      "score": 3,
+      "signal": "## Approved architecture + reconciled implementation plan",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/full-measure-world-layer",
+      "number": 19,
+      "title": "docs: design Human Terminal operator membrane",
+      "url": "https://github.com/the-static-collective/full-measure-world-layer/pull/19",
+      "score": 3,
+      "signal": "Preserves the approved Human Terminal v0.1 architecture and now adds the executable implementation plan.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/GHoT",
+      "number": 1,
+      "title": "Many-Bodied Machine 001: make the old offline JARVIS architecture executable",
+      "url": "https://github.com/the-static-collective/GHoT/pull/1",
+      "score": 2,
+      "signal": "First executable cut of GHoT as a many-bodied local compute organism.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/jublEchat",
+      "number": 7,
+      "title": "Causal Explanation v0 — extract Why Current / Still Alive as fail-closed read models",
+      "url": "https://github.com/the-static-collective/jublEchat/issues/7",
+      "score": 2,
+      "signal": "explanation logic, rendering, and surrounding product state live together in a large component. The next slice should make the read model independently characterizable without changing ledger authority.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/jublEchat",
+      "number": 8,
+      "title": "design: preserve Residual Lineage without authority",
+      "url": "https://github.com/the-static-collective/jublEchat/pull/8",
+      "score": 3,
+      "signal": "The first implementation remains entirely product-local and read-only:",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/King-sCup",
+      "number": 2,
+      "title": "CANON-LOOM-002 — capability genome + reconstructible room field",
+      "url": "https://github.com/the-static-collective/King-sCup/pull/2",
+      "score": 3,
+      "signal": "This PR currently contains the **architectural design only** for CANON-LOOM-002. No runtime implementation has crossed the design gate yet.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/LOADOUT",
+      "number": 5,
+      "title": "LIVE-SURFACE / CURRENT-ORGAN v0",
+      "url": "https://github.com/the-static-collective/LOADOUT/pull/5",
+      "score": 2,
+      "signal": "Implements the first executable LIVE-SURFACE / CURRENT-ORGAN specimen in LOADOUT.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/national-treasure",
+      "number": 30,
+      "title": "Research feedback communication as alternating participant acts",
+      "url": "https://github.com/the-static-collective/national-treasure/issues/30",
+      "score": 2,
+      "signal": "## Suggested deliverable",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/national-treasure",
+      "number": 26,
+      "title": "docs: preserve Static Collective Movie lore thread",
+      "url": "https://github.com/the-static-collective/national-treasure/pull/26",
+      "score": 2,
+      "signal": "- one tiny implementation plan;",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/national-treasure",
+      "number": 35,
+      "title": "Sigil Algebra v0 — typed mathematics beneath the geometry",
+      "url": "https://github.com/the-static-collective/national-treasure/pull/35",
+      "score": 2,
+      "signal": "Adds the approved **Sigil Algebra v0** design as a docs-only constitutional slice.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/project0",
+      "number": 39,
+      "title": "Floor 1.2 specimen: prove one authority-preserving World Encounter Envelope",
+      "url": "https://github.com/the-static-collective/project0/issues/39",
+      "score": 3,
+      "signal": "- `ROADMAP.md` names Floor 1.2 as the **adapter boundary**, beginning with a versioned import/export envelope, extension namespaces, compatibility rules, and contrasting adapters.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/project0",
+      "number": 46,
+      "title": "Define L-Branch v0.1 as bounded resonant propagation",
+      "url": "https://github.com/the-static-collective/project0/issues/46",
+      "score": 2,
+      "signal": "- Project 0's current roadmap explicitly defers an autonomous agent runtime. L-Branch therefore begins as a pure contract + fixture surface, not an orchestration engine.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/project0",
+      "number": 48,
+      "title": "Implement Snap-State v0.1 thresholded topology",
+      "url": "https://github.com/the-static-collective/project0/issues/48",
+      "score": 2,
+      "signal": "plementation until the human design-review gate is explicitly cleared.** After approval, create the implementation plan through the repository's Superpowers workflow before writing production code.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/project0",
+      "number": 34,
+      "title": "NAV v0.1 crossing witness",
+      "url": "https://github.com/the-static-collective/project0/pull/34",
+      "score": 3,
+      "signal": "Implementation plan: `docs/superpowers/plans/2026-08-16-nav-v0.1-crossing-witness.md`",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/project0",
+      "number": 36,
+      "title": "feat: graduate advanced Floor 1.1 conformance",
+      "url": "https://github.com/the-static-collective/project0/pull/36",
+      "score": 2,
+      "signal": "Implementation plan: `docs/superpowers/plans/2026-08-16-floor-1.1-conformance-graduation.md`",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/project0",
+      "number": 40,
+      "title": "Design World Encounter Envelope v0.1",
+      "url": "https://github.com/the-static-collective/project0/pull/40",
+      "score": 3,
+      "signal": "Design only. Defines the proposed first Floor 1.2 adapter-boundary specimen beneath issue #39:",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/project0",
+      "number": 47,
+      "title": "Implement L-Branch v0.1 bounded resonant propagation",
+      "url": "https://github.com/the-static-collective/project0/pull/47",
+      "score": 3,
+      "signal": "The implementation remains above the frozen Project 0 ontology. L-Branch declaration, step, and terminal evidence are **experimental addressed records** under the distinct `Project0-LBranch-v0.1|` domain; this PR does not add a canonical receipt ",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/project0",
+      "number": 49,
+      "title": "Implement Snap-State v0.1 thresholded topology",
+      "url": "https://github.com/the-static-collective/project0/pull/49",
+      "score": 2,
+      "signal": "- approved design + reconciled implementation plan under `docs/superpowers/`",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/project0",
+      "number": 52,
+      "title": "Design manuscript transmission stress corpus v0",
+      "url": "https://github.com/the-static-collective/project0/pull/52",
+      "score": 2,
+      "signal": "The implementation plan now makes the dependency explicit:",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/reLATTE",
+      "number": 2,
+      "title": "Implement canonical crossing identity and bounded P-256 verification",
+      "url": "https://github.com/the-static-collective/reLATTE/issues/2",
+      "score": 3,
+      "signal": "Implement reLATTE's first executable protocol seam: canonical identity for `CrossingEnvelopeV0` and `ReceiptV0`, plus one bounded ECDSA P-256 signing/verification profile.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/reLATTE",
+      "number": 5,
+      "title": "Research group-scoped administration without cloud sovereignty",
+      "url": "https://github.com/the-static-collective/reLATTE/issues/5",
+      "score": 2,
+      "signal": "- `docs/ROADMAP.md` R3–R7 are the first receiver, multi-node, transport, and mirror/store/serve stages.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/reLATTE",
+      "number": 7,
+      "title": "Implement the R3 sovereign receiver: RECEIVE, HOLD, ADMIT, REFUSE, RETURN",
+      "url": "https://github.com/the-static-collective/reLATTE/issues/7",
+      "score": 2,
+      "signal": "Build reLATTE's first sovereign receiver runtime for Roadmap R3:",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/static-live",
+      "number": 1,
+      "title": "LIVE-001 — THE BAND CAN LOSE A LIMB",
+      "url": "https://github.com/the-static-collective/static-live/pull/1",
+      "score": 2,
+      "signal": "Land the first executable Static Live specimen: compile a declared Performance Packet plus the humans actually present into a deterministic, fail-closed stage projection for a conventional DAW/FOH workflow.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-daily-slice",
+      "number": 58,
+      "title": "docs: Jubilee Engine lighthouse design",
+      "url": "https://github.com/the-static-collective/the-daily-slice/pull/58",
+      "score": 2,
+      "signal": "## Next gate",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-blender",
+      "number": 2,
+      "title": "N1 · The 10,000-Photo Pantry — resumable archive and visual discovery",
+      "url": "https://github.com/the-static-collective/the-haunted-blender/issues/2",
+      "score": 2,
+      "signal": "## Acceptance criteria",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-blender",
+      "number": 1,
+      "title": "N0: Haunted Blender nuclear scaffold — AAA filmmaking foundation",
+      "url": "https://github.com/the-static-collective/the-haunted-blender/pull/1",
+      "score": 2,
+      "signal": "## Next gates",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-phonography",
+      "number": 10,
+      "title": "Specimen 002 — RING v0.1: bounded resonant musical propagation",
+      "url": "https://github.com/the-static-collective/the-haunted-phonography/issues/10",
+      "score": 2,
+      "signal": "## Acceptance criteria",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-phonography",
+      "number": 11,
+      "title": "Specimen 003 — Acoustic Loci 001: navigable continuity through changed sound",
+      "url": "https://github.com/the-static-collective/the-haunted-phonography/issues/11",
+      "score": 2,
+      "signal": "## Acceptance criteria",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-phonography",
+      "number": 4,
+      "title": "feat: make provenance authority executable",
+      "url": "https://github.com/the-static-collective/the-haunted-phonography/pull/4",
+      "score": 2,
+      "signal": "Implements the first executable Haunted Phonograph authority seam from issue #2:",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-pol-ish-roids",
+      "number": 3,
+      "title": "docs: define the Haunted Polaroid living camera organism",
+      "url": "https://github.com/the-static-collective/the-haunted-pol-ish-roids/pull/3",
+      "score": 3,
+      "signal": "- a narrow first executable proof that establishes the living loop before remote social lineage machinery.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-pol-ish-roids",
+      "number": 4,
+      "title": "docs: plan Haunted Polaroid first living-camera proof",
+      "url": "https://github.com/the-static-collective/the-haunted-pol-ish-roids/pull/4",
+      "score": 2,
+      "signal": "Adds the implementation plan for the approved Haunted Polaroid organism in PR #3.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 103,
+      "title": "Hidden primitive field: salvage Toaster Lab structure and dynamics vocabulary",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/103",
+      "score": 2,
+      "signal": "## Acceptance criteria",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 104,
+      "title": "STOMP / UNBORED: one-shot maximum-thrust six-up",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/104",
+      "score": 2,
+      "signal": "## Acceptance criteria",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 172,
+      "title": "ToastPack Frame Reservoir v1: treat every video frame as latent deterministic visual material",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/172",
+      "score": 3,
+      "signal": "## Slice B — Frame Motion consumer (deferred behind renderer trust)",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 183,
+      "title": "Video Audio Witness v1 — let VSPantry specimens cast a ghosted topology pulse",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/183",
+      "score": 2,
+      "signal": "## Slice B — Ghosted Topology Coupling v1 — deferred behind renderer trust",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 187,
+      "title": "Resonant Disturbance v0 — deterministic body-plan physiology between perception and render authority",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/187",
+      "score": 2,
+      "signal": "The first executable specimen should use a fixed synthetic pressure fixture so the body law is proven independently.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 195,
+      "title": "BETA Topology Events — APERTURE / SPEAK / GRAB / GROW / BODY",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/195",
+      "score": 2,
+      "signal": "## First proof target",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 208,
+      "title": "Render Mutation Grammar v0 — first Collective Dreamstate compiler subset",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/208",
+      "score": 2,
+      "signal": "A useful first proof family should show the same primitive recombining across several contexts, for example:",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 213,
+      "title": "Flagship slice: acoustic coordinate → witness maps → topology pressure",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/213",
+      "score": 2,
+      "signal": "This is the first executable vertical under **GitBook CR #148 — Autodisco Hologram: WAV Bedrock & Toaster World Engine**.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 225,
+      "title": "L BRANCH — Evidence Bus / Toaster Mixing Desk",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/225",
+      "score": 2,
+      "signal": "/detail control across layers and subregions. GRAB is becoming a bounded spatial scope. Separately, planned analysis-only audio work can expose evidence such as transient/percussion pressure, low-end pressure, vocal salience, harmonic body, air/noise, recurrence, and Listener-derived timing evidence without pretending to reco",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 309,
+      "title": "Add the Batch Console and TOAST THE RECORD flow",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/309",
+      "score": 2,
+      "signal": "nt renderer still exposes only the single-song workflow. The visible batch surface is intentionally deferred from #308.",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 313,
+      "title": "FRANKEN-COMPOSER-001 — one frozen composition, two renderers, three donor bodies",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/issues/313",
+      "score": 2,
+      "signal": "* product code must not begin until that written design is reviewed and approved, then a task-level implementation plan is written.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 157,
+      "title": "feat: add persistent Video source and VSPantry",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/pull/157",
+      "score": 2,
+      "signal": "Implements the first executable slice of the approved Video/VSPantry/ToastPack/Toaster Memory architecture:",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 169,
+      "title": "docs: define Creative Context Table v1",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/pull/169",
+      "score": 5,
+      "signal": "The first executable proof is intentionally small:",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 188,
+      "title": "docs: design and plan Resonant Disturbance v0",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/pull/188",
+      "score": 2,
+      "signal": "- `docs/superpowers/plans/2026-08-19-resonant-disturbance-v0.md` — a four-task, TDD-first implementation plan for the pure-data body primitive.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 196,
+      "title": "docs: design Topology Events v0.1",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/pull/196",
+      "score": 3,
+      "signal": "## First executable proof",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 210,
+      "title": "Plan Sigil Grammar v0 implementation",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/pull/210",
+      "score": 2,
+      "signal": "Adds the implementation plan for Haunted Toaster Sigil Grammar v0, following the approved and now-landed National Treasure sigil-language design.",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 221,
+      "title": "Plan Sigil Algebra v0 exact equivalence proof",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/pull/221",
+      "score": 3,
+      "signal": "Adds the docs-only implementation plan for #220.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/the-haunted-toaster",
+      "number": 314,
+      "title": "design: FRANKEN-COMPOSER-001 deterministic cross-renderer bench",
+      "url": "https://github.com/the-static-collective/the-haunted-toaster/pull/314",
+      "score": 2,
+      "signal": "This PR contains the written architectural design only.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/tranchnode",
+      "number": 9,
+      "title": "Reconcile fulfillment kernel after substrate implementation",
+      "url": "https://github.com/the-static-collective/tranchnode/issues/9",
+      "score": 2,
+      "signal": "5. **#9 — fulfillment-kernel reconciliation — active next slice.**",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/tranchnode",
+      "number": 37,
+      "title": "Implement Stigmergic Field v0.1 projection and conformance fixture",
+      "url": "https://github.com/the-static-collective/tranchnode/issues/37",
+      "score": 2,
+      "signal": "- Final implementation plan on branch `lumi/stigmergic-field-v0.1-implementation`: `docs/superpowers/plans/2026-08-10-stigmergic-field-v0.1-final.md`",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/tranchnode",
+      "number": 56,
+      "title": "Continuity Spine v0.1 — design transformation as staged continuity across time",
+      "url": "https://github.com/the-static-collective/tranchnode/issues/56",
+      "score": 2,
+      "signal": "- roadmap/task-manager replacement;",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/tranchnode",
+      "number": 65,
+      "title": "Four-Surface Capability Covenant v0.1 — Eye / Mouth / Hand / Hair",
+      "url": "https://github.com/the-static-collective/tranchnode/issues/65",
+      "score": 2,
+      "signal": "## First proof shape",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "issue",
+      "repo": "the-static-collective/tranchnode",
+      "number": 70,
+      "title": "WATER HIVE 0 — witness lifecycle mineralization in a cyclic silica lattice",
+      "url": "https://github.com/the-static-collective/tranchnode/issues/70",
+      "score": 2,
+      "signal": "The first proof should distinguish at minimum:",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/tranchnode",
+      "number": 36,
+      "title": "Design: Stigmergic Field v0.1 linked vertical",
+      "url": "https://github.com/the-static-collective/tranchnode/pull/36",
+      "score": 3,
+      "signal": "Design only. No implementation code is included in this PR.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/tranchnode",
+      "number": 57,
+      "title": "Design Continuity Spine v0.1",
+      "url": "https://github.com/the-static-collective/tranchnode/pull/57",
+      "score": 5,
+      "signal": "- the first executable specimen is the real Intent Stroke v0.1 -> v0.2 transition from PR #54.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/tranchnode",
+      "number": 66,
+      "title": "docs: design Four-Surface Capability Covenant v0.1",
+      "url": "https://github.com/the-static-collective/tranchnode/pull/66",
+      "score": 2,
+      "signal": "The first executable proof is designed as one inert addressed profile/claim evaluator. A declared `hand` surface never grants execution authority; an opaque external admission reference remains project-owned evidence, and every evaluator ou",
+      "stageGuess": "UNKNOWN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/Upper-room",
+      "number": 6,
+      "title": "Add Branch / Return Witness v0",
+      "url": "https://github.com/the-static-collective/Upper-room/pull/6",
+      "score": 2,
+      "signal": "Implements the first executable specimen of Upper Room's landed continuity edge:",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/What-is-the-static-collective-",
+      "number": 15,
+      "title": "Design Metta traversal boundedness slice",
+      "url": "https://github.com/the-static-collective/What-is-the-static-collective-/pull/15",
+      "score": 2,
+      "signal": "## Design only",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/What-is-the-static-collective-",
+      "number": 16,
+      "title": "Design Threshold Scan and transport-independent doors",
+      "url": "https://github.com/the-static-collective/What-is-the-static-collective-/pull/16",
+      "score": 3,
+      "signal": "## Design only",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/What-is-the-static-collective-",
+      "number": 18,
+      "title": "Design AI guest BoundaryMetadata and re-entry slice",
+      "url": "https://github.com/the-static-collective/What-is-the-static-collective-/pull/18",
+      "score": 3,
+      "signal": "## Design only",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/What-is-the-static-collective-",
+      "number": 20,
+      "title": "docs: publish Lawful Navigation Specimen 001",
+      "url": "https://github.com/the-static-collective/What-is-the-static-collective-/pull/20",
+      "score": 2,
+      "signal": "- includes the Superpowers design and implementation plan used for this slice.",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/What-is-the-static-collective-",
+      "number": 70,
+      "title": "Define MORTAL-ACTOR-001 common stack",
+      "url": "https://github.com/the-static-collective/What-is-the-static-collective-/pull/70",
+      "score": 2,
+      "signal": "## Design only",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/What-is-the-static-collective-",
+      "number": 78,
+      "title": "Design MORTAL-NARRATIVE-001 lawful narrative agency",
+      "url": "https://github.com/the-static-collective/What-is-the-static-collective-/pull/78",
+      "score": 2,
+      "signal": "## Design only — review gate",
+      "stageGuess": "DESIGN"
+    },
+    {
+      "kind": "pr",
+      "repo": "the-static-collective/What-is-the-static-collective-",
+      "number": 82,
+      "title": "Design: ORCHARD + PICKER delight layer",
+      "url": "https://github.com/the-static-collective/What-is-the-static-collective-/pull/82",
+      "score": 3,
+      "signal": "The first executable slice is deliberately local and deterministic: shared core, human + CLI benches, attributable fruit cards, baskets, append-only rides, provenance/replay reveal, and seeded surprise over an already-attributed field. Live",
+      "stageGuess": "IMPLEMENTATION_PLAN"
+    }
+  ]
+}
