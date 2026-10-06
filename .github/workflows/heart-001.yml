@@ -1,0 +1,62 @@
+name: HEART-001 exact witness
+
+on:
+  push:
+    branches:
+      - experiment/heart-001-fatherhand-combinatrix
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  heart:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: HEART-001 constitutional tests
+        run: node --test 002/tests/heart-001.test.mjs
+
+      - name: Emit exact HEART-001 witness
+        run: |
+          mkdir -p heart-witness
+          node 002/bin/heart-001.mjs > heart-witness/HEART-001.json
+
+      - name: Report exact decisions
+        run: |
+          node --input-type=module - <<'NODE'
+          import fs from "node:fs";
+          const w=JSON.parse(fs.readFileSync("heart-witness/HEART-001.json","utf8"));
+          console.log(JSON.stringify({
+            fatherhand:{
+              candidateId:w.fatherhand.candidateId,
+              decision:w.fatherhand.decision,
+              chainId:w.fatherhand.chainId
+            },
+            heartLung:{
+              candidateId:w.heartLung.candidateId,
+              decision:w.heartLung.decision,
+              chainId:w.heartLung.chainId,
+              ownerHead:w.heartLung.ownerHead
+            },
+            result:w.result,
+            receiptAuthority:w.receiptAuthority
+          },null,2));
+          if (!w.result.planZ002CompletionLawSatisfied) process.exit(1);
+          if (w.fatherhand.decision !== "REFUSE") process.exit(1);
+          if (w.heartLung.decision !== "ACCEPT") process.exit(1);
+          if (w.receiptAuthority !== "none") process.exit(1);
+          NODE
+
+      - name: Upload exact HEART witness
+        uses: actions/upload-artifact@v4
+        with:
+          name: heart-001-witness
+          path: heart-witness/

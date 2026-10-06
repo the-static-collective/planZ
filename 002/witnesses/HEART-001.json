@@ -1,0 +1,52 @@
+{
+  "schema": "static-collective/planz-heart-001-summary/v0",
+  "date": "2026-10-06",
+  "authorityRef": "human:current-conversation:2026-10-06:heart-001-approved",
+  "fatherhand": {
+    "planId": "PLZ-TRANCH-FATHERHAND-001",
+    "candidateId": "mut-ba2399e2f3d57d8e",
+    "decision": "REFUSE",
+    "chainId": "chain-23c1d2136a20b77f533d3e92",
+    "pressureWitness": "002/witnesses/HEART-001-FATHERHAND-PRESSURE.md",
+    "residue": [
+      "possible missing organ: deterministic Fatherhand grant-chain validator",
+      "do not restore the old Fatherhand body wholesale"
+    ]
+  },
+  "heartLung": {
+    "planId": "PLZ-IRON-LUNG-COMBINATRIX-001",
+    "candidateId": "mut-3834da8b7d763eb4",
+    "decision": "ACCEPT",
+    "chainId": "chain-1a7664ca07426c770bef4710",
+    "ownerConsequence": "https://github.com/the-static-collective/iron-lung/pull/7",
+    "ownerHead": "8e0c7a3f6f94a2a40562d59522ee1390d3b0dfb1",
+    "ownerCiRun": "https://github.com/the-static-collective/iron-lung/actions/runs/37475903996",
+    "ownerCiResult": {
+      "tests": 39,
+      "passed": 39,
+      "failed": 0,
+      "deterministicFirstBreath": true,
+      "deterministicHeart001": true
+    }
+  },
+  "planZCi": {
+    "run": "https://github.com/the-static-collective/planZ/actions/runs/37476561525",
+    "tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "artifactId": "11419028446"
+  },
+  "result": {
+    "humanReviewedRide": true,
+    "deliberateGeneratedCandidateRefusal": true,
+    "separatelyAdmittedCandidate": true,
+    "owningProjectConsequenceReturned": true,
+    "planZ002CompletionLawSatisfied": true
+  },
+  "receiptAuthority": "none",
+  "nonClaims": [
+    "Iron Lung PR #7 is not claimed merged into main.",
+    "Fatherhand refusal does not prove every historical organ is already implemented.",
+    "One completed Heart witness selects no other PLANZ candidate."
+  ]
+}
