@@ -1,0 +1,25 @@
+{
+  "artifactId": "artifact:finished-demo-001",
+  "title": "Finished lyric-video pass",
+  "posture": "FINISHED",
+  "sourceRefs": [
+    "git:example/repo@deadbeef",
+    "receipt:render-001"
+  ],
+  "organs": [
+    {
+      "organId": "organ:lyric-geometry-001",
+      "kind": "lyric-geometry",
+      "description": "Words form traversable scene geometry.",
+      "behavior": "Expose text shapes as spatial collision / placement surfaces.",
+      "basisRefs": [
+        "receipt:timing-map-001"
+      ],
+      "candidateDestinations": [
+        "Haunted Toaster",
+        "PlayDeck"
+      ]
+    }
+  ],
+  "note": "Synthetic constitutional fixture only; it proves the data boundary, not a completed real-world performance."
+}
