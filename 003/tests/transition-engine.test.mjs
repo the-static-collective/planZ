@@ -107,10 +107,13 @@ test("chain requires a downstream receipt to consume predecessor output",()=>{
   assert.match(check.errors.join(" "),/predecessor output not consumed/);
 });
 
-test("L-to-U-to-L real witness traverses five connected arrows",()=>{
+test("L-to-U-to-L real witness traverses five connected arrows and matches golden",()=>{
   const realText=fs.readFileSync("003/witnesses/l-to-u-to-l-real-001.json","utf8");
   const humanText=fs.readFileSync("003/witnesses/l-to-u-to-l-human-play-001.json","utf8");
   const completionText=fs.readFileSync("003/witnesses/l-to-u-to-l-completion-001.json","utf8");
+  const golden=JSON.parse(fs.readFileSync(
+    "003/witnesses/l-to-u-to-l-arrow-chain-001.json","utf8"
+  ));
   const human=JSON.parse(humanText);
   const chain=buildLulArrowChain(
     JSON.parse(realText),
@@ -138,4 +141,5 @@ test("L-to-U-to-L real witness traverses five connected arrows",()=>{
     "aa037c362789c27fbab13adc94baa464d7d7509aa6c4c536b41a584d42cafac3");
   assert.ok(verifyTransitionChain(chain.receipts).valid);
   assert.equal(chain.chainId,transitionChainId(chain.receipts));
+  assert.deepEqual(chain,golden);
 });
