@@ -20,11 +20,9 @@ export function buildLulArrowChain(real,human,completion,{humanText=null,complet
     throw new Error("human/completion witness incomplete");
   }
 
-  if (humanText && sha256Text(humanText) !== human.receiptSha256) {
-    throw new Error("human receipt content does not match receiptSha256");
-  }
-
   const sourceRef=`artifact:sha256:${real.source.sha256}`;
+  const humanRepoDigest=humanText ? sha256Text(humanText) : null;
+
   const organ={
     organId:real.organ.organId,
     kind:real.organ.kind,
@@ -79,12 +77,18 @@ export function buildLulArrowChain(real,human,completion,{humanText=null,complet
     nonClaims:["The TransitionReceipt does not create that authority.","Admission does not prove performance."]
   });
 
+  const humanInputs=[
+    {role:"original-human-play-upload",ref:`upload:sha256:${human.receiptSha256}`,digest:digest(human.receiptSha256)},
+    {role:"normalized-human-play-witness",ref:"003/witnesses/l-to-u-to-l-human-play-001.json",
+      digest:humanRepoDigest ? digest(humanRepoDigest) : null}
+  ];
+
   const perform=createTransitionReceipt({
     kind:"PERFORM",
     operation:"Apply the admitted instrument using the returned human controller events and render the resulting artifact.",
     inputs:[
       {role:"admission",ref:"admission:planz-003-real-001"},
-      {role:"human-play-receipt",ref:"003/witnesses/l-to-u-to-l-human-play-001.json",digest:digest(human.receiptSha256)}
+      ...humanInputs
     ],
     outputs:[{
       role:"result-artifact",
@@ -94,9 +98,11 @@ export function buildLulArrowChain(real,human,completion,{humanText=null,complet
     predecessorReceiptIds:[admit.receiptId],
     claims:[
       "A human controller performance was captured.",
+      "The original uploaded receipt identity and the normalized repository witness identity are preserved separately.",
       "The derived result artifact is identified by the completion receipt hash."
     ],
     nonClaims:[
+      "The normalized checked-in JSON is not claimed byte-identical to the original uploaded human receipt.",
       "The repository does not currently embed the result artifact bytes.",
       "Performance does not imply ancestry authorized the new work."
     ]
