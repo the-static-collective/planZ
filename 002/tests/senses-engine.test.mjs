@@ -39,11 +39,24 @@ test("derives addressable gap and stranding without authority", () => {
   assert.equal(frame.selection,"NONE");
 });
 
-test("maps declared recovery posture to bounded maxhinal", () => {
-  const candidate=unaryMutation(stranded);
+test("maps declared recovery posture to bounded maxhinal through matching SenseFrame", () => {
+  const frame=deriveSenseFrame(stranded);
+  const candidate=unaryMutation(stranded,frame);
   assert.equal(candidate.chamber,"REANIMATE");
   assert.deepEqual(candidate.sourcePlanIds,["P1"]);
   assert.equal(candidate.authority,"none");
+});
+
+test("unary mutation refuses a SenseFrame from another PlanRecord", () => {
+  const wrong=deriveSenseFrame(other);
+  assert.throws(()=>unaryMutation(stranded,wrong),/same PlanRecord/);
+});
+
+test("unary mutation refuses a frame that contradicts declared recoverability", () => {
+  const frame=deriveSenseFrame(stranded);
+  const contradicted=structuredClone(frame);
+  contradicted.signals.recoverability={present:false,reasons:[]};
+  assert.throws(()=>unaryMutation(stranded,contradicted),/does not support/);
 });
 
 test("CROSS refuses automatic composition without a hinge", () => {
