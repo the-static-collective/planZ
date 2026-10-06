@@ -1,0 +1,54 @@
+name: ARROW-001 exact witness
+
+on:
+  push:
+    branches:
+      - feat/transition-receipts-003-1
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  arrow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Transition constitutional tests
+        run: node --test 003/tests/transition-engine.test.mjs
+
+      - name: Build exact L-to-U-to-L arrow chain
+        run: |
+          mkdir -p .arrow-witness
+          node 003/bin/lul-arrow-chain.mjs > .arrow-witness/lul-arrow-chain.json
+
+      - name: Report exact chain
+        run: |
+          node --input-type=module - <<'NODE'
+          import fs from "node:fs";
+          const chain=JSON.parse(fs.readFileSync(".arrow-witness/lul-arrow-chain.json","utf8"));
+          console.log(JSON.stringify({
+            chainId:chain.chainId,
+            proposalId:chain.proposal.proposalId,
+            receiptIds:chain.receipts.map((r)=>r.receiptId),
+            kinds:chain.receipts.map((r)=>r.kind),
+            admissions:chain.receipts.map((r)=>r.admission.decision),
+            receiptAuthority:[...new Set(chain.receipts.map((r)=>r.receiptAuthority))]
+          },null,2));
+          if (chain.receipts.length !== 5) process.exit(1);
+          if (chain.receipts.some((r)=>r.receiptAuthority !== "none")) process.exit(1);
+          if (chain.receipts[2].admission.decision !== "ACCEPT") process.exit(1);
+          NODE
+
+      - name: Upload exact arrow witness
+        uses: actions/upload-artifact@v4
+        with:
+          name: arrow-001-lul-chain
+          path: .arrow-witness/
