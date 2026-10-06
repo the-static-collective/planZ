@@ -16,7 +16,7 @@ function sha256(value) {
 
 test("receipt identity is deterministic and endpoint-order independent",()=>{
   const spec={
-    kind:"derive",
+    kind:"DERIVE",
     operation:"bounded transform",
     inputs:[{role:"b",ref:"2"},{role:"a",ref:"1"}],
     outputs:[{role:"out",ref:"3"}],
@@ -47,6 +47,24 @@ test("receipt never manufactures external authority",()=>{
   }),/NONE admission cannot carry authorityRef/);
 });
 
+test("transition kind and admission decision must agree",()=>{
+  assert.throws(()=>createTransitionReceipt({
+    kind:"OBSERVE",
+    operation:"smuggled accept",
+    inputs:[{role:"x",ref:"x"}],
+    outputs:[{role:"y",ref:"y"}],
+    admission:{decision:"ACCEPT",authorityRef:"human:somewhere"}
+  }),/OBSERVE transition requires admission decision NONE/);
+
+  assert.throws(()=>createTransitionReceipt({
+    kind:"ADMIT",
+    operation:"wrong decision",
+    inputs:[{role:"proposal",ref:"p"}],
+    outputs:[{role:"admission",ref:"a"}],
+    admission:{decision:"HOLD",authorityRef:"human:somewhere"}
+  }),/ADMIT transition requires admission decision ACCEPT/);
+});
+
 test("tampering invalidates a receipt",()=>{
   const receipt=createTransitionReceipt({
     kind:"OBSERVE",
@@ -74,7 +92,22 @@ test("chain rejects missing or forward predecessors",()=>{
   assert.match(check.errors.join(" "),/missing or forward predecessor/);
 });
 
-test("L-to-U-to-L real witness traverses five explicit arrows",()=>{
+test("chain requires a downstream receipt to consume predecessor output",()=>{
+  const one=createTransitionReceipt({
+    kind:"OBSERVE",operation:"one",
+    inputs:[{role:"x",ref:"x"}],outputs:[{role:"y",ref:"y"}]
+  });
+  const two=createTransitionReceipt({
+    kind:"DERIVE",operation:"two",
+    inputs:[{role:"unrelated",ref:"q"}],outputs:[{role:"z",ref:"z"}],
+    predecessorReceiptIds:[one.receiptId]
+  });
+  const check=verifyTransitionChain([one,two]);
+  assert.equal(check.valid,false);
+  assert.match(check.errors.join(" "),/predecessor output not consumed/);
+});
+
+test("L-to-U-to-L real witness traverses five connected arrows",()=>{
   const realText=fs.readFileSync("003/witnesses/l-to-u-to-l-real-001.json","utf8");
   const humanText=fs.readFileSync("003/witnesses/l-to-u-to-l-human-play-001.json","utf8");
   const completionText=fs.readFileSync("003/witnesses/l-to-u-to-l-completion-001.json","utf8");
