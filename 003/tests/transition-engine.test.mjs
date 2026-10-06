@@ -1,0 +1,145 @@
+import crypto from "node:crypto";
+import fs from "node:fs";
+import test from "node:test";
+import assert from "node:assert/strict";
+import {
+  createTransitionReceipt,
+  verifyTransitionReceipt,
+  verifyTransitionChain,
+  transitionChainId
+} from "../../arrow/src/transition-engine.mjs";
+import { buildLulArrowChain } from "../src/lul-arrow-chain.mjs";
+
+function sha256(value) {
+  return crypto.createHash("sha256").update(value).digest("hex");
+}
+
+test("receipt identity is deterministic and endpoint-order independent",()=>{
+  const spec={
+    kind:"DERIVE",
+    operation:"bounded transform",
+    inputs:[{role:"b",ref:"2"},{role:"a",ref:"1"}],
+    outputs:[{role:"out",ref:"3"}],
+    claims:["z","a"],
+    nonClaims:["n"]
+  };
+  const a=createTransitionReceipt(spec);
+  const b=createTransitionReceipt({...spec,inputs:[...spec.inputs].reverse(),claims:["a","z"]});
+  assert.equal(a.receiptId,b.receiptId);
+  assert.ok(verifyTransitionReceipt(a));
+});
+
+test("receipt never manufactures external authority",()=>{
+  assert.throws(()=>createTransitionReceipt({
+    kind:"ADMIT",
+    operation:"bad admission",
+    inputs:[{role:"proposal",ref:"p"}],
+    outputs:[{role:"admission",ref:"a"}],
+    admission:{decision:"ACCEPT",authorityRef:null}
+  }),/requires external authorityRef/);
+
+  assert.throws(()=>createTransitionReceipt({
+    kind:"OBSERVE",
+    operation:"bad none",
+    inputs:[{role:"x",ref:"x"}],
+    outputs:[{role:"y",ref:"y"}],
+    admission:{decision:"NONE",authorityRef:"invented"}
+  }),/NONE admission cannot carry authorityRef/);
+});
+
+test("transition kind and admission decision must agree",()=>{
+  assert.throws(()=>createTransitionReceipt({
+    kind:"OBSERVE",
+    operation:"smuggled accept",
+    inputs:[{role:"x",ref:"x"}],
+    outputs:[{role:"y",ref:"y"}],
+    admission:{decision:"ACCEPT",authorityRef:"human:somewhere"}
+  }),/OBSERVE transition requires admission decision NONE/);
+
+  assert.throws(()=>createTransitionReceipt({
+    kind:"ADMIT",
+    operation:"wrong decision",
+    inputs:[{role:"proposal",ref:"p"}],
+    outputs:[{role:"admission",ref:"a"}],
+    admission:{decision:"HOLD",authorityRef:"human:somewhere"}
+  }),/ADMIT transition requires admission decision ACCEPT/);
+});
+
+test("tampering invalidates a receipt",()=>{
+  const receipt=createTransitionReceipt({
+    kind:"OBSERVE",
+    operation:"see",
+    inputs:[{role:"x",ref:"x"}],
+    outputs:[{role:"y",ref:"y"}]
+  });
+  const tampered=structuredClone(receipt);
+  tampered.outputs[0].ref="changed";
+  assert.equal(verifyTransitionReceipt(tampered),false);
+});
+
+test("chain rejects missing or forward predecessors",()=>{
+  const one=createTransitionReceipt({
+    kind:"OBSERVE",operation:"one",
+    inputs:[{role:"x",ref:"x"}],outputs:[{role:"y",ref:"y"}]
+  });
+  const two=createTransitionReceipt({
+    kind:"DERIVE",operation:"two",
+    inputs:[{role:"y",ref:"y"}],outputs:[{role:"z",ref:"z"}],
+    predecessorReceiptIds:["tr-000000000000000000000000"]
+  });
+  const check=verifyTransitionChain([one,two]);
+  assert.equal(check.valid,false);
+  assert.match(check.errors.join(" "),/missing or forward predecessor/);
+});
+
+test("chain requires a downstream receipt to consume predecessor output",()=>{
+  const one=createTransitionReceipt({
+    kind:"OBSERVE",operation:"one",
+    inputs:[{role:"x",ref:"x"}],outputs:[{role:"y",ref:"y"}]
+  });
+  const two=createTransitionReceipt({
+    kind:"DERIVE",operation:"two",
+    inputs:[{role:"unrelated",ref:"q"}],outputs:[{role:"z",ref:"z"}],
+    predecessorReceiptIds:[one.receiptId]
+  });
+  const check=verifyTransitionChain([one,two]);
+  assert.equal(check.valid,false);
+  assert.match(check.errors.join(" "),/predecessor output not consumed/);
+});
+
+test("L-to-U-to-L real witness traverses five connected arrows and matches golden",()=>{
+  const realText=fs.readFileSync("003/witnesses/l-to-u-to-l-real-001.json","utf8");
+  const humanText=fs.readFileSync("003/witnesses/l-to-u-to-l-human-play-001.json","utf8");
+  const completionText=fs.readFileSync("003/witnesses/l-to-u-to-l-completion-001.json","utf8");
+  const golden=JSON.parse(fs.readFileSync(
+    "003/witnesses/l-to-u-to-l-arrow-chain-001.json","utf8"
+  ));
+  const human=JSON.parse(humanText);
+  const chain=buildLulArrowChain(
+    JSON.parse(realText),
+    human,
+    JSON.parse(completionText),
+    {humanText,completionText}
+  );
+
+  assert.deepEqual(chain.receipts.map((r)=>r.kind),[
+    "OBSERVE","PROPOSE","ADMIT","PERFORM","RETURN"
+  ]);
+  assert.match(chain.proposal.proposalId,/^inst-/);
+  assert.equal(chain.receipts[2].admission.decision,"ACCEPT");
+  assert.equal(chain.receipts[2].receiptAuthority,"none");
+
+  const perform=chain.receipts[3];
+  assert.equal(perform.inputs.find((x)=>x.role==="original-human-play-upload").digest.value,
+    "01f1080529929cad287d6517050776b4dc56641587720fcf4ed9f0cbf361601e");
+  assert.equal(perform.inputs.find((x)=>x.role==="normalized-human-play-witness").digest.value,
+    sha256(humanText));
+  assert.notEqual(sha256(humanText),human.receiptSha256);
+  assert.ok(perform.nonClaims.some((x)=>/not claimed byte-identical/.test(x)));
+
+  assert.equal(perform.outputs[0].digest.value,
+    "aa037c362789c27fbab13adc94baa464d7d7509aa6c4c536b41a584d42cafac3");
+  assert.ok(verifyTransitionChain(chain.receipts).valid);
+  assert.equal(chain.chainId,transitionChainId(chain.receipts));
+  assert.deepEqual(chain,golden);
+});

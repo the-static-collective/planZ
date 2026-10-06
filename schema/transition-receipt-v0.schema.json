@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "static-collective/planz-transition-receipt/v0",
+  "title": "PLANZ TransitionReceipt v0",
+  "type": "object",
+  "required": [
+    "schema",
+    "receiptId",
+    "kind",
+    "operation",
+    "inputs",
+    "outputs",
+    "predecessorReceiptIds",
+    "admission",
+    "claims",
+    "nonClaims",
+    "receiptAuthority"
+  ],
+  "properties": {
+    "schema": {"const": "static-collective/planz-transition-receipt/v0"},
+    "receiptId": {"type": "string", "pattern": "^tr-[0-9a-f]{24}$"},
+    "kind": {
+      "enum": ["OBSERVE", "DERIVE", "PROPOSE", "ADMIT", "REFUSE", "HOLD", "PERFORM", "RETURN"]
+    },
+    "operation": {"type": "string", "minLength": 1},
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/endpoint"}
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/endpoint"}
+    },
+    "predecessorReceiptIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^tr-[0-9a-f]{24}$"}
+    },
+    "admission": {
+      "type": "object",
+      "required": ["decision", "authorityRef"],
+      "properties": {
+        "decision": {"enum": ["NONE", "ACCEPT", "REFUSE", "HOLD"]},
+        "authorityRef": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {"properties": {"decision": {"const": "NONE"}}},
+          "then": {"properties": {"authorityRef": {"const": null}}}
+        },
+        {
+          "if": {"properties": {"decision": {"enum": ["ACCEPT", "REFUSE", "HOLD"]}}},
+          "then": {"properties": {"authorityRef": {"type": "string", "minLength": 1}}}
+        }
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "nonClaims": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "receiptAuthority": {"const": "none"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "ADMIT"}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "ACCEPT"}}}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "REFUSE"}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "REFUSE"}}}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "HOLD"}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "HOLD"}}}}}
+    },
+    {
+      "if": {"properties": {"kind": {"not": {"enum": ["ADMIT", "REFUSE", "HOLD"]}}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "NONE"}}}}}
+    }
+  ],
+  "$defs": {
+    "endpoint": {
+      "type": "object",
+      "required": ["role", "ref"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "ref": {"type": "string", "minLength": 1},
+        "digest": {
+          "type": ["object", "null"],
+          "properties": {
+            "algorithm": {"type": "string", "minLength": 1},
+            "value": {"type": "string", "minLength": 1}
+          },
+          "required": ["algorithm", "value"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
