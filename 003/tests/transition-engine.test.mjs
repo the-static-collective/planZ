@@ -7,7 +7,7 @@ import {
   verifyTransitionReceipt,
   verifyTransitionChain,
   transitionChainId
-} from "../src/transition-engine.mjs";
+} from "../../arrow/src/transition-engine.mjs";
 import { buildLulArrowChain } from "../src/lul-arrow-chain.mjs";
 
 function sha256(value) {
