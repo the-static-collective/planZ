@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "static-collective/planz-transition-receipt/v0",
+  "title": "PLANZ TransitionReceipt v0",
+  "type": "object",
+  "required": [
+    "schema",
+    "receiptId",
+    "kind",
+    "operation",
+    "inputs",
+    "outputs",
+    "predecessorReceiptIds",
+    "admission",
+    "claims",
+    "nonClaims",
+    "receiptAuthority"
+  ],
+  "properties": {
+    "schema": {"const": "static-collective/planz-transition-receipt/v0"},
+    "receiptId": {"type": "string", "pattern": "^tr-[0-9a-f]{24}$"},
+    "kind": {"type": "string", "minLength": 1},
+    "operation": {"type": "string", "minLength": 1},
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/endpoint"}
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/endpoint"}
+    },
+    "predecessorReceiptIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^tr-[0-9a-f]{24}$"}
+    },
+    "admission": {
+      "type": "object",
+      "required": ["decision", "authorityRef"],
+      "properties": {
+        "decision": {"enum": ["NONE", "ACCEPT", "REFUSE", "HOLD"]},
+        "authorityRef": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {"properties": {"decision": {"const": "NONE"}}},
+          "then": {"properties": {"authorityRef": {"const": null}}}
+        },
+        {
+          "if": {"properties": {"decision": {"enum": ["ACCEPT", "REFUSE", "HOLD"]}}},
+          "then": {"properties": {"authorityRef": {"type": "string", "minLength": 1}}}
+        }
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "nonClaims": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "receiptAuthority": {"const": "none"}
+  },
+  "$defs": {
+    "endpoint": {
+      "type": "object",
+      "required": ["role", "ref"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "ref": {"type": "string", "minLength": 1},
+        "digest": {
+          "type": ["object", "null"],
+          "properties": {
+            "algorithm": {"type": "string", "minLength": 1},
+            "value": {"type": "string", "minLength": 1}
+          },
+          "required": ["algorithm", "value"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
