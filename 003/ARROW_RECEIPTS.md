@@ -19,6 +19,7 @@ DERIVATION != SELECTION
 ADMISSION != EXECUTION
 EXECUTION != RETURN
 RETURN != OWNERSHIP
+NORMALIZED WITNESS != ORIGINAL BYTES
 ```
 
 A TransitionReceipt records:
@@ -91,6 +92,13 @@ PLANZ completion receipt
 This does **not** add new human authority after the fact.
 
 The ADMIT arrow points back to the already checked-in source-witness statement recording the human request to run the instrument.
+
+The PERFORM arrow also preserves two different identities for the human-play evidence:
+
+1. the SHA-256 of the original uploaded receipt;
+2. the SHA-256 of the normalized JSON witness checked into planZ.
+
+They are deliberately **not** asserted to be byte-identical.
 
 ## Remaining limitation
 
