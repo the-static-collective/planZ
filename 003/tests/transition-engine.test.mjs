@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -8,6 +9,10 @@ import {
   transitionChainId
 } from "../src/transition-engine.mjs";
 import { buildLulArrowChain } from "../src/lul-arrow-chain.mjs";
+
+function sha256(value) {
+  return crypto.createHash("sha256").update(value).digest("hex");
+}
 
 test("receipt identity is deterministic and endpoint-order independent",()=>{
   const spec={
@@ -73,9 +78,10 @@ test("L-to-U-to-L real witness traverses five explicit arrows",()=>{
   const realText=fs.readFileSync("003/witnesses/l-to-u-to-l-real-001.json","utf8");
   const humanText=fs.readFileSync("003/witnesses/l-to-u-to-l-human-play-001.json","utf8");
   const completionText=fs.readFileSync("003/witnesses/l-to-u-to-l-completion-001.json","utf8");
+  const human=JSON.parse(humanText);
   const chain=buildLulArrowChain(
     JSON.parse(realText),
-    JSON.parse(humanText),
+    human,
     JSON.parse(completionText),
     {humanText,completionText}
   );
@@ -86,9 +92,16 @@ test("L-to-U-to-L real witness traverses five explicit arrows",()=>{
   assert.match(chain.proposal.proposalId,/^inst-/);
   assert.equal(chain.receipts[2].admission.decision,"ACCEPT");
   assert.equal(chain.receipts[2].receiptAuthority,"none");
-  assert.equal(chain.receipts[3].inputs.find((x)=>x.role==="human-play-receipt").digest.value,
+
+  const perform=chain.receipts[3];
+  assert.equal(perform.inputs.find((x)=>x.role==="original-human-play-upload").digest.value,
     "01f1080529929cad287d6517050776b4dc56641587720fcf4ed9f0cbf361601e");
-  assert.equal(chain.receipts[3].outputs[0].digest.value,
+  assert.equal(perform.inputs.find((x)=>x.role==="normalized-human-play-witness").digest.value,
+    sha256(humanText));
+  assert.notEqual(sha256(humanText),human.receiptSha256);
+  assert.ok(perform.nonClaims.some((x)=>/not claimed byte-identical/.test(x)));
+
+  assert.equal(perform.outputs[0].digest.value,
     "aa037c362789c27fbab13adc94baa464d7d7509aa6c4c536b41a584d42cafac3");
   assert.ok(verifyTransitionChain(chain.receipts).valid);
   assert.equal(chain.chainId,transitionChainId(chain.receipts));
