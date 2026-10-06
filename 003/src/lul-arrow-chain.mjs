@@ -4,7 +4,7 @@ import {
   createTransitionReceipt,
   transitionChainId,
   verifyTransitionChain
-} from "./transition-engine.mjs";
+} from "../../arrow/src/transition-engine.mjs";
 
 function sha256Text(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
