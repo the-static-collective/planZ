@@ -110,8 +110,19 @@ function proposalFor(chamber, record) {
 }
 
 export function unaryMutation(record, senseFrame = deriveSenseFrame(record)) {
+  if (!senseFrame || senseFrame.planId !== record.planId) {
+    throw new Error("SenseFrame must belong to the same PlanRecord");
+  }
+
   const chamber = chamberFor(record);
   if (!chamber) return null;
+
+  if (!senseFrame.signals?.recoverability?.present) {
+    throw new Error("SenseFrame does not support the PlanRecord's declared recovery posture");
+  }
+  if (chamber === "PROBE" && !senseFrame.signals?.ambiguity?.present) {
+    throw new Error("PROBE requires an ambiguous SenseFrame");
+  }
 
   const core = {
     chamber,
@@ -188,9 +199,12 @@ export function pressureMutation(candidate) {
 }
 
 export function senseCensus(records) {
-  return records.map((record) => ({
-    plan:record,
-    sense:deriveSenseFrame(record),
-    mutation:unaryMutation(record)
-  }));
+  return records.map((record) => {
+    const sense=deriveSenseFrame(record);
+    return {
+      plan:record,
+      sense,
+      mutation:unaryMutation(record,sense)
+    };
+  });
 }
