@@ -23,20 +23,30 @@
     "selectionAuthority": "human operator requested the PLANZ-003 run on this uploaded finished artifact",
     "engineAuthority": "none"
   },
-  "performance": {
+  "machineProofPerformance": {
     "artifactFilename": "L-to-U-to-L_PLANZ-003_instrument-performance-001.wav",
     "sha256": "7c63cd2b1105d48fc55065d68c24718821407e4adc36859f16bbe0ffb14b6244",
     "durationSeconds": 17.603792,
-    "render": "deterministic synthesized proof performance; no source samples copied",
-    "humanPlayClaim": "BOUNDED: human selected the source/run; this render is machine-executed, not a real-time physical controller performance"
+    "render": "deterministic synthesized proof performance; no source samples copied"
+  },
+  "humanPerformance": {
+    "receiptPath": "003/witnesses/l-to-u-to-l-human-play-001.json",
+    "receiptSha256": "01f1080529929cad287d6517050776b4dc56641587720fcf4ed9f0cbf361601e",
+    "eventCount": 6,
+    "sequence": ["LOW","UP","LOW_RETURN","LOW","UP","LOW_RETURN"],
+    "beats": [8,11,16,21,23,25],
+    "resultArtifactFilename": "L-to-U-to-L_human-performance-001.mp3",
+    "resultArtifactSha256": "aa037c362789c27fbab13adc94baa464d7d7509aa6c4c536b41a584d42cafac3",
+    "resultDurationSeconds": 14.871995
   },
   "status": {
     "finishedArtifactAdmitted": true,
     "explicitOrganIdentified": true,
     "instrumentExposed": true,
     "newArtifactProduced": true,
-    "humanRealtimePerformanceProven": false,
+    "humanRealtimePerformanceProven": true,
     "returnedProvenanceReady": true,
-    "planZ003Complete": false
+    "returnedProvenanceRecorded": true,
+    "planZ003FirstRealWitnessComplete": true
   }
 }
