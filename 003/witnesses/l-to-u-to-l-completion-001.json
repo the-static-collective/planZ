@@ -1,0 +1,34 @@
+{
+  "schema": "static-collective/planz-instrument-completion-receipt/v0",
+  "witnessId": "planz-003-real-001",
+  "sourceArtifactSha256": "fb4d820594d465a2ed6cae8e4f242cc1ff9a29b3fc16670c2d4fa2cd769379e1",
+  "organId": "organ:lul-chorus-geometry-001",
+  "humanPlayReceipt": {
+    "path": "003/witnesses/l-to-u-to-l-human-play-001.json",
+    "sha256": "01f1080529929cad287d6517050776b4dc56641587720fcf4ed9f0cbf361601e",
+    "eventCount": 6,
+    "sequence": ["LOW","UP","LOW_RETURN","LOW","UP","LOW_RETURN"],
+    "beats": [8,11,16,21,23,25]
+  },
+  "derivedHumanPerformanceArtifact": {
+    "filename": "L-to-U-to-L_human-performance-001.mp3",
+    "sha256": "aa037c362789c27fbab13adc94baa464d7d7509aa6c4c536b41a584d42cafac3",
+    "wavSha256": "d0547311f8755aa4daa6d127ded442172d21552e9f3e303729e3331bbbaab623",
+    "durationSeconds": 14.871995,
+    "renderBasis": "Only the human receipt event timing, pad identity, and captured controller strengths; no source-song samples copied.",
+    "durabilityNote": "Artifact bytes were returned in the originating conversation; this repository receipt preserves identity and derivation, not the binary payload."
+  },
+  "claims": {
+    "finishedArtifactAdmitted": true,
+    "explicitOrganIdentified": true,
+    "instrumentExposed": true,
+    "humanControllerPerformanceCaptured": true,
+    "newArtifactResultedFromHumanPlay": true,
+    "returnedProvenanceRecorded": true,
+    "ancestryAuthorizesNewWork": false
+  },
+  "completion": {
+    "planZ003FirstRealWitness": "COMPLETE",
+    "scope": "first real witness only; does not imply all possible PLANZ-003 integrations or destination implementations are complete"
+  }
+}

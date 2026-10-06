@@ -1,0 +1,18 @@
+{
+  "schema": "static-collective/planz-human-play-receipt/v0",
+  "sourceSha256": "fb4d820594d465a2ed6cae8e4f242cc1ff9a29b3fc16670c2d4fa2cd769379e1",
+  "organId": "organ:lul-chorus-geometry-001",
+  "bpm": 123.046875,
+  "performedAt": "2026-10-06T12:10:41.373Z",
+  "eventCount": 6,
+  "events": [
+    {"pad":"LOW","ms":3968,"beat":8,"controller":0.662701},
+    {"pad":"UP","ms":5699,"beat":11,"controller":0.977217},
+    {"pad":"LOW_RETURN","ms":7906,"beat":16,"controller":0.642871},
+    {"pad":"LOW","ms":10410,"beat":21,"controller":0.722198},
+    {"pad":"UP","ms":11596,"beat":23,"controller":0.86476},
+    {"pad":"LOW_RETURN","ms":12672,"beat":25,"controller":0.392022}
+  ],
+  "claim": "human controller performance captured",
+  "receiptSha256": "01f1080529929cad287d6517050776b4dc56641587720fcf4ed9f0cbf361601e"
+}

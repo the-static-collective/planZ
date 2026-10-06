@@ -1,0 +1,52 @@
+{
+  "schema": "static-collective/planz-real-instrument-witness/v0",
+  "witnessId": "planz-003-real-001",
+  "source": {
+    "filename": "L to U to L (1).mp3",
+    "sha256": "fb4d820594d465a2ed6cae8e4f242cc1ff9a29b3fc16670c2d4fa2cd769379e1",
+    "durationSeconds": 103.92,
+    "measuredTempoBpm": 123.046875,
+    "dominantPitchClass": "A",
+    "repeatWindowsSeconds": [[32.856236,48.343946],[71.5639,87.05161]],
+    "repeatLagBeats": 80
+  },
+  "organ": {
+    "organId": "organ:lul-chorus-geometry-001",
+    "kind": "beat-synchronous-call-geometry",
+    "description": "A repeated 32-beat chorus geometry whose semantic gesture is LOW → UP → LOW.",
+    "controller": "mean beat-level onset/RMS energy across the two repeated chorus windows",
+    "controller32": [0.25,0.745709,0.615593,0.814884,0.67815,0.695618,0.651682,0.448054,0.662701,0.656602,0.738062,0.977217,0.684346,0.685443,0.730767,0.468839,0.642871,0.64454,0.732458,1.0,0.772185,0.722198,0.678924,0.86476,0.658607,0.392022,0.777993,0.256897,0.790811,0.968215,0.540774,0.522983]
+  },
+  "instrument": {
+    "proposal": "Map LOW → UP → LOW to A2 → E4 → A2 bell strikes; preserve the 123 BPM beat grid; use extracted beat energy only as strike-strength control.",
+    "directSourceAudioSampling": false,
+    "selectionAuthority": "human operator requested the PLANZ-003 run on this uploaded finished artifact",
+    "engineAuthority": "none"
+  },
+  "machineProofPerformance": {
+    "artifactFilename": "L-to-U-to-L_PLANZ-003_instrument-performance-001.wav",
+    "sha256": "7c63cd2b1105d48fc55065d68c24718821407e4adc36859f16bbe0ffb14b6244",
+    "durationSeconds": 17.603792,
+    "render": "deterministic synthesized proof performance; no source samples copied"
+  },
+  "humanPerformance": {
+    "receiptPath": "003/witnesses/l-to-u-to-l-human-play-001.json",
+    "receiptSha256": "01f1080529929cad287d6517050776b4dc56641587720fcf4ed9f0cbf361601e",
+    "eventCount": 6,
+    "sequence": ["LOW","UP","LOW_RETURN","LOW","UP","LOW_RETURN"],
+    "beats": [8,11,16,21,23,25],
+    "resultArtifactFilename": "L-to-U-to-L_human-performance-001.mp3",
+    "resultArtifactSha256": "aa037c362789c27fbab13adc94baa464d7d7509aa6c4c536b41a584d42cafac3",
+    "resultDurationSeconds": 14.871995
+  },
+  "status": {
+    "finishedArtifactAdmitted": true,
+    "explicitOrganIdentified": true,
+    "instrumentExposed": true,
+    "newArtifactProduced": true,
+    "humanRealtimePerformanceProven": true,
+    "returnedProvenanceReady": true,
+    "returnedProvenanceRecorded": true,
+    "planZ003FirstRealWitnessComplete": true
+  }
+}
