@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "static-collective/planz-instrument-proposal/v0",
+  "title": "PLANZ InstrumentProposal v0",
+  "type": "object",
+  "required": [
+    "schema",
+    "proposalId",
+    "sourceArtifactIds",
+    "organ",
+    "candidateDestinations",
+    "basisRefs",
+    "residuals",
+    "authority",
+    "selection"
+  ],
+  "properties": {
+    "schema": {
+      "const": "static-collective/planz-instrument-proposal/v0"
+    },
+    "proposalId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceArtifactIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "organ": {
+      "type": "object",
+      "required": ["organId", "kind", "description"],
+      "properties": {
+        "organId": {"type": "string", "minLength": 1},
+        "kind": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "behavior": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "candidateDestinations": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "basisRefs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "residuals": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "authority": {"const": "none"},
+    "selection": {"const": "NONE"}
+  },
+  "additionalProperties": true
+}
