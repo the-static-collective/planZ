@@ -81,7 +81,7 @@ This completes the **first real PLANZ-003 witness**, not every possible destinat
 
 ## ARROW-001 hardening
 
-[ARROW_RECEIPTS.md](ARROW_RECEIPTS.md) makes each transition in that witness first-class.
+[repo-level ARROW-001](../arrow/README.md) makes each transition in that witness first-class.
 
 Each TransitionReceipt binds exact inputs and outputs to:
 - a declared operation;
