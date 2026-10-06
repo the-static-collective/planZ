@@ -1,0 +1,63 @@
+name: INSTRUMENT-001 exact witness
+
+on:
+  push:
+    branches:
+      - feat/remains-instruments-003
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  instrument:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Constitutional tests
+        run: node --test 003/tests/instrument-engine.test.mjs
+
+      - name: Emit exact synthetic witness
+        run: |
+          mkdir -p .instrument-witness
+          node --input-type=module - <<'NODE'
+          import fs from "node:fs";
+          import { proposeDeclaredOrgans } from "./003/src/instrument-engine.mjs";
+          const artifact=JSON.parse(fs.readFileSync("./003/witnesses/finished-artifact-001.json","utf8"));
+          const proposals=proposeDeclaredOrgans(artifact);
+          fs.writeFileSync(".instrument-witness/proposals.json",JSON.stringify(proposals,null,2)+"\n");
+          console.log(JSON.stringify({
+            artifactId:artifact.artifactId,
+            proposalCount:proposals.length,
+            proposalIds:proposals.map((p)=>p.proposalId),
+            authority:[...new Set(proposals.map((p)=>p.authority))],
+            selection:[...new Set(proposals.map((p)=>p.selection))]
+          },null,2));
+          if (proposals.length !== artifact.organs.length) process.exit(1);
+          if (proposals.some((p)=>p.authority !== "none" || p.selection !== "NONE")) process.exit(1);
+          NODE
+
+      - name: Prove opaque artifacts do not self-instrument
+        run: |
+          node --input-type=module - <<'NODE'
+          import { proposeDeclaredOrgans } from "./003/src/instrument-engine.mjs";
+          const proposals=proposeDeclaredOrgans({
+            artifactId:"artifact:opaque-ci-001",
+            sourceRefs:["receipt:opaque-ci-001"]
+          });
+          console.log(JSON.stringify({proposalCount:proposals.length},null,2));
+          if (proposals.length !== 0) process.exit(1);
+          NODE
+
+      - name: Upload exact witness
+        uses: actions/upload-artifact@v4
+        with:
+          name: instrument-001-witness
+          path: .instrument-witness/
