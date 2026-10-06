@@ -19,7 +19,9 @@
   "properties": {
     "schema": {"const": "static-collective/planz-transition-receipt/v0"},
     "receiptId": {"type": "string", "pattern": "^tr-[0-9a-f]{24}$"},
-    "kind": {"type": "string", "minLength": 1},
+    "kind": {
+      "enum": ["OBSERVE", "DERIVE", "PROPOSE", "ADMIT", "REFUSE", "HOLD", "PERFORM", "RETURN"]
+    },
     "operation": {"type": "string", "minLength": 1},
     "inputs": {
       "type": "array",
@@ -67,6 +69,24 @@
     },
     "receiptAuthority": {"const": "none"}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "ADMIT"}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "ACCEPT"}}}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "REFUSE"}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "REFUSE"}}}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "HOLD"}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "HOLD"}}}}}
+    },
+    {
+      "if": {"properties": {"kind": {"not": {"enum": ["ADMIT", "REFUSE", "HOLD"]}}}},
+      "then": {"properties": {"admission": {"properties": {"decision": {"const": "NONE"}}}}}
+    }
+  ],
   "$defs": {
     "endpoint": {
       "type": "object",
