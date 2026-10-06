@@ -22,18 +22,29 @@ jobs:
           node-version: "22"
 
       - name: Transition constitutional tests
-        run: node --test 003/tests/transition-engine.test.mjs
+        run: |
+          node --test 003/tests/transition-engine.test.mjs
+          node --test 002/tests/sense-arrow-chain.test.mjs
 
       - name: Build exact L-to-U-to-L arrow chain
         run: |
           mkdir -p arrow-witness
           node 003/bin/lul-arrow-chain.mjs > arrow-witness/lul-arrow-chain.json
 
-      - name: Report exact chain
+      - name: Build global PLANZ-002 sense arrows
+        run: |
+          node 002/bin/sense-arrow-global.mjs \
+            registry/seed-plan-records.jsonl \
+            registry/provisional-global-pass-001.jsonl \
+            > arrow-witness/global-sense-arrows.json
+
+      - name: Report exact chains
         run: |
           node --input-type=module - <<'NODE'
           import fs from "node:fs";
+
           const chain=JSON.parse(fs.readFileSync("arrow-witness/lul-arrow-chain.json","utf8"));
+          console.log("L→U→L");
           console.log(JSON.stringify({
             chainId:chain.chainId,
             proposalId:chain.proposal.proposalId,
@@ -42,13 +53,33 @@ jobs:
             admissions:chain.receipts.map((r)=>r.admission.decision),
             receiptAuthority:[...new Set(chain.receipts.map((r)=>r.receiptAuthority))]
           },null,2));
+
           if (chain.receipts.length !== 5) process.exit(1);
           if (chain.receipts.some((r)=>r.receiptAuthority !== "none")) process.exit(1);
           if (chain.receipts[2].admission.decision !== "ACCEPT") process.exit(1);
+
+          const global=JSON.parse(fs.readFileSync("arrow-witness/global-sense-arrows.json","utf8"));
+          console.log("PLANZ-002 global field");
+          console.log(JSON.stringify({
+            dedupedRecordCount:global.dedupedRecordCount,
+            planToSenseTransitions:global.planToSenseTransitions,
+            senseToMutationTransitions:global.senseToMutationTransitions,
+            transitionReceiptCount:global.transitionReceiptCount,
+            chainCount:global.chainCount,
+            receiptAuthority:global.receiptAuthority,
+            selection:global.selection,
+            semanticSha256:global.semanticSha256
+          },null,2));
+
+          if (global.dedupedRecordCount !== 94) process.exit(1);
+          if (global.planToSenseTransitions !== 94) process.exit(1);
+          if (global.senseToMutationTransitions !== 90) process.exit(1);
+          if (global.transitionReceiptCount !== 184) process.exit(1);
+          if (global.receiptAuthority !== "none" || global.selection !== "NONE") process.exit(1);
           NODE
 
-      - name: Upload exact arrow witness
+      - name: Upload exact arrow witnesses
         uses: actions/upload-artifact@v4
         with:
-          name: arrow-001-lul-chain
+          name: arrow-001-witnesses
           path: arrow-witness/
