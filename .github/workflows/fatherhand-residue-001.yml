@@ -1,0 +1,55 @@
+name: FATHERHAND-RESIDUE-001 exact witness
+
+on:
+  push:
+    branches:
+      - experiment/fatherhand-grant-chain-residue-001
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  residue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Residue constitutional tests
+        run: node --test 002/tests/fatherhand-residue-001.test.mjs
+
+      - name: Emit exact residue witness
+        run: |
+          mkdir -p residue-witness
+          node 002/bin/fatherhand-residue-001.mjs > residue-witness/FATHERHAND-RESIDUE-001.json
+
+      - name: Report exact chain
+        run: |
+          node --input-type=module - <<'NODE'
+          import fs from "node:fs";
+          const w=JSON.parse(fs.readFileSync("residue-witness/FATHERHAND-RESIDUE-001.json","utf8"));
+          console.log(JSON.stringify({
+            priorDecision:w.priorFatherhandDecision,
+            priorCandidateId:w.priorCandidateId,
+            residue:w.residue,
+            newDecision:w.newDecision,
+            chainId:w.chainId,
+            ownerHead:w.ownerHead,
+            receiptAuthority:w.receiptAuthority
+          },null,2));
+          if (w.priorFatherhandDecision !== "REFUSE") process.exit(1);
+          if (w.newDecision !== "ACCEPT") process.exit(1);
+          if (w.receiptAuthority !== "none") process.exit(1);
+          NODE
+
+      - name: Upload exact residue witness
+        uses: actions/upload-artifact@v4
+        with:
+          name: fatherhand-residue-001-witness
+          path: residue-witness/
