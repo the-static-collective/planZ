@@ -4,6 +4,7 @@
 **Status:** PROPOSED / HELD FOR OWNER REVIEW. Listing a plan in planZ is not execution, admission, deployment, or CANNON selection.
 **New layer:** [FIELD-SCORE-001](../layers/2026-10-11-field-score-material-counterpoint-001.md)
 **Research ancestry:** [Cross-project dig](../research/2026-10-11-physical-portals-thread-dig-001.md)
+**Human-facing proposed topper:** [TOPPER-001 — Revival × Traveling Jubilee / The Road Is the Room](../layers/2026-10-11-revival-traveling-jubilee-topper-001.md) — **HELD**, not host acceptance or source admission.
 
 > ONE LIVING GRAMMAR. MANY PHYSICAL LANGUAGES. NO CARRIER OWNS THE MEANING.
 
