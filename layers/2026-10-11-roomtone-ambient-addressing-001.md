@@ -232,7 +232,7 @@ All fixture outcomes are **expectations**, not passing test results, until indep
 
 **R0 — Written grammar (this PR):** types, non-collapses, fixtures, proposed ranking without exact location, consent and privacy envelope. Historical plan progress only.
 
-**R1 — Synthetic candidate evaluator:** deterministic offers -> candidates -> explicit selections, refusal traces, expiry and replay. No sensors, no actual people, no network; score thresholds are declared and stress-tested, not model-chosen silently.
+**R1 — Synthetic candidate evaluator:** a narrow, pure-JavaScript demonstrator now exists in [the three-room fixture](../fixtures/roomtone-001/README.md), including negative/consent tests. It runs offline and produces candidates, refusal and expiry outcomes with **no effects**; the full envisioned score and rendezvous runtime, sensor tests, real users, network controls and independent Node CI remain unimplemented. No model-selected thresholds.
 
 **R2 — SONG-SEAT two voluntary browser sessions:** use explicitly shared player state from a local song, timed opt-in aliases, no microphone permission. Separate acceptance on both ends and visible leave/revoke.
 
