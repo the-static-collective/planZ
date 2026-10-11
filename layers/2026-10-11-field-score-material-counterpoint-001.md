@@ -218,3 +218,16 @@ These are proposed FIELD-SCORE laws, not owner-selected CANNON primitives.
 **What would count as implementation:** owner-local fixture runtime, negative tests, actual separately sourced observation receipts and a reviewed user-selection seam.
 **What would NOT count:** this markdown landing; a branch existing; CI built with synthetic radio or synthetic audio; a beautiful generated drawing; a signed but unverified origin claim; an imagined orchard communication; a score declaration with no witnessed playback.
 **Next exact edge:** F0 deterministic fixture → F1 physical SIGIL + SONG measurements. Any owner can accept/refuse the proposal without planZ overwriting the original historical record.
+
+## 11. ROOMTONE-001 neighboring layer — relational addressing
+
+The approved planning extension [ROOMTONE — Ambient Addressing & Relational Rendezvous](2026-10-11-roomtone-ambient-addressing-001.md) asks a different question from FIELD-SCORE:
+
+- FIELD-SCORE: *What physical evidence and scored observations can constitute a bounded local encounter candidate?*
+- ROOMTONE: *What minimal, volunteered, short-lived features can help two independently sovereign rooms discover a potential relationship without revealing their physical addresses or inferring consent?*
+
+ROOMTONE may use declared track IDs, opt-in acoustic/atmospheric features, and eventually cautiously verified ground-vibration event comparisons. It **must not** equate similar roomprints, shared music, synchronized playback, traffic sounds, or recurring event descriptors with physical co-location, shared participants, or permission to connect. No source recordings need to leave their original host merely because an ephemeral rendezvous was offered.
+
+A correspondence between two temporal condition-addresses is not yet a mutual encounter. See [the synthetic THREE-ROOMS fixture](../fixtures/roomtone-001/three-rooms.json) for a test where same-song candidate status survives but one party refuses; no connection is authorized.
+
+**No change is proposed to any reLATTE, TranchNode or Project0 normative core.**
