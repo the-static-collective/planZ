@@ -113,3 +113,8 @@ A song may become a common listening room; similar traffic vibrations may sugges
 **Dependencies:** each owner repo retains its own execution authority, commits, tests, release gates and editorial admission. planZ inventories the roads; CANNON may independently select exact evidence; neither promotes this proposal automatically.
 
 **First earned claim:** Two different senses identify one referent; observation histories remain distinct; no unauthorized consequence occurs. The new [FIELD-SCORE-001 layer](../layers/2026-10-11-field-score-material-counterpoint-001.md) makes that claim pressureable.
+
+
+## GO.STATIC — native field processor descendant
+
+[GO.STATIC FIELD COMPUTER 001](../layers/2026-10-11-go-static-field-computer-001.md) is now a separate code-wire and physical-proof layer. The actual owner-local implementation is [STATIC-OS draft PR #87](https://github.com/the-static-collective/static-os/pull/87), stacked on [Instrument Host #54](https://github.com/the-static-collective/static-os/pull/54), not part of planZ's runtime. It implements synthetic consented ROOMTONE candidate computation through the existing eleven-dial read-only instrument contract. Exact-head software CI passed at 7126d16091a156a2c075145d56dfd965bf57f7dd; physical-field processing, sensor I/O, power wiring and RF remain untested. This descendant makes the master plan **partially instantiated as software**, not admitted as a field hardware network.
