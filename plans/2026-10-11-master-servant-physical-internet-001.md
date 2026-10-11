@@ -95,6 +95,16 @@ Generate a legal/authorized derivative audio master rather than claiming an upst
 - **S5 ROOT controls:** benchtop earth/electrode measurements with counterexamples and honest negative findings.
 - **S6 Public doorway:** Abundent/Workbench shows origins and separate observations, holds untrusted entries, supports explicit inspect/decline/admit, and exports typed reLATTE receipts only where implemented.
 
+## ROOMTONE-001 — Address the condition, not the place
+
+[ROOMTONE — Ambient Addressing & Relational Rendezvous](../layers/2026-10-11-roomtone-ambient-addressing-001.md) is the approved *planning addition* to this MasterServant stack, proposed for owner-local review. It composes FIELD-SCORE encounter candidates into short-lived, opt-in rendezvous between rooms without publishing stable physical addresses.
+
+**Three address relations:** SONG-SEAT (same volunteered recording reference), ROOM-RHYME (declared coarse environmental resemblance), GROUND-ECHO (bounded and explicitly uncertain vibration relation). An optional **AFTERGLOW** mailbox accepts letters addressed to consensually shared encounter conditions instead of person or place.
+
+A song may become a common listening room; similar traffic vibrations may suggest a possible relation but do not verify the same vehicle or geographic adjacency. **Address != location; resemblance != co-presence; proposal != meeting.** No ambient audio sensing or public room indexing by default. Two-sided explicit consent is required for a private connection; privacy and abuse controls are mandatory.
+
+**Next test:** [Synthetic three-room fixture](../fixtures/roomtone-001/three-rooms.json) checks song-match invitation, coarse ambient rhyme, declined connection, nonparticipant exclusion and unverified source labels. This is test input, not executed code, participant evidence or a deployed matching service.
+
 ## PlanZ plan record and outstanding edge
 
 **Plan ID:** MASTER-SERVANT-PHYSICAL-INTERNET-001.
