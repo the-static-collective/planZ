@@ -27,7 +27,7 @@ The code implementation now lives in STATIC-OS owner territory, not planZ.
 | Project0 | [L-BRANCH #47](https://github.com/the-static-collective/project0/pull/47) | Merged bounded propagation under unchanged authority, no physical control |
 | TranchNode | [LUMINOUS TERRAIN #68](https://github.com/the-static-collective/TranchNode/pull/68) | Merged future-coordinate docs on light and environment as routing media, not installed infrastructure |
 
-**Current integration claim:** STATIC-OS #87 really implements the InstrumentAdapterV0 donor contract, giving a finite, non-actuating synthetic ROOMTONE field an address in the existing 11-dial host. It is source/digest bound, read-only and consent-aware. The PR's CI result must be checked on its exact current head before declaring passing.
+**Current integration claim:** STATIC-OS #87 really implements the InstrumentAdapterV0 donor contract, giving a finite, non-actuating synthetic ROOMTONE field an address in the existing 11-dial host. It is source/digest bound, read-only and consent-aware. At exact STATIC-OS PR #87 head 7126d16091a156a2c075145d56dfd965bf57f7dd, [Instrument Host CI run 38168526147](https://github.com/the-static-collective/static-os/actions/runs/38168526147) and [Genesis contract run 38168526123](https://github.com/the-static-collective/static-os/actions/runs/38168526123) completed successfully, including the inherited unittest discovery and native cold verification steps. This is software CI evidence only.
 
 **What it does not claim:** all these independent donor projects have been merged or imported, the environment has computed, any field site was observed, or any radio/light/copper transport operated.
 
@@ -87,7 +87,7 @@ OPTIONAL HUMAN DOOR   [Abundent ROOMTONE consent + reLATTE crossing where earned
 - MASTER-SERVANT plan: HELD proposal; some software descendants now exist.
 - FIELD-SCORE: proposed encounter grammar.
 - ROOMTONE: synthetic planZ fixture plus STATIC-OS owner-local native adapter.
-- STATIC-OS FIELD-PROCESSOR-001: implemented source under review; exact-head CI status must be checked separately.
+- STATIC-OS FIELD-PROCESSOR-001: source committed on draft PR #87; native host and contract CI passed on SHA 7126d16091a156a2c075145d56dfd965bf57f7dd; independent physical validation NOT RUN.
 - **Next physical proof remains unmet**. No orchard, road, household, RF or optical hardware claims are earned by this page.
 
 ## Completion next edge
