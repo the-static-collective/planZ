@@ -1,0 +1,137 @@
+{
+  "schema": "roomtone/three-rooms-fixture/v0",
+  "status": "SYNTHETIC_ONLY",
+  "generated_from": "ROOMTONE-001 planning proposal, 2026-10-11",
+  "now": "2026-10-11T18:04:00Z",
+  "expected": {
+    "candidates": [
+      "ROOM-RHYME:A:C",
+      "SONG-SEAT:A:B"
+    ],
+    "dispositions": {
+      "ROOM-RHYME:A:C": "HOLD",
+      "SONG-SEAT:A:B": "REFUSED"
+    },
+    "excludedOffers": [
+      "D"
+    ],
+    "noPhysicalCapture": true,
+    "noAutomaticConnection": true
+  },
+  "offers": [
+    {
+      "id": "A",
+      "alias": "fern",
+      "optIn": true,
+      "revoked": false,
+      "modes": [
+        "SONG-SEAT",
+        "ROOM-RHYME"
+      ],
+      "share": [
+        "song_ref",
+        "texture",
+        "weather"
+      ],
+      "song": {
+        "ref": "recording:rosemary-roses-cut-001",
+        "title": "Rosemary Roses",
+        "evidenceClass": "PLAYER_STATE",
+        "offsetSeconds": 47
+      },
+      "features": {
+        "texture": "soft-low-hum",
+        "weather": "rain",
+        "weatherBasis": "SELF_REPORTED"
+      },
+      "expiresAt": "2026-10-11T18:15:00Z"
+    },
+    {
+      "id": "B",
+      "alias": "porch",
+      "optIn": true,
+      "revoked": false,
+      "modes": [
+        "SONG-SEAT"
+      ],
+      "share": [
+        "song_ref"
+      ],
+      "song": {
+        "ref": "recording:rosemary-roses-cut-001",
+        "title": "Rosemary Roses",
+        "evidenceClass": "PLAYER_STATE",
+        "offsetSeconds": 48
+      },
+      "features": {
+        "texture": null,
+        "weather": null,
+        "weatherBasis": null
+      },
+      "expiresAt": "2026-10-11T18:15:00Z"
+    },
+    {
+      "id": "C",
+      "alias": "quiet",
+      "optIn": true,
+      "revoked": false,
+      "modes": [
+        "ROOM-RHYME"
+      ],
+      "share": [
+        "texture",
+        "weather"
+      ],
+      "song": {
+        "ref": "recording:another-song-cut-001",
+        "title": "Other Song",
+        "evidenceClass": "PLAYER_STATE",
+        "offsetSeconds": 32
+      },
+      "features": {
+        "texture": "soft-low-hum",
+        "weather": "rain",
+        "weatherBasis": "SELF_REPORTED"
+      },
+      "expiresAt": "2026-10-11T18:15:00Z"
+    },
+    {
+      "id": "D",
+      "alias": "unpublished",
+      "optIn": false,
+      "revoked": false,
+      "modes": [
+        "SONG-SEAT"
+      ],
+      "share": [
+        "song_ref"
+      ],
+      "song": {
+        "ref": "recording:rosemary-roses-cut-001",
+        "title": "Rosemary Roses",
+        "evidenceClass": "PLAYER_STATE",
+        "offsetSeconds": 50
+      },
+      "features": {
+        "texture": null,
+        "weather": null,
+        "weatherBasis": null
+      },
+      "expiresAt": "2026-10-11T18:15:00Z"
+    }
+  ],
+  "decisions": {
+    "A": "ACCEPT",
+    "B": "DECLINE",
+    "C": "HOLD"
+  },
+  "nonclaims": [
+    "COLOCATION",
+    "ROOM_IDENTITY",
+    "PEOPLE_IDENTITY",
+    "RAW_AUDIO_OBSERVED",
+    "SHARED_VEHICLE",
+    "CONSENT_TO_CONNECT"
+  ],
+  "comments": "Names, timestamps, music labels, room conditions, events and decisions are test data, not measurements of real people or places."
+}
