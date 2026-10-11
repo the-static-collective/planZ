@@ -41,3 +41,10 @@ This is **one planned descendant with actual software artifacts**. It is not per
 **Next practical encounter:** look at the operator's scrap inventory and photograph; verify low-voltage safe components; assemble a battery-free checkable layout; only then conduct isolated AA-powered measurement with a known DC meter.
 
 > THE FIRST FIELD COMPUTER DOES NOT BEGIN WITH A CLAIM OF INTELLIGENCE. IT BEGINS WITH A FIELD THAT CAN HONESTLY SAY WHAT CHANGED.
+
+
+## Salvage update — audio-first field proof
+
+User-reported hardware materially changes the fastest lawful test route: [SCRAP-ORCHESTRA-001](2026-10-11-scrap-orchestra-001.md) records the multimeter, soldering iron, laptops, desktops, routers, audio mixers/amplifiers/receivers, CD player, and doorbells as **uninspected assets**. A working laptop microphone and an intact audio emitter can demonstrate a genuine physical propagation observation before parts are soldered or unknown devices opened. The AA-powered RC/soil material computation objective is **retained**, not replaced.
+
+Do not promote model compatibility, installed operating systems, actual RF reception, geolocation or consent from equipment ownership alone.
