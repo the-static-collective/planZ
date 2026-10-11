@@ -41,13 +41,13 @@ This is **not an extra dial** on Abundent's eleven-dial interface, a new univers
 ## 3. Revival's actual source frontier, not a magical Bible API
 
 - [Revival 010 — First World](https://github.com/the-static-collective/revival/blob/main/docs/FIRST_WORLD.md) proves a locally rendered, standalone **Genesis 1:1–3** Scripture world with source/annotation/derivation/fog, inspectable receipts and selectable renderings.
-- [Revival 011 — World Places](https://github.com/the-static-collective/revival/blob/main/docs/WORLD_PLACES.md) adds \`revival://\` projection addresses; *address is not geography, referent or truth*.
+- [Revival 011 — World Places](https://github.com/the-static-collective/revival/blob/main/docs/WORLD_PLACES.md) adds `revival://` projection addresses; *address is not geography, referent or truth*.
 - [Revival 012 — Earned Names](https://github.com/the-static-collective/revival/blob/main/docs/EARNED_NAMES.md) gives source-aligned lexeme names but keeps semantic sense, referent and world type visibly unresolved.
-- [Revival PR #13](https://github.com/the-static-collective/revival/pull/13) is a **draft/open owner-specific external DOOR PACKET receiver for Upper Room only**. It accepts a restricted \`static.door-packet/0.1\` and holds with \`revivalAddress: null\` and \`authority: null\`. The tree, a song, and a concert **must not impersonate that schema**.
+- [Revival PR #13](https://github.com/the-static-collective/revival/pull/13) is a **draft/open owner-specific external DOOR PACKET receiver for Upper Room only**. It accepts a restricted `static.door-packet/0.1` and holds with `revivalAddress: null` and `authority: null`. The tree, a song, and a concert **must not impersonate that schema**.
 
-**Bible references for Jubilee** — Leviticus 25, Isaiah 61, Luke 4, Acts 2 and 4 — are human-curated thematic Scripture *citations*. They do **not** currently establish source-backed Revival world entries because the demonstrated Revival corpus is the Genesis-opening proof. The host can read them from independently chosen legitimate Bibles; the digital topper must say \`CITATION_ONLY / SOURCE_UNRESOLVED\` until Revival independently imports and verifies the required source editions and licenses.
+**Bible references for Jubilee** — Leviticus 25, Isaiah 61, Luke 4, Acts 2 and 4 — are human-curated thematic Scripture *citations*. They do **not** currently establish source-backed Revival world entries because the demonstrated Revival corpus is the Genesis-opening proof. The host can read them from independently chosen legitimate Bibles; the digital topper must say `CITATION_ONLY / SOURCE_UNRESOLVED` until Revival independently imports and verifies the required source editions and licenses.
 
-**First possible actual digital Scripture door:** verify one Revival-generated Gen.1.1 source address from the existing standalone build and offer a click to inspect it. Never construct a \`revival://\` address from an arbitrary typed reference, program theme, song lyric or QR label.
+**First possible actual digital Scripture door:** verify one Revival-generated Gen.1.1 source address from the existing standalone build and offer a click to inspect it. Never construct a `revival://` address from an arbitrary typed reference, program theme, song lyric or QR label.
 
 ## 4. What the festival looks like
 
@@ -61,7 +61,7 @@ Each town keeps a local branch. The caravan may carry **one consented artifact**
 
 ## 5. Illustrative candidate only — not a shared wire format
 
-\`\`\`json
+```json
 {
   "schema_status": "ILLUSTRATIVE_NOT_REGISTERED",
   "kind": "JUBILEE_TOPPER_DOOR_CANDIDATE",
@@ -77,7 +77,7 @@ Each town keeps a local branch. The caravan may carry **one consented artifact**
   "publication_permission": "NONE",
   "effect": "NONE"
 }
-\`\`\`
+```
 
 This is **not** the Revival Door Packet, a software schema adoption, a field measurement or an already validated source link. Revival must independently supply any real source-backed object. The event owner must separately attest any actual gathering. A participant owns whether to take the door.
 
@@ -94,7 +94,7 @@ A wider Memorial Day family gathering is a **horizon**, not a booking or calenda
 
 ## 7. Hostile questions before promotion
 
-1. QR says \`Luke 4\`, Revival has no matching owned corpus: **HOLD_UNRESOLVED**, never fabricate an address or source bytes.
+1. QR says `Luke 4`, Revival has no matching owned corpus: **HOLD_UNRESOLVED**, never fabricate an address or source bytes.
 2. Printed Gen.1.1 QR is scanned twice: separate observed occurrences, no duplicate consequence.
 3. A performance contains verse-like language: keep it **song/interpretation**, not Scripture witness or encoded source.
 4. A church declines, or two host traditions disagree: neither gets silently listed, harmonized or compelled.
@@ -112,7 +112,7 @@ A wider Memorial Day family gathering is a **horizon**, not a booking or calenda
 - [x] Anchor the exact existing MasterServant draft and Jubilee field proposal.
 - [x] Inspect Revival's existing current source-backed capabilities and the open Upper Room door receiver.
 - [x] Open [Revival's owner-local review issue #14](https://github.com/the-static-collective/revival/issues/14) instead of modifying its frozen kernel.
-- [ ] Owner builds/tests a deterministic **T0 three-card** evaluator: \`ELIGIBLE_FOR_LOOKUP\`, \`CITATION_ONLY_SOURCE_UNRESOLVED\`, \`PRIVATE_OR_WITHDRAWN\`; effect must stay NONE.
+- [ ] Owner builds/tests a deterministic **T0 three-card** evaluator: `ELIGIBLE_FOR_LOOKUP`, `CITATION_ONLY_SOURCE_UNRESOLVED`, `PRIVATE_OR_WITHDRAWN`; effect must stay NONE.
 - [ ] Owner supplies one genuinely built and source-verified Genesis address, with its receipt and license boundary.
 - [ ] Local humans accept a first host covenant, safeguarding, food/music logistics and paper-first event run sheet.
 - [ ] One real recorded field encounter (not synthetic) tests consent/withdrawal and the Giving Tree locally.
