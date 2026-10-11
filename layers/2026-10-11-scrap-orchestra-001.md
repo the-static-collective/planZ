@@ -43,3 +43,8 @@ Do not probe a mains-powered wireless doorbell receiver or A/V receiver interior
 Household sound may contain people, private conversations or unintended presence information. Any capture or published room relation is explicitly opt-in, locally bounded, time-limited and inspectable; no perpetual room recorder.
 
 **Next earned line:** ONE INTACT DEVICE EMITS; ANOTHER INTACT DEVICE OBSERVES; LOCAL SOFTWARE RECEIPTS THE PHYSICAL DIFFERENCE; NO SIGNAL ACQUIRES AUTHORITY.
+
+
+## DUAL-BODY-001 — the real interoperability lane
+
+The user additionally reports at least **a couple of likely working laptops and working desktop computers**; exact power/OS/toolchain and successful paired operation are not verified. Rather than assume all devices run STATIC-OS, see [DUAL-BODY-001 STATIC-OS × reLATTE Compatibility Membrane](2026-10-11-dual-body-static-relatte-compat-001.md), which inventories the existing native pinned reLATTE owner bridge separately from reLATTE's newer simulated transport composer. The smallest next witnessed cross is a deterministic harmless test file carried from BODY A to independently powered BODY B, with source/receive file digests checked and NO cryptographic authenticity claim. The subsequent native reLATTE crossing and receiving-HOLD need their own owner-coded integration and independent verification.
