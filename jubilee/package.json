@@ -1,0 +1,11 @@
+{
+  "name": "jubilee-road-room-rehearsal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node bin/build.mjs",
+    "test": "node --test tests/engine.test.mjs",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "devDependencies": {"playwright": "1.64.0"}
+}

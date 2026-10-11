@@ -107,12 +107,18 @@ A wider Memorial Day family gathering is a **horizon**, not a booking or calenda
 11. Upper Room's exact Door Packet is presented: only the separately owned source-specific Revival receiver may decide to HOLD it.
 12. No network, power, phone or special hardware: paper, human welcome and safe host-curated gathering remain sufficient.
 
-## 8. Order of operations and exit conditions
+## 8. Executable software descendant
+
+[JUBILEE-001](../jubilee/README.md) implements the synthetic three-card T0 evaluator and an interactive three-town rehearsal. Open [the standalone browser experience](../jubilee/dist/index.html) for the Giving Tree, scoped music handoff, separately accepted help introduction, report/confirmation split, paper printing and return ledger. A deterministic CLI cold-replays the same engine; hostile tests cover withdrawal, refusal, repeated occurrences and forbidden promotion.
+
+This earns a software rehearsal, not a live town, verified source lookup, authenticated consent, real receipt or T1–T3 field proof. All Revival addresses remain null. The internal demo schema does not replace any owner's native contract.
+
+## 9. Order of operations and exit conditions
 
 - [x] Anchor the exact existing MasterServant draft and Jubilee field proposal.
 - [x] Inspect Revival's existing current source-backed capabilities and the open Upper Room door receiver.
 - [x] Open [Revival's owner-local review issue #14](https://github.com/the-static-collective/revival/issues/14) instead of modifying its frozen kernel.
-- [ ] Owner builds/tests a deterministic **T0 three-card** evaluator: `ELIGIBLE_FOR_LOOKUP`, `CITATION_ONLY_SOURCE_UNRESOLVED`, `PRIVATE_OR_WITHDRAWN`; effect must stay NONE.
+- [x] planZ builds/tests a deterministic **T0 three-card** evaluator: `ELIGIBLE_FOR_LOOKUP`, `CITATION_ONLY_SOURCE_UNRESOLVED`, excluded `PRIVATE_OR_WITHDRAWN`; effect stays NONE. See [JUBILEE-001](../jubilee/README.md).
 - [ ] Owner supplies one genuinely built and source-verified Genesis address, with its receipt and license boundary.
 - [ ] Local humans accept a first host covenant, safeguarding, food/music logistics and paper-first event run sheet.
 - [ ] One real recorded field encounter (not synthetic) tests consent/withdrawal and the Giving Tree locally.

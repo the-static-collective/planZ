@@ -1,0 +1,11 @@
+{
+  "schema": "jubilee/rehearsal/v1",
+  "status": "SYNTHETIC_ONLY",
+  "now": "2026-10-11T12:00:00Z",
+  "towns": [{"id":"orchard","label":"Orchard","host":"host-orchard"},{"id":"river","label":"River","host":"host-river"},{"id":"harbor","label":"Harbor","host":"host-harbor"}],
+  "cards": [
+    {"id":"genesis-door","town":"orchard","owner":"reader","kind":"SCRIPTURE","label":"In the beginning","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":"Gen.1.1","permissions":[]},
+    {"id":"jubilee-theme","town":"orchard","owner":"reader","kind":"SCRIPTURE","label":"Good news to the poor","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":"Luke.4","permissions":[]},
+    {"id":"held-need","town":"orchard","owner":"neighbor","kind":"NEED","label":"Private synthetic placeholder","visibility":"PRIVATE","optIn":false,"revoked":true,"expiresAt":"2026-10-12T12:00:00Z","citation":null,"permissions":[]}
+  ]
+}
