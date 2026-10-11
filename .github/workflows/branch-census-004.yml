@@ -1,0 +1,20 @@
+name: BRANCH CENSUS 004 — pinned capability snapshot
+on:
+  push:
+    branches:
+      - experiment/branch-capability-census-004
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  branch-census:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test 004/tests/branch-census.test.mjs
+      - run: |
+          node 004/bin/branch-census.mjs build 004/capabilities.json /tmp/branch-capabilities-004.json
+          node 004/bin/branch-census.mjs verify 004/capabilities.json /tmp/branch-capabilities-004.json
