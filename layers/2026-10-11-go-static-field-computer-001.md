@@ -95,3 +95,12 @@ OPTIONAL HUMAN DOOR   [Abundent ROOMTONE consent + reLATTE crossing where earned
 Review [STATIC-OS PR #87](https://github.com/the-static-collective/static-os/pull/87), check exact-head CI and hostile fixture. Move R2 to actual consenting player sessions in an appropriate Abundent owner repo after a separate privacy/abuse review; keep the synthetic instrument available as an offline regression oracle.
 
 The source will continue to reside with each project owner. planZ records the road, not the authority to cross it.
+
+
+## FIELD-CELL-001 — The first scrap-bench physical descendant
+
+[FIELD-CELL-001](2026-10-11-field-cell-001-scrap-bench.md) now records a prepared physical proof plan and independently reviewable software artifacts in [STATIC-OS draft PR #88](https://github.com/the-static-collective/static-os/pull/88), stacked on FIELD-PROCESSOR #87. The AA-powered, resistor-limited copper/soil RC circuit is **not yet built or measured**; the capacitor stores charge while soil affects a measured charge path. A synthetic 15-trial fixture, finite offline analysis and 17 targeted hostile tests make honest future measurement evaluation reproducible.
+
+At exact STATIC-OS head 142e84c4991b88445f8afa93ffac1eec6354c6f5, [Instrument Host run 38169417718](https://github.com/the-static-collective/static-os/actions/runs/38169417718) and Genesis contract CI succeeded, including test discovery and cold verification. This proves code-level integration only. No actual physical data was input; no physical field processor claim has been earned.
+
+The human operator has a soldering iron and a scrap inventory to inspect; next is a **battery-disconnected safe parts check** and a genuine meter-observed control run.
