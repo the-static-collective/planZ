@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - build/jubilee-road-room-001
+      - build/jubilee-field-kit-002
   pull_request:
 permissions:
   contents: read
@@ -18,10 +19,11 @@ jobs:
         with:
           node-version: '24'
       - name: Exercise Jubilee boundaries and inherited ROOMTONE
-        run: node --test jubilee/tests/engine.test.mjs fixtures/roomtone-001/evaluate.test.mjs
+        run: node --test jubilee/tests/*.test.mjs fixtures/roomtone-001/evaluate.test.mjs
       - name: Check portable build and cold replay
         run: |
           node jubilee/bin/build.mjs --check
+          node jubilee/bin/build-field.mjs --check
           node jubilee/bin/rehearse.mjs build jubilee/fixtures/three-towns.json jubilee/fixtures/journey.json /tmp/jubilee-witness.json
           node jubilee/bin/rehearse.mjs verify jubilee/fixtures/three-towns.json jubilee/fixtures/journey.json /tmp/jubilee-witness.json
       - name: Install browser test tools
@@ -30,4 +32,6 @@ jobs:
           cd jubilee
           npx playwright install --with-deps chromium
       - name: Check offline browser journeys
-        run: node jubilee/tests/browser.mjs
+        run: |
+          node jubilee/tests/browser.mjs
+          node jubilee/tests/field-browser.mjs

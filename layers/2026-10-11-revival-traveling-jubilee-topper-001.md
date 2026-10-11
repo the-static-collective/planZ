@@ -111,7 +111,9 @@ A wider Memorial Day family gathering is a **horizon**, not a booking or calenda
 
 [JUBILEE-001](../jubilee/README.md) implements the synthetic three-card T0 evaluator and an interactive three-town rehearsal. Open [the standalone browser experience](../jubilee/dist/index.html) for the Giving Tree, scoped music handoff, separately accepted help introduction, report/confirmation split, paper printing and return ledger. A deterministic CLI cold-replays the same engine; hostile tests cover withdrawal, refusal, repeated occurrences and forbidden promotion.
 
-This earns a software rehearsal, not a live town, verified source lookup, authenticated consent, real receipt or T1–T3 field proof. All Revival addresses remain null. The internal demo schema does not replace any owner's native contract.
+The separate [JUBILEE-002 field kit](../jubilee/field/README.md) now provides an empty steward notebook, default-private invitations, host/participant declarations, separate encounter/return reports, encrypted local backups and a printable blank host pack. Its Genesis reader consumes an actual [Revival-owned export](https://github.com/the-static-collective/revival/pull/15) with a source-generated address, verified bytes, receipts and preserved attribution. The original synthetic evaluator keeps its own null source fields.
+
+This earns software and a verified local source artifact, not a live town, authenticated consent, real receipt or T1–T3 field proof. The internal demo/notebook schemas do not replace any owner's native contract. See [the field-kit checklist](../jubilee/field/README.md) for prepared tools versus actual human evidence still needed.
 
 ## 9. Order of operations and exit conditions
 
@@ -119,7 +121,7 @@ This earns a software rehearsal, not a live town, verified source lookup, authen
 - [x] Inspect Revival's existing current source-backed capabilities and the open Upper Room door receiver.
 - [x] Open [Revival's owner-local review issue #14](https://github.com/the-static-collective/revival/issues/14) instead of modifying its frozen kernel.
 - [x] planZ builds/tests a deterministic **T0 three-card** evaluator: `ELIGIBLE_FOR_LOOKUP`, `CITATION_ONLY_SOURCE_UNRESOLVED`, excluded `PRIVATE_OR_WITHDRAWN`; effect stays NONE. See [JUBILEE-001](../jubilee/README.md).
-- [ ] Owner supplies one genuinely built and source-verified Genesis address, with its receipt and license boundary.
+- [x] Owner-local Revival draft [#15](https://github.com/the-static-collective/revival/pull/15) supplies one genuinely built Genesis address; source inputs match immutable compiler/source pin, cold rebuild matches, and the kit verifies artifact/world/HTML bytes, receipts and attribution. This is local source binding, not independently retrieved upstream corpus, signature or owner admission.
 - [ ] Local humans accept a first host covenant, safeguarding, food/music logistics and paper-first event run sheet.
 - [ ] One real recorded field encounter (not synthetic) tests consent/withdrawal and the Giving Tree locally.
 - [ ] One deliberate cross-town return confirms whether anything was actually carried and whether any aid was independently confirmed.

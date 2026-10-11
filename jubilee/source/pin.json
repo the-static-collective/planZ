@@ -1,0 +1,9 @@
+{
+  "schema": "jubilee/selected-source-pin/v1",
+  "sourceCommit": "af1e00c24e3d7c6eb6b1ac39ef59bf894e2385fd",
+  "ownerExporterCommit": "cc48fcf1eb469dd998c1317abce21be00a9429b4",
+  "ownerReview": "https://github.com/the-static-collective/revival/pull/15",
+  "exporterSha256": "2a10c8b38fe906324ad2601f5bafc7d43c1d2cfb9afa4ba91b8fb9d11bd808d2",
+  "artifactSha256": "f5c2b01e7a3a7f8a30c371f9dcd5460a013fba1602a0f4509acf48ed8894bdd6",
+  "admission": "NOT_CLAIMED"
+}

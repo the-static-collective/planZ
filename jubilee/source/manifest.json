@@ -1,0 +1,94 @@
+{
+  "artifactSha256": "f5c2b01e7a3a7f8a30c371f9dcd5460a013fba1602a0f4509acf48ed8894bdd6",
+  "authority": "NONE",
+  "effect": "NONE",
+  "files": {
+    "html": "genesis-world.html",
+    "world": "world.json"
+  },
+  "fragment": "#revival%3A%2F%2Foshb-v2.2-genesis-opening%2Fscene%2Fgenesis-opening-proof%2Fpassage%2FGen.1.1",
+  "htmlSha256": "980cf5ea05fd89f71e1caa2e1f44f9802139e574324ce491eed63d0c1d032d80",
+  "inputDigests": {
+    "corpora/oshb-v2.2-genesis-opening.json": "55a1b77bac186314283a49d4fbea38e89082dc3b74a11252aafae28a78454afd",
+    "sources/macula-hebrew/ATTRIBUTION.md": "c5b3fc64631a01f1d99f3541f26aad759fa2cc8b7fc576757a466018902df53f",
+    "sources/macula-hebrew/Gen.1.1-lowfat.xml": "b5d9a6ba8a0642246342ae4b15e4d5456a8964141fceeaaf09b2a1078491223c",
+    "sources/macula-hebrew/source.json": "b2510bc33eec33a368311ba65f37c7cdf466417194253e4c1367bfaa6fc91dfe",
+    "sources/oshb-v2.2/ATTRIBUTION.md": "8a7a052a42ee485a9ae7cc17b84353a64709ad7e14a295c83a9059f1dc1652bf",
+    "sources/oshb-v2.2/Gen.1.1.xml": "b601bac5db10a5b8b15a2c2363cc0d8bc688fa305c267db50fb3f27e9170ce40",
+    "sources/oshb-v2.2/Gen.1.2.source.json": "dd78fd7ab124040f67924a4d36cd1a9b437d8022d4ff9c317194476968c543a6",
+    "sources/oshb-v2.2/Gen.1.2.xml": "8e4a61fa98eb3a2b365039f68f4dd54f2f7e13f62c8eac7d9f8aa28348cba4d5",
+    "sources/oshb-v2.2/Gen.1.3.source.json": "ede1e8d262b933ee9370eb43ddad66f2843153c4af85f276c025a88eade1eec9",
+    "sources/oshb-v2.2/Gen.1.3.xml": "4b33d01e72e0ea234186595e367f660afd13a07755fdeff4cab019fb9fe58918",
+    "sources/oshb-v2.2/morphology-codes.json": "5fe741ae1e5c24f489e32fc62a2f52ea868625bf3e43876eceaf6a21ac88e031",
+    "sources/oshb-v2.2/source.json": "d94b939ea304e78fc5f268873f8f308059839e792ff07a57b93873c424a22571",
+    "src/revival/__init__.py": "c2ff0318196590c5a06694f4deda13b539f72ffcd4aa90410375bb81cb10e8f6",
+    "src/revival/__main__.py": "8206753fa0db7ce9d98a19bbf73a6dbd5d18c99b1306d94120916a17e58818f4",
+    "src/revival/adapters/__init__.py": "9dec7e87606f281062ab4ab21bfaed496603c3343821d8eff986397cac2d53eb",
+    "src/revival/adapters/macula.py": "3f39a0048570bc990b287160fd1ab1912af3cde1f5a6c01f5966061ea0d73b99",
+    "src/revival/adapters/oshb.py": "b49b506da0d9ae5aba9d6b3e081cd6e32822b5084b4dfa08d37bd882db960a3b",
+    "src/revival/aleph_tav.py": "084d14ac3d58613e6183e3e213adab453f73aa756cc653c6c11ffb4fc81ec97e",
+    "src/revival/aleph_tav_atlas.py": "fc67eb5a36801ff2923ddc280590f981e4af1686f42c2992e8c877f110b53e04",
+    "src/revival/atlas.py": "01d0308bdfc6988a448f543c0c3b3f9d840d9e67dc7a5f5aa12d3d85cdd3ca2a",
+    "src/revival/compiler.py": "df0dd7b1d4893e31f4d56592dc51c8905fd9090c3e067b0c7138537a4814cfdb",
+    "src/revival/corpus.py": "3ba0e9105ae012c5fdd2a998e18c8ed167352397b3c77d567ef3dec8d58423a3",
+    "src/revival/corpus_atlas.py": "787590fefa1215b8b8144b8118f3d15bafe91c41af015f08cf264dbaf147c651",
+    "src/revival/curiosity.py": "4c1202f402222ef8256163fa701fcb484cdf08f12d715d32ec4dcc4728dd2695",
+    "src/revival/earned_names.py": "8ba3b8f0c3306be9c5836e32dd8308692e4c102a568854388d58f7a46bcd93fe",
+    "src/revival/first_world.py": "4efee2cabdf15c7feafa54abf3c6855ec8cd633615ad7af3f8b7c0191b8aea99",
+    "src/revival/kernel/__init__.py": "84516d1627fc65aa05e6f021b2e47a3b107b3ab6ba56256decf0a7624dd7c1db",
+    "src/revival/kernel/v1.py": "9c0fa34ac3138eb17c0799a5e8845cbef601caf7f44cf5b91ada4e1b5313c67b",
+    "src/revival/linguistic.py": "109010e2db2a8bea5b41b70cb399861c5465c33429bd0f0a79dad47de1d95bb5",
+    "src/revival/object_relations.py": "4b3d07c71844880eab06effd4d86f5eeff712fbd4fc4669088a365821ee54d54",
+    "src/revival/object_relations_atlas.py": "a7890664d579751daa49305355537b66bde7f7dacf4b1ac5264409a9be72469a",
+    "src/revival/world_places.py": "03e905aaf7ede15f17741654adfec5002cd6bb85a87c94df50758dff24442404"
+  },
+  "licenses": [
+    {
+      "license": {
+        "annotations": "OSHB lemma and morphology data: Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb",
+        "text": "Westminster Leningrad Codex text: Public Domain"
+      },
+      "project": "Open Scriptures Hebrew Bible",
+      "upstreamBlob": "dcc8be362134981d3054e9b64d3a465d08492a33",
+      "upstreamCommit": "6a5db284c715c18b239422e57bb89684e6a19f00"
+    },
+    {
+      "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "project": "MACULA Hebrew Linguistic Datasets",
+      "upstreamBlob": "08829ff09c7c6b06f2ae01bc980fc182c1d1a4b8",
+      "upstreamCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c"
+    }
+  ],
+  "locator": "Gen.1.1",
+  "nonclaims": [
+    "THEOLOGICAL_TRUTH",
+    "PREFERRED_TRANSLATION",
+    "LIVE_SCAN",
+    "HOST_ACCEPTANCE",
+    "PARTICIPANT_CONSENT",
+    "SOURCE_ADMISSION",
+    "SIGNATURE",
+    "INDEPENDENT_UPSTREAM_RETRIEVAL"
+  ],
+  "producer": {
+    "exporterSha256": "2a10c8b38fe906324ad2601f5bafc7d43c1d2cfb9afa4ba91b8fb9d11bd808d2",
+    "repository": "https://github.com/the-static-collective/revival",
+    "sourceCommit": "af1e00c24e3d7c6eb6b1ac39ef59bf894e2385fd"
+  },
+  "revivalAddress": "revival://oshb-v2.2-genesis-opening/scene/genesis-opening-proof/passage/Gen.1.1",
+  "schema": "revival.jubilee-source-door/0.1",
+  "status": "SOURCE_BOUND_READ_ONLY",
+  "witnessSha256": "150e98e687687bc590571444d8bd19126211ec774be51310fc615ea549126e83",
+  "worldReceipt": {
+    "corpus_sha256": "0c3e618dd5069c33cdf2b0e0006d98a3d97bd66f75542a0bc6c5f5bd2c1ecf14",
+    "edges_sha256": "8c52b8f357e7c0b0f90ee0df3f7e55b0b3417c366c0f69e40b840b2b874aebce",
+    "first_world_projection_sha256": "4a61784691f590160a13a309f7131c0ccc66d8b83fb0a5710d94ddd138249a2e",
+    "kind": "revival-world-places",
+    "places_sha256": "0d604ec51b125a1c70f4ad97374f80935eeb5fd39b256042cf799bd9c726ac86",
+    "projection_sha256": "c178d8e6f70be28f9bea227e790e29d653377624ed402dba95619854eb6a6c29",
+    "room_addresses_sha256": "da40d7bbcc6ec8664d780ed727a65786950f105afe17513b62ea40465e6c1ff4"
+  },
+  "worldSha256": "30300ce033f69d7ab26c779fb32f9abc2f25eabdada50eeddf117ff206f9095b"
+}

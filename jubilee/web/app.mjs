@@ -49,12 +49,13 @@ function openDoor(cid){
   const original=state.fixture.cards.find(x=>x.id===cid);
   $('#door-kind').textContent=kindNames[c.kind];$('#door-title').textContent=c.label;
   const copy={
-    SCRIPTURE:c.disposition==='ELIGIBLE_FOR_LOOKUP'?`<p>${esc(c.citation)} is eligible for a lookup in Revival’s demonstrated Genesis-opening world.</p><div class="note">A real address and its source receipt must come from Revival. This rehearsal has neither; there is no invented Scripture link.</div>`:`<p>${esc(c.citation)} is a human-selected Jubilee theme.</p><div class="note">Citation only. The demonstrated Revival corpus does not establish this source address. A host may read from their separately chosen Bible.</div>`,
+    SCRIPTURE:c.disposition==='ELIGIBLE_FOR_LOOKUP'?`<p>${esc(c.citation)} is a synthetic paper invitation.</p><div class="note">A separate, verified source world is now available from Revival’s owner-local exporter, with its actual passage address, receipts and attribution. Inspecting it does not turn the rehearsal into a real event.</div>`:`<p>${esc(c.citation)} is a human-selected Jubilee theme.</p><div class="note">Citation only. The demonstrated Revival corpus does not establish this source address. A host may read from their separately chosen Bible.</div>`,
     NEED:'<p>A public invitation to share a table, held by its original neighbor.</p><div class="note">An introduction requires the neighbor’s and helper’s separate choices. A helper’s report remains separate from the recipient’s confirmation. Worship is optional.</div>',
     OFFER:'<p>A local offer. The people who offer it retain their own choices.</p><div class="note">This synthetic card does not book a kitchen, promise availability or appoint a host.</div>',
     MUSIC:'<p>A music artifact that may travel from Orchard to River.</p><div class="note">Permission: physical handoff to River only. Public broadcast, recording and onward publication require separate permission. This rehearsal contains no actual recording.</div>'
   };
   $('#door-copy').innerHTML=copy[c.kind];$('#door-actions').innerHTML='<button class="secondary" id="withdraw-card">Withdraw this invitation in rehearsal</button>';
+  if(c.kind==='SCRIPTURE'&&c.citation===SOURCE_BUNDLE.manifest.locator){const source=document.createElement('button');source.className='primary';source.id='open-source';source.textContent='Inspect the verified Genesis world ↗';source.onclick=async()=>{try{await SourceViewer.openSourceWorld(SOURCE_BUNDLE,SOURCE_PIN,()=>projectSession(state).cards.some(x=>x.id===c.id));}catch(error){$('#notice').textContent=error.message;}};$('#door-actions').prepend(source);}
   $('#withdraw-card').onclick=()=>{if(act(extra('WITHDRAW_CARD',{card:c.id,actor:original.owner})))$('#door-dialog').close();};
   const intro=state.introductions.find(i=>i.cardId===c.id);
   if(intro && intro.status==='PROPOSED' && !intro.decisions[intro.recipient]){
