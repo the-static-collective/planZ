@@ -104,3 +104,8 @@ The source will continue to reside with each project owner. planZ records the ro
 At exact STATIC-OS head 142e84c4991b88445f8afa93ffac1eec6354c6f5, [Instrument Host run 38169417718](https://github.com/the-static-collective/static-os/actions/runs/38169417718) and Genesis contract CI succeeded, including test discovery and cold verification. This proves code-level integration only. No actual physical data was input; no physical field processor claim has been earned.
 
 The human operator has a soldering iron and a scrap inventory to inspect; next is a **battery-disconnected safe parts check** and a genuine meter-observed control run.
+
+
+## DUAL-BODY-001 — crossing the field between independently sovereign computers
+
+[DUAL-BODY-001](2026-10-11-dual-body-static-relatte-compat-001.md) now records the opportunity created by a couple of likely working laptops and working desktops. It separates: hardware boot; local runtime suitability; ordinary file delivery; cryptographically verified reLATTE packet; receiver-local RECEIVE/HOLD; separately admitted STATIC-OS read-only record; real acoustic field evidence. The existing STATIC-OS Instrument Host's opaque-organ crossing is **not automatically compatible** with the standard crossing-envelope type consumed by reLATTE Transport Composition #93. A typed bridge, exact donor pin and owner-local tests are required before these branches can be called interoperable on two physical machines.
