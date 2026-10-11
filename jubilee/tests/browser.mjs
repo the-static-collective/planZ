@@ -23,7 +23,7 @@ try {
   await fresh();assert.equal(await page.locator('#main-view [data-card]').count(),4);
   assert.ok(!(await page.locator('body').innerText()).includes('Private synthetic placeholder'));
   await page.locator('[data-card="genesis-door"]').click();
-  assert.ok((await page.locator('#door-copy').innerText()).includes('there is no invented Scripture link'));
+  assert.ok((await page.locator('#door-copy').innerText()).includes('verified source world'));
   await page.keyboard.press('Escape');assert.equal(await page.locator('dialog').evaluate(d=>d.open),false);checks++;
   if(process.env.JUBILEE_SCREENSHOTS){mkdirSync(process.env.JUBILEE_SCREENSHOTS,{recursive:true});await page.screenshot({path:process.env.JUBILEE_SCREENSHOTS+'/giving-tree.png',fullPage:true});}
 
