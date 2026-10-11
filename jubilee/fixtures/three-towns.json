@@ -1,0 +1,13 @@
+{
+  "schema": "jubilee/rehearsal/v1", "status": "SYNTHETIC_ONLY", "now": "2026-10-11T12:00:00Z",
+  "towns": [{"id":"orchard","label":"Orchard","host":"host-orchard"},{"id":"river","label":"River","host":"host-river"},{"id":"harbor","label":"Harbor","host":"host-harbor"}],
+  "cards": [
+    {"id":"genesis-door","town":"orchard","owner":"reader","kind":"SCRIPTURE","label":"In the beginning","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":"Gen.1.1","permissions":[]},
+    {"id":"jubilee-theme","town":"orchard","owner":"reader","kind":"SCRIPTURE","label":"Good news to the poor","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":"Luke.4","permissions":[]},
+    {"id":"shared-table","town":"orchard","owner":"neighbor","kind":"NEED","label":"A place at a shared table","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":null,"permissions":[]},
+    {"id":"traveling-song","town":"orchard","owner":"musician","kind":"MUSIC","label":"A song for the next town","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":null,"permissions":["HANDOFF:river"]},
+    {"id":"open-kitchen","town":"river","owner":"host-river","kind":"OFFER","label":"A kitchen with room to spare","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":null,"permissions":[]},
+    {"id":"branch-makers","town":"harbor","owner":"host-harbor","kind":"OFFER","label":"We can make a new branch","visibility":"PUBLIC","optIn":true,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":null,"permissions":[]},
+    {"id":"held-need","town":"orchard","owner":"private-neighbor","kind":"NEED","label":"Private synthetic placeholder","visibility":"PRIVATE","optIn":false,"revoked":false,"expiresAt":"2026-10-12T12:00:00Z","citation":null,"permissions":[]}
+  ]
+}

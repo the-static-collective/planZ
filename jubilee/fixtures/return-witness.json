@@ -1,0 +1,144 @@
+{
+  "schema": "jubilee/replay-witness/v1",
+  "status": "SYNTHETIC_ONLY",
+  "fixtureSha256": "a046de5910ef54e3cd6ed99dbb0bbcf8f28afff826d2f90c2c10a5c3a92f6693",
+  "eventsSha256": "96de834072db2c8f1253fd99e1aedd8e6e7938687136d7242a75a49573330ab6",
+  "projection": {
+    "schema": "jubilee/card-projection/v1",
+    "status": "SYNTHETIC_ONLY",
+    "cards": [
+      {
+        "id": "branch-makers",
+        "town": "harbor",
+        "kind": "OFFER",
+        "label": "We can make a new branch",
+        "citation": null,
+        "disposition": "PUBLIC_INVITATION",
+        "revivalAddress": null,
+        "sourceDigest": null,
+        "effect": "NONE"
+      },
+      {
+        "id": "genesis-door",
+        "town": "orchard",
+        "kind": "SCRIPTURE",
+        "label": "In the beginning",
+        "citation": "Gen.1.1",
+        "disposition": "ELIGIBLE_FOR_LOOKUP",
+        "revivalAddress": null,
+        "sourceDigest": null,
+        "effect": "NONE"
+      },
+      {
+        "id": "jubilee-theme",
+        "town": "orchard",
+        "kind": "SCRIPTURE",
+        "label": "Good news to the poor",
+        "citation": "Luke.4",
+        "disposition": "CITATION_ONLY_SOURCE_UNRESOLVED",
+        "revivalAddress": null,
+        "sourceDigest": null,
+        "effect": "NONE"
+      },
+      {
+        "id": "open-kitchen",
+        "town": "river",
+        "kind": "OFFER",
+        "label": "A kitchen with room to spare",
+        "citation": null,
+        "disposition": "PUBLIC_INVITATION",
+        "revivalAddress": null,
+        "sourceDigest": null,
+        "effect": "NONE"
+      },
+      {
+        "id": "shared-table",
+        "town": "orchard",
+        "kind": "NEED",
+        "label": "A place at a shared table",
+        "citation": null,
+        "disposition": "PUBLIC_INVITATION",
+        "revivalAddress": null,
+        "sourceDigest": null,
+        "effect": "NONE"
+      },
+      {
+        "id": "traveling-song",
+        "town": "orchard",
+        "kind": "MUSIC",
+        "label": "A song for the next town",
+        "citation": null,
+        "disposition": "PUBLIC_INVITATION",
+        "revivalAddress": null,
+        "sourceDigest": null,
+        "effect": "NONE"
+      }
+    ],
+    "excludedCount": 1,
+    "exclusions": {
+      "PRIVATE_OR_WITHDRAWN": 1,
+      "EXPIRED": 0
+    },
+    "createdConnections": [],
+    "appliedEffects": [],
+    "currentTown": "harbor",
+    "acceptedHosts": [
+      "orchard",
+      "river",
+      "harbor"
+    ],
+    "visitedTowns": [
+      "orchard",
+      "river",
+      "harbor"
+    ],
+    "carries": [
+      {
+        "id": "carry-song",
+        "cardId": "traveling-song",
+        "sourceTown": "orchard",
+        "destinationTown": "river",
+        "status": "RECEIVED",
+        "receivedAt": "river"
+      }
+    ],
+    "introductions": [
+      {
+        "id": "help-table",
+        "cardId": "shared-table",
+        "town": "river",
+        "status": "CONFIRMED"
+      }
+    ],
+    "observations": [],
+    "returns": [
+      {
+        "id": "return-home",
+        "towns": [
+          "orchard",
+          "river",
+          "harbor"
+        ],
+        "carryIds": [
+          "carry-song"
+        ],
+        "aidIds": [
+          "help-table"
+        ],
+        "status": "SYNTHETIC_RETURN",
+        "authority": "NONE"
+      }
+    ],
+    "eventCount": 13,
+    "authority": "NONE"
+  },
+  "nonclaims": [
+    "LIVE_EVENT",
+    "SOURCE_VERIFICATION",
+    "AUTHENTICATED_CONSENT",
+    "DELIVERY",
+    "OWNER_ADMISSION",
+    "SIGNATURE"
+  ],
+  "semanticSha256": "3a2e9c7b9230808d93b5951e747116489c6bafa2df2370ffb531535921168d77"
+}

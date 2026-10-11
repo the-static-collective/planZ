@@ -1,0 +1,15 @@
+[
+  {"id":"host-a","type":"ACCEPT_HOST","town":"orchard","actor":"host-orchard"},
+  {"id":"host-b","type":"ACCEPT_HOST","town":"river","actor":"host-river"},
+  {"id":"carry-song","type":"CARRY_ARTIFACT","card":"traveling-song","town":"river","actor":"musician"},
+  {"id":"help-table","type":"PROPOSE_HELP","card":"shared-table","town":"river","recipient":"neighbor","helper":"host-river"},
+  {"id":"neighbor-accept","type":"DECIDE_HELP","introduction":"help-table","actor":"neighbor","decision":"ACCEPT"},
+  {"id":"helper-accept","type":"DECIDE_HELP","introduction":"help-table","actor":"host-river","decision":"ACCEPT"},
+  {"id":"visit-river","type":"TRAVEL","town":"river"},
+  {"id":"receive-song","type":"RECEIVE_ARTIFACT","carry":"carry-song","actor":"host-river"},
+  {"id":"report-table","type":"REPORT_DELIVERY","introduction":"help-table","actor":"host-river"},
+  {"id":"confirm-table","type":"CONFIRM_AID","introduction":"help-table","actor":"neighbor"},
+  {"id":"host-c","type":"ACCEPT_HOST","town":"harbor","actor":"host-harbor"},
+  {"id":"visit-harbor","type":"TRAVEL","town":"harbor"},
+  {"id":"return-home","type":"RECORD_RETURN"}
+]
