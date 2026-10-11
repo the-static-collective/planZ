@@ -135,3 +135,8 @@ and no execution capability. The proposal remains HELD. F1 printed/recorded
 physical evidence, F2 opt-in playback, account/platform integrations and any
 reLATTE admission have not occurred. This is a new servant of the existing
 FIELD-SCORE grammar, not an alternate master authority.
+
+
+## DUAL-BODY-001 — real machine capability versus protocol compatibility
+
+The [DUAL-BODY compatibility membrane](../layers/2026-10-11-dual-body-static-relatte-compat-001.md) anchors the first two-machine experimental loop. The operator has identified a couple of laptops and working desktop candidates, subject to local verification. The plan explicitly distinguishes exact-file transport, native reLATTE signed opaque-organ packets, receiver-local HOLD and later STATIC-OS read-only instrument admission. A signed *standard* crossing is a different typed contract from the opaque-organ crossing used by the existing Static-OS instrument bridge; the new transport compositor does not silently resolve that mismatch. A local-only [capability and exact-byte probe](../tools/dual-body-compat.py) plus hostile synthetic tests are on this proposal branch. **No actual two-machine test or network crossing has yet been conducted.**
