@@ -271,3 +271,8 @@ All fixture outcomes are **expectations**, not passing test results, until indep
 **Smallest next proof:** two consenting browser sessions intentionally share the exact same locally played track ID; the system offers—but does not create—a temporary shared listening room; declining, expiry and leaving are visible, immediate and receipted.
 
 **How it differs from the prior layer:** FIELD-SCORE governs how heterogeneous physical observations become owner-local encounter *candidates*. ROOMTONE governs how consenting, ephemeral **room projections** discover one another by declared environmental or musical relations before they elect to interact. Neither substitutes for the other.
+
+
+## GO.STATIC descendant: a host-native synthetic field processor
+
+[GO.STATIC FIELD COMPUTER 001](2026-10-11-go-static-field-computer-001.md) records the code-wire archaeology; [STATIC-OS draft PR #87](https://github.com/the-static-collective/static-os/pull/87) implements a real read-only InstrumentAdapterV0 for synthetic, opt-in ROOMTONE observations. At head 7126d16091a156a2c075145d56dfd965bf57f7dd, inherited Static-OS native tests and cold-verification GitHub Actions completed successfully. This is **not** a real room sensor, operating matchmaking service, network, or environmental computing hardware. Actual consenting listeners and real instruments remain independent future gates.
