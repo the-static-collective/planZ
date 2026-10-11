@@ -118,3 +118,20 @@ A song may become a common listening room; similar traffic vibrations may sugges
 ## GO.STATIC — native field processor descendant
 
 [GO.STATIC FIELD COMPUTER 001](../layers/2026-10-11-go-static-field-computer-001.md) is now a separate code-wire and physical-proof layer. The actual owner-local implementation is [STATIC-OS draft PR #87](https://github.com/the-static-collective/static-os/pull/87), stacked on [Instrument Host #54](https://github.com/the-static-collective/static-os/pull/54), not part of planZ's runtime. It implements synthetic consented ROOMTONE candidate computation through the existing eleven-dial read-only instrument contract. Exact-head software CI passed at 7126d16091a156a2c075145d56dfd965bf57f7dd; physical-field processing, sensor I/O, power wiring and RF remain untested. This descendant makes the master plan **partially instantiated as software**, not admitted as a field hardware network.
+
+
+## BANDCAMP × FIELD-SCORE — Singing Sigil descendant
+
+[The Bandcamp Singing Sigil layer](../layers/2026-10-11-bandcamp-singing-sigil-001.md)
+now records a distinct **F0 synthetic software experiment** in
+[STATIC-OS draft PR #89](https://github.com/the-static-collective/static-os/pull/89).
+The source titles come from the human's actual Bandcamp lyric export, but the
+three-cue sequence is a new cross-release proposal, **not** a historical album
+or proof that published recordings contain machine-readable data.
+
+The native eleven-dial adapter preserves separate synthetic QR/audio/optical
+occurrence IDs, duplicate and clock uncertainty, a distinct declared referent
+and no execution capability. The proposal remains HELD. F1 printed/recorded
+physical evidence, F2 opt-in playback, account/platform integrations and any
+reLATTE admission have not occurred. This is a new servant of the existing
+FIELD-SCORE grammar, not an alternate master authority.
