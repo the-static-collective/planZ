@@ -60,6 +60,18 @@ jobs:
           assert not o["no_git_merge"]==False
           print("PASS: synthetic graph -> planZ mission offer only, no execution")
           PY
+      - name: Package exact public sources for private replay
+        run: |
+          tar -czf relay001-planz-source.tar.gz \
+            scripts/relay001_planz.py \
+            tests/test_relay001_planz.py \
+            docs/RELAY001-SEVENTH-ORGAN.md \
+            .relay-deps/free-graph/scripts/fg_core.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: relay001-planz-source-carrier
+          path: relay001-planz-source.tar.gz
+          if-no-files-found: error
       - name: Publish only synthetic planning proof
         uses: actions/upload-artifact@v4
         with:
