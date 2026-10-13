@@ -1,0 +1,68 @@
+name: RELAY-001 seventh-organ plan census
+
+on:
+  push:
+    branches: [experiment/relay001-next-mission]
+  pull_request:
+    paths:
+      - 'scripts/relay001_planz.py'
+      - 'tests/test_relay001_planz.py'
+      - 'docs/RELAY001-SEVENTH-ORGAN.md'
+      - '.github/workflows/relay001-planz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  planz-native-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout planZ
+        uses: actions/checkout@v4
+      - name: Checkout pinned Free Graph project-owned source
+        uses: actions/checkout@v4
+        with:
+          repository: the-static-collective/free-graph
+          ref: fce3634baf2ac127695271671e3571ab54a9d92d
+          path: .relay-deps/free-graph
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run synthetic native provenance and adversarial tests
+        env:
+          FREE_GRAPH_CORE: .relay-deps/free-graph/scripts/fg_core.py
+        run: python3 -m unittest discover -s tests -v
+      - name: Compile and verify a synthetic seventh-organ offer
+        env:
+          FREE_GRAPH_CORE: .relay-deps/free-graph/scripts/fg_core.py
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import importlib.util, json
+          spec=importlib.util.spec_from_file_location("fixture","tests/test_relay001_planz.py")
+          m=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(m)
+          Path("relay001-synthetic-graph.json").write_text(json.dumps(m.synthetic_graph(),indent=2)+"\n")
+          PY
+          python3 scripts/relay001_planz.py \
+            --graph relay001-synthetic-graph.json \
+            --free-graph-core "$FREE_GRAPH_CORE" \
+            --output relay001-synthetic-mission-offer.json
+          python3 - <<'PY'
+          import json
+          o=json.load(open("relay001-synthetic-mission-offer.json"))
+          assert o["census"]["now_locally_compiled"]==7
+          assert o["census"]["still_proposed"]==32
+          assert o["selection_policy"]["next_offer"]=="the-haunted-toaster"
+          assert not o["required_next_gate"]["render_authorized"]
+          assert not o["no_git_merge"]==False
+          print("PASS: synthetic graph -> planZ mission offer only, no execution")
+          PY
+      - name: Publish only synthetic planning proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: relay001-planz-synthetic-only
+          path: relay001-synthetic-mission-offer.json
+          if-no-files-found: error
