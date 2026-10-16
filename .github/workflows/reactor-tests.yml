@@ -1,0 +1,32 @@
+name: BANANAS-001 reactor checks
+
+on:
+  pull_request:
+    paths:
+      - "reactor/**"
+      - "registry/conversation-plan-records-2026-10-16.jsonl"
+      - ".github/workflows/reactor-tests.yml"
+  push:
+    branches: ["experiment/banana-reactor-64-001"]
+    paths:
+      - "reactor/**"
+      - "registry/conversation-plan-records-2026-10-16.jsonl"
+      - ".github/workflows/reactor-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  compile-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate quarantined source and eight chamber boundaries
+        run: node --test reactor/collide.test.mjs
+      - name: Derive machine-readable proposal capsule
+        run: node reactor/collide.mjs --format json --out /tmp/bananas-001.json
+      - name: Derive reviewable Markdown map
+        run: node reactor/collide.mjs --format md --out /tmp/bananas-001.md
