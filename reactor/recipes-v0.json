@@ -1,0 +1,280 @@
+{
+  "schema": "static-collective/planz-banana-reactor/v0",
+  "name": "BANANAS-001 | 64 Seed Reactor",
+  "status": "PROPOSED_UNVERIFIED",
+  "seedSet": "PLANZ-CHAT-20261016",
+  "input": "registry/conversation-plan-records-2026-10-16.jsonl",
+  "loop": "particular -> 8 non-authoritative constellations -> human selects one pilot -> independent owner proof -> held receipt -> optional porch return",
+  "cards": [
+    {
+      "id": "ORCHARD-CINEMA",
+      "name": "Orchard Cinema",
+      "todayDoor": "Tell it",
+      "question": "Can a single permitted motif become an editable manga panel and a reversible film candidate?",
+      "primary": [
+        "N02",
+        "N07",
+        "V03",
+        "V04",
+        "V09"
+      ],
+      "orbit": [
+        "N01",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "N08",
+        "N10",
+        "V02",
+        "V05",
+        "V06",
+        "M04",
+        "C02"
+      ],
+      "smallestProof": "One source-permitted Story DNA motif -> editable lemonPRESS panel -> reversible shot candidate; no publication.",
+      "returns": "An editable panel, a proposed shot and a separately reviewable source/choice receipt.",
+      "ownerCandidates": [
+        "story-dna",
+        "lemonPRESS",
+        "the-haunted-blender"
+      ],
+      "gates": [
+        "Obtain exact permitted source and rights.",
+        "Keep the source observation distinct from imagined connective narrative.",
+        "Human panel KEEP/REFUSE before any publishing."
+      ]
+    },
+    {
+      "id": "FOSSIL-JUKEBOX",
+      "name": "Fossil Jukebox",
+      "todayDoor": "Hear it",
+      "question": "Can one song become an inspectable ancestry tree with competing interpretations?",
+      "primary": [
+        "M01",
+        "M02",
+        "M04",
+        "M07",
+        "C10"
+      ],
+      "orbit": [
+        "M03",
+        "M05",
+        "M06",
+        "M08",
+        "M09",
+        "M10",
+        "W05"
+      ],
+      "smallestProof": "One owner-provided song identity, an alternate or album placement, and an explicitly refused false ancestry edge.",
+      "returns": "A replayable song genealogy card with a rejected link and a visitor-safe listening door.",
+      "ownerCandidates": [
+        "SIA",
+        "webZ"
+      ],
+      "gates": [
+        "Require exact owner-provided identity and permitted metadata.",
+        "Keep generations, songs, albums and editorial membership distinct.",
+        "No automatic mirroring of third-party audio or lyrics."
+      ]
+    },
+    {
+      "id": "NEEDFUL-PORCH",
+      "name": "Needful Porch",
+      "todayDoor": "Help with it",
+      "question": "Can a public visitor carry music, a need and an invitation without conflating consent?",
+      "primary": [
+        "W03",
+        "W04",
+        "W05",
+        "C08",
+        "C09"
+      ],
+      "orbit": [
+        "W01",
+        "W02",
+        "W06",
+        "W08",
+        "W09",
+        "W10",
+        "P04",
+        "C01"
+      ],
+      "smallestProof": "One non-sensitive local need/offer prototype with separate review and newsletter opt-in/out.",
+      "returns": "An independently reviewed help slip, optionally a private follow-up, and no automatic audience membership.",
+      "ownerCandidates": [
+        "webZ",
+        "BananaSpork"
+      ],
+      "gates": [
+        "No raw personal requests in a public seed feed.",
+        "Human moderation and recipient confirmation remain separate.",
+        "Email opt-in is never inferred from listening or requesting help."
+      ]
+    },
+    {
+      "id": "GHOST-POST",
+      "name": "Ghost Post",
+      "todayDoor": "Carry it",
+      "question": "Can one exact envelope travel through different carriers and return with distinct custody observations?",
+      "primary": [
+        "P01",
+        "P05",
+        "P08",
+        "P07",
+        "C11"
+      ],
+      "orbit": [
+        "P02",
+        "P03",
+        "P06",
+        "P10",
+        "P11",
+        "C06",
+        "M08"
+      ],
+      "smallestProof": "One owner-created harmless envelope across two manually controlled transports; compare receiver hashes and HOLD decisions.",
+      "returns": "Two non-identical transport receipts pointing to one exact source identity; no invented delivery.",
+      "ownerCandidates": [
+        "static-briars",
+        "GHoT",
+        "reLATTE"
+      ],
+      "gates": [
+        "Only authorized carriers and opt-in peers.",
+        "An emitted packet is not receipt, delivery or acceptance.",
+        "Field success requires independent physical receivers."
+      ]
+    },
+    {
+      "id": "TRAVELING-JUBILEE",
+      "name": "Traveling Jubilee",
+      "todayDoor": "Bring it",
+      "question": "Can a locally invited act of care travel with music and a printable artifact?",
+      "primary": [
+        "P04",
+        "W03",
+        "C09",
+        "V07",
+        "P09"
+      ],
+      "orbit": [
+        "P07",
+        "P08",
+        "C08",
+        "C04",
+        "N11"
+      ],
+      "smallestProof": "Paper-first host invitation plus a consented help/gift card; explicitly no claim that an event occurred.",
+      "returns": "A portable host packet with roles, invitation, refusal and optional verified outcome fields.",
+      "ownerCandidates": [
+        "BananaSpork",
+        "Jubilee-Engine-VM"
+      ],
+      "gates": [
+        "Host invitation must be actual and voluntary.",
+        "Recipient acceptance is independent of giver report.",
+        "Physical print and field attendance require their own witnesses."
+      ]
+    },
+    {
+      "id": "MISSION-FORGE",
+      "name": "Mission Forge",
+      "todayDoor": "Build it",
+      "question": "Can quarantined conversation ideas become bounded work offers without being falsely promoted?",
+      "primary": [
+        "C01",
+        "C03",
+        "C04",
+        "C12",
+        "W07",
+        "W08"
+      ],
+      "orbit": [
+        "C05",
+        "C06",
+        "C07",
+        "C11",
+        "W10"
+      ],
+      "smallestProof": "Compile one source-identified candidate into a bounded operator-review packet, then HOLD it without running anything.",
+      "returns": "A reproducible mission offer, candidate loadout and independent receiver HOLD/refusal receipt.",
+      "ownerCandidates": [
+        "planZ",
+        "CANNON",
+        "reLATTE"
+      ],
+      "gates": [
+        "A conversation summary is not primary provenance.",
+        "Proposal, branch selection, code execution and owner admission are independent.",
+        "No automatic PR merges or canonical seed rewrites."
+      ]
+    },
+    {
+      "id": "RHYTHM-MUTANT",
+      "name": "Rhythm Mutant",
+      "todayDoor": "Perform it",
+      "question": "Can an editable source scene produce multiple human-performed visual mutations without losing ancestry?",
+      "primary": [
+        "V01",
+        "V02",
+        "V05",
+        "V08",
+        "C10"
+      ],
+      "orbit": [
+        "V03",
+        "V04",
+        "V06",
+        "V07",
+        "V09",
+        "N09",
+        "N10",
+        "M09"
+      ],
+      "smallestProof": "One permitted panel or photo with human-recorded CUT/HOLD sequence and source-preserving alternate.",
+      "returns": "One original, two reversible candidate cuts and a human KEEP/COMPOST decision.",
+      "ownerCandidates": [
+        "the-haunted-toaster",
+        "vidmage",
+        "lemonPRESS"
+      ],
+      "gates": [
+        "Source media must be permitted and hash-pinned.",
+        "Timeline acts are user-performance events, not story facts.",
+        "Render and publication are separate human choices."
+      ]
+    },
+    {
+      "id": "ROOMSHIP",
+      "name": "Roomship",
+      "todayDoor": "Cross it",
+      "question": "Can a relationship cross between independently owned worlds without overwriting either world's continuity?",
+      "primary": [
+        "N09",
+        "N11",
+        "N12",
+        "N01",
+        "N05"
+      ],
+      "orbit": [
+        "P02",
+        "W09",
+        "C05",
+        "C02",
+        "C07"
+      ],
+      "smallestProof": "One two-world encounter card, both local interpretations and a valid one-sided REFUSE outcome.",
+      "returns": "An encounter specimen with distinct histories, no global canon and a replayable alternate reading.",
+      "ownerCandidates": [
+        "STORYSHIP",
+        "story-dna"
+      ],
+      "gates": [
+        "Two world owners must separately admit the encounter.",
+        "Relationship is not identity fusion or consent.",
+        "An interpretation remains a proposed descendant, not a source event."
+      ]
+    }
+  ]
+}
