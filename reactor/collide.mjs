@@ -20,7 +20,7 @@ function seedCode(planId) {
 }
 
 export function compile(recordsText, recipesText) {
-  const lines = recordsText.trim().split(/\\r?\\n/).filter(Boolean);
+  const lines = recordsText.trim().split(/\r?\n/).filter(Boolean);
   const records = lines.map((line, i) => {
     try { return JSON.parse(line); }
     catch { fail("malformed input JSONL line " + (i + 1)); }
@@ -99,7 +99,7 @@ export function compile(recordsText, recipesText) {
   return result;
 }
 
-const escapeCell = x => String(x).replaceAll("|", "\\|").replaceAll("\\n", " ");
+const escapeCell = x => String(x).replaceAll("|", "\\|").replaceAll("\n", " ");
 export function renderMarkdown(result) {
   const h = result.source;
   const parts = [
@@ -150,7 +150,7 @@ export function renderMarkdown(result) {
     "",
     "When a project actually performs a pilot, it needs a separate real owner-issued receipt. Do not write that receipt in this generator.",
     "");
-  return parts.join("\\n");
+  return parts.join("\n");
 }
 
 function main() {
@@ -167,10 +167,10 @@ function main() {
   }
   if (!["md", "json"].includes(format)) fail("format must be md or json");
   const r = compile(readFileSync(recordsPath, "utf8"), readFileSync(recipesPath, "utf8"));
-  const printed = format === "json" ? JSON.stringify(r, null, 2) + "\\n" : renderMarkdown(r);
+  const printed = format === "json" ? JSON.stringify(r, null, 2) + "\n" : renderMarkdown(r);
   if (outputPath) writeFileSync(outputPath, printed, "utf8");
   else process.stdout.write(printed);
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  try { main(); } catch (error) { process.stderr.write(error.message + "\\n"); process.exitCode = 1; }
+  try { main(); } catch (error) { process.stderr.write(error.message + "\n"); process.exitCode = 1; }
 }
