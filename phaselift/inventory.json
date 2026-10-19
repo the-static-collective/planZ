@@ -1,0 +1,140 @@
+{
+  "schema": "phaselift.inventory.v0",
+  "observed_on": "2026-10-19",
+  "source": "https://github.com/the-static-collective/planZ/pulls",
+  "classification": "observed snapshot; not an admission or merge recommendation",
+  "count": 14,
+  "entries": [
+    {
+      "number": 19,
+      "title": "BANANAS-001: eight-chamber reactor for all 64 conversation seeds",
+      "head": "experiment/banana-reactor-64-001",
+      "head_sha": "7481da74c98b66ef34daf04a6d36458fedae7167",
+      "url": "https://github.com/the-static-collective/planZ/pull/19",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 18,
+      "title": "PLANZ-CHAT-001 — 64 conversation-seed candidates (public-safe, provenance quarantine)",
+      "head": "harvest/conversation-ideas-2026-10-16-001",
+      "head_sha": "9fe64b9d48792499cfd972b9de88bf0d63268f11",
+      "url": "https://github.com/the-static-collective/planZ/pull/18",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 17,
+      "title": "RELAY-001: seventh-organ Free Graph → planZ bounded mission census",
+      "head": "experiment/relay001-next-mission",
+      "head_sha": "f4b8207105cc7c7883d5533892c83089d0a7322d",
+      "url": "https://github.com/the-static-collective/planZ/pull/17",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 16,
+      "title": "JUBILEE-002 — verified Genesis door and local field notebook",
+      "head": "build/jubilee-field-kit-002",
+      "head_sha": "21cdf8399f185b022d1356a7383509fe7f4adf93",
+      "url": "https://github.com/the-static-collective/planZ/pull/16",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 15,
+      "title": "JUBILEE-001 — executable Giving Tree and three-town caravan",
+      "head": "build/jubilee-road-room-001",
+      "head_sha": "9f6f1c339109f73c351eff1dcf1ed77187044693",
+      "url": "https://github.com/the-static-collective/planZ/pull/15",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 14,
+      "title": "TOPPER-001 — Revival × Traveling Jubilee: The Road Is the Room",
+      "head": "proposal/revival-traveling-jubilee-topper-001",
+      "head_sha": "686c8df2bec928a83c05b3198fb4898c663e22f4",
+      "url": "https://github.com/the-static-collective/planZ/pull/14",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 12,
+      "title": "MASTER-SERVANT × ROOMTONE × GO.STATIC × DUAL-BODY — reLATTE compatibility",
+      "head": "proposal/master-servant-field-score-001",
+      "head_sha": "b819dec38b36f49ae1d1991d4e73a752bb4a2d5d",
+      "url": "https://github.com/the-static-collective/planZ/pull/12",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 11,
+      "title": "BRANCH-CENSUS 004 — inventory usable unmerged code without backlog classification",
+      "head": "experiment/branch-capability-census-004",
+      "head_sha": "ec384bfddbdff471ea8d9b295b905980f702e1ad",
+      "url": "https://github.com/the-static-collective/planZ/pull/11",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 10,
+      "title": "FATHERHAND-RESIDUE-001: activate grant-chain validator residue",
+      "head": "experiment/fatherhand-grant-chain-residue-001",
+      "head_sha": "e8111fdb64c5587b33aece0fed639ed3d03375ac",
+      "url": "https://github.com/the-static-collective/planZ/pull/10",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 9,
+      "title": "HEART-001: refuse Fatherhand, admit Heart-Lung",
+      "head": "experiment/heart-001-fatherhand-combinatrix",
+      "head_sha": "bc0ae32e0abb22cda53cc197acd6d14429fee6fa",
+      "url": "https://github.com/the-static-collective/planZ/pull/9",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 8,
+      "title": "ARROW-001: make transitions first-class",
+      "head": "feat/transition-receipts-003-1",
+      "head_sha": "8621c46f8e4e70d7e2c09fe57a2936dcb949f6f6",
+      "url": "https://github.com/the-static-collective/planZ/pull/8",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 6,
+      "title": "PLANZ-003: REMAINS → INSTRUMENTS",
+      "head": "feat/remains-instruments-003",
+      "head_sha": "535d34b5d7680ab98fb50e717b4cd00b972a232b",
+      "url": "https://github.com/the-static-collective/planZ/pull/6",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 4,
+      "title": "PLANZ-002: CENSUS → SENSES mutation engine",
+      "head": "feat/census-senses-mutation-002",
+      "head_sha": "557577c6ae4cd30a45b07cf23709283c8b4bf548",
+      "url": "https://github.com/the-static-collective/planZ/pull/4",
+      "state": "open",
+      "review": "not assessed"
+    },
+    {
+      "number": 2,
+      "title": "PLANZ-001: define the Global Plan Census",
+      "head": "feat/global-plan-census-001",
+      "head_sha": "c93ccbfa6a501cdfd5e4ff8a3957300ecc0ae9c5",
+      "url": "https://github.com/the-static-collective/planZ/pull/2",
+      "state": "open",
+      "review": "not assessed"
+    }
+  ],
+  "nonclaims": [
+    "Open PR does not mean approved",
+    "Branch does not mean deployed",
+    "Inventory does not change dispositions"
+  ]
+}
