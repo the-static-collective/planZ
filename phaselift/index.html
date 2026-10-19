@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>planZ // PHASELIFT</title>
+<style>
+:root{color-scheme:dark;--bg:#101c17;--panel:#1d3027;--ink:#eff3dc;--muted:#adc1aa;--gold:#efd28b;--line:#506757;--accent:#9de5b6}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#335b43,var(--bg) 52%);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:1100px;margin:auto;padding:28px 18px 72px}h1,h2,h3{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(3rem,9vw,6.4rem);margin:.15em 0;color:var(--gold)}
+p{max-width:77ch}.eyebrow,small,.tag{font:12px/1.5 ui-monospace,monospace;letter-spacing:.07em}.eyebrow{color:var(--accent)}.intro{font-size:1.25rem}
+.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}.panel{margin:22px 0}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button,.link{border:1px solid #759080;background:#294839;color:var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;font:inherit;text-decoration:none}
+button:hover,.link:hover,button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}button[aria-pressed=true],.primary{background:var(--gold);color:#1b281b;font-weight:700}
+a{color:var(--accent)}#cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin:16px 0}
+.card h3{font-size:1.55rem;margin:.4em 0}.card p{color:var(--muted)}.tag{color:var(--gold)}.status{color:var(--muted)}.gate{padding-left:15px;border-left:3px solid var(--gold)}
+#details[hidden],#error[hidden]{display:none}#details{border-color:var(--gold)}select{font:inherit;background:#294839;color:white;border:1px solid var(--line);padding:10px;border-radius:8px;max-width:100%}
+footer{margin-top:48px;color:var(--muted);font-size:.85rem}
+</style></head><body><main>
+<p class="eyebrow">THE STATIC COLLECTIVE / PLANZ / PHASELIFT-001</p>
+<h1>planZ</h1>
+<p class="intro">From historical census to living possibility.</p>
+<p>This instrument displays a dated, <strong>non-authoritative</strong> view of selected plans. Branches are not deployments. Selecting an option makes a local review receipt, not a project decision.</p>
+<section class="panel"><p class="eyebrow">DAILY ENGINE / HUMAN-SELECTED OFFERS</p><div id="daily" class="row"></div></section>
+<section aria-labelledby="lane-heading"><h2 id="lane-heading">Phase board</h2><div id="tabs" class="row" role="group" aria-label="Filter lanes"></div><p id="summary" class="status" aria-live="polite"></p><div id="cards"></div></section>
+<section id="details" class="panel" hidden aria-live="polite"></section>
+<p id="error" hidden role="alert"></p>
+<footer>Source: <a href="https://github.com/the-static-collective/planZ">planZ</a>. All proposals require separate owner review. Snapshot not synchronized live. No visitor information is transmitted.</footer>
+</main>
+</body></html>
