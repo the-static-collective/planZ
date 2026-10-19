@@ -1,0 +1,38 @@
+{
+  "schema": "phaselift.board.v0",
+  "as_of": "2026-10-19",
+  "authority": "none",
+  "lanes": [
+    "NOW",
+    "NEXT",
+    "HELD",
+    "COMPOST",
+    "WILD"
+  ],
+  "records": [
+    {
+      "id": "FIRST-COMMERCE-001",
+      "title": "Independent business installation",
+      "phase": "ACT",
+      "lane": "HELD",
+      "source": "https://github.com/the-static-collective/planZ/issues/20",
+      "next": "Confirm owner-approved launch and payment gates."
+    },
+    {
+      "id": "REGIONAL-HELP-001",
+      "title": "The Neighbor Door",
+      "phase": "DISCERN",
+      "lane": "HELD",
+      "source": "https://github.com/the-static-collective/planZ/issues/21",
+      "next": "Seek human co-design; no assumed partners."
+    },
+    {
+      "id": "BANANAS-001",
+      "title": "Eight-chamber seed reactor",
+      "phase": "COMPOSE",
+      "lane": "WILD",
+      "source": "https://github.com/the-static-collective/planZ/pull/19",
+      "next": "Review source harvest and select one bounded experiment."
+    }
+  ]
+}
