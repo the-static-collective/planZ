@@ -17,3 +17,19 @@ export async function sha256Text(text) {
   const hash = await globalThis.crypto.subtle.digest("SHA-256", bytes);
   return Array.from(new Uint8Array(hash), n => n.toString(16).padStart(2, "0")).join("");
 }
+
+export async function localSelection(record, decision, snapshotSha, at) {
+  if (!record?.source || !record.next || !DECISIONS.includes(decision)) throw Error("Invalid local choice");
+  if (!/^[a-f0-9]{64}$/.test(snapshotSha) || Number.isNaN(Date.parse(at))) throw Error("Missing receipt basis");
+  const receipt = {
+    kind: "PHASELIFT_LOCAL_SELECTION_V0",
+    at,
+    source: {id: record.id, url: record.source, board_sha256: snapshotSha},
+    decision,
+    next_action_proposal: record.next,
+    authority: "none",
+    admission: "NONE",
+    nonclaims: ["Not project disposition", "Not execution", "Not field proof", "Not third-party consent"]
+  };
+  return {...receipt, sha256: await sha256Text(JSON.stringify(receipt))};
+}
