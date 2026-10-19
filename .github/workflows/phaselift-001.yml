@@ -1,0 +1,23 @@
+name: PHASELIFT-001
+on:
+  pull_request:
+    paths:
+      - "phaselift/**"
+      - ".github/workflows/phaselift-001.yml"
+  push:
+    branches:
+      - feat/phaselift-001-living-phase-board
+    paths:
+      - "phaselift/**"
+      - ".github/workflows/phaselift-001.yml"
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --test phaselift/engine.test.mjs
