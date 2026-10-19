@@ -1,0 +1,3 @@
+export const PHASES = ['SEED','DISCERN','COMPOSE','ACT','RETURN'];
+export const LANES = ['NOW','NEXT','HELD','COMPOST','WILD'];
+export const DECISIONS = ['SELECT_FOR_REVIEW','HOLD_LOCALLY','DECLINE_LOCALLY'];
