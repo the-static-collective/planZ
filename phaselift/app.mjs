@@ -26,3 +26,26 @@ function openCard(id){
     details.querySelector("#"+button).onclick=()=>save(r,decision);
   }
 }
+
+async function save(r,decision){
+  const receipt=await localSelection(r,decision,digest,new Date().toISOString());
+  const blob=new Blob([JSON.stringify(receipt,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download=r.id.toLowerCase()+"-choice.json";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+tabs.addEventListener("click",e=>{
+  const b=e.target.closest("button[data-lane]");
+  if(b){selectedLane=b.dataset.lane;draw()}
+});
+boardElement.addEventListener("click",e=>{
+  const b=e.target.closest("button[data-open]");
+  if(b)openCard(b.dataset.open);
+});
+daily.innerHTML=[["BUILD","FIRST-COMMERCE-001"],["CONNECTION","REGIONAL-HELP-001"],["DISCOVERY","BANANAS-001"]].map(([kind,id])=>'<button data-pick="'+id+'">'+kind+'</button>').join("");
+daily.addEventListener("click",e=>{
+  const b=e.target.closest("button[data-pick]");if(b)openCard(b.dataset.pick);
+});
+draw();
