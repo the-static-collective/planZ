@@ -64,7 +64,7 @@ footer{margin-top:20px;border-top:1px solid #294047;padding-top:14px}
 <div>
 <div class="kicker">planZ · HEAP-CUT-001 · 21 October 2026</div>
 <h1>The whole grocery network crosses</h1>
-<p class="intro">A <strong>relational map, not a geographic map</strong>. Seven essential grocery functions, optional community nodes, and one proposed Kinship Radio editorial bridge. Every link is a question until independent human authority and evidence establish otherwise.</p>
+<p class="intro">A <strong>relational map, not a geographic map</strong>. Seven essential grocery functions, optional community nodes, and a proposed rotating Kinship Radio broadcast-card layer. Every link is a question until independent human authority and evidence establish otherwise.</p>
 </div>
 <div class="status">N0: CONCEIVED<br>N1: structural candidate<br>N2–N5: not established</div>
 </div>
@@ -105,6 +105,7 @@ footer{margin-top:20px;border-top:1px solid #294047;padding-top:14px}
 </div>
 <div class="actions">
 <button class="action" id="download" type="button">Export this proposal map (.json)</button>
+<a class="action" href="./kinship-live-queue.html" style="text-decoration:none;background:#443451;border-color:#cba6e1">Open rotating radio-card simulation →</a>
 <span id="exportStatus" class="small" role="status">Offline-only preview. No accounts, analytics, station feed or server connection.</span>
 </div>
 <footer class="small">
@@ -132,7 +133,7 @@ const NODES=[
 {id:"GARDEN",name:"The Garden",group:"optional",x:55,y:567,w:198,h:72,tag:"OPTIONAL SITE",detail:"Potential independently owned garden/housing site; owners may permit growing or workshops without ever joining a grocery.",gate:"Land use, family ownership, public access and any partnership are unapproved."},
 {id:"COMMON_TABLE",name:"Common Table",group:"optional",x:299,y:632,w:220,h:72,tag:"OPTIONAL COMMONS",detail:"Independent possibility for food and arts encounters, a stage, workshops and neighbor introductions.",gate:"No premises, event, licensed kitchen or operator is committed."},
 {id:"ABUNDENT",name:"Abundent Field",group:"optional",x:626,y:687,w:222,h:65,tag:"OPTIONAL RETURN",detail:"Potential print-and-discover door for approved public questions with a separate, voluntary return path.",gate:"A public card is not a contract, receipt, co-op membership or permission to access private land."},
-{id:"KINSHIP",name:"Kinship Radio",group:"radio",x:859,y:54,w:252,h:95,tag:"INDEPENDENT MEDIA · DRAFT",detail:"An optional editorial and community-calendar bridge: public event notices, strictly reviewed neighbor-help leads, or separately permissioned outcome stories. Kinship retains station control.",gate:"KINSHIP-006 remains an unmerged producer adapter. A candidate is not a submission; READY is not AIRED; AIRING is not a confirmed delivery.",source:"https://github.com/the-static-collective/static-live/pull/31"}
+{id:"KINSHIP",name:"Kinship Radio",group:"radio",x:859,y:54,w:252,h:95,tag:"ROTATING CARD BULLETIN · DRAFT",detail:"Potential recurring, producer-controlled broadcast node for the living card system: source stewards update consented public needs, station editors select a dated edition, listeners respond through the current online card, and local stewards confirm what changes. Also possible calendar and approved story notices.",gate:"No Kinship permission or broadcast schedule exists. A reviewed card is not aired; airtime is a dated snapshot, not live state; a listener offer is not fulfillment. Older audio must point to a current-state door.",source:"https://github.com/the-static-collective/static-live/pull/31"}
 ];
 const EDGES=[
 ["GOVERNANCE","SUPPLY","core"],["GOVERNANCE","PLACE","core"],["GOVERNANCE","COMMERCE","core"],
