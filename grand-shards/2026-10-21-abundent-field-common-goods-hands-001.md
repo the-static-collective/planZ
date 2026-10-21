@@ -179,3 +179,16 @@ PRINT / PASS / OPTIONAL LOCAL RETURN
 **Next demo script:** Ask someone for an existing non-sensitive routine without soliciting names, route addresses, business commitments or private needs. Invite a separate question about possible community usefulness. Print only the question; save any source observation separately and privately if desired. A refusal or a note that no further action is warranted is a complete return.
 
 **Release gate:** CI test proofs plus actual device use and deliberate production promotion; PR or green CI alone does not change the live site.
+
+## FIELD-002 PRODUCTION WITNESS · October 21, 2026
+
+- Following the first returned local card, FIELD-002 was implemented on [webZ PR #68](https://github.com/the-static-collective/webZ/pull/68), based on the live-reconciled Abundent garden code.
+- Exact reviewed source commit: `5c8c105baa766c172a39e987e816414dfbe759b1`. GitHub Actions two Offline portal verification runs at that SHA completed **SUCCESS**, including Node tests, immutable build verification, reproducible export and Chromium mobile card+crossing proof.
+- Vercel production deployment `dpl_3HzMSY1uV95g48Puk2hKW6iJayui` is **READY**. The exact commit was promoted; Vercel alias API confirms `abundent.org` and `www.abundent.org` now map to it, with `www` redirecting to the apex.
+- New public doorway (same path): `https://abundent.org/field/cards/`. Distinct from existing 11-world `/field/` public catalog.
+- FIELD-002 functions: a local observation captured separately; a *human-authored* candidate question/title; unreviewed descendant POSTYMON/REALITY.2 card; optional local crossing JSON containing observation+descendant; reopening prior locally exported card JSON and local crossing JSON; unpublished parent IDs. The observation stays **out of QR, print and fragment links**. No accounts, uploads, tracking, publication, offers or real-world authority.
+- Vercel runtime-error summary showed **no runtime errors** in the checked one-hour window. This is not a complete browser functional audit or proof of physical printing.
+- **Remaining field checks:** a human opens the public doorway on their actual device, uses a previously saved `local-*.json`, makes a child card from a separate observation, saves a local crossing, prints and scans QR on real equipment, and compares source deck wording with original PDFs.
+- **Rollback reference:** previous Abundent production deployment `dpl_7qqPr3HfCorjQ1fKJ4bNZhx4DVAd` (commit `31f80398c937e5da289d517f50e01cf6470c7c6a`). Do not infer user enrollment or institutional partnership from successful software release.
+
+**OBSERVATION != QUESTION != OFFER != ACCEPTANCE != REPORT != CONFIRMATION.**
