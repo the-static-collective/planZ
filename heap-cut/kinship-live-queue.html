@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kinship × Right Hands · Rotating Broadcast Cards (Fictional Demo)</title>
+<style>
+:root{color-scheme:dark;font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;background:#10161b;color:#eaf0ed}
+*{box-sizing:border-box}body{margin:0;padding:0}button{cursor:pointer;font:inherit}button:focus-visible,a:focus-visible{outline:3px solid #e8dc97;outline-offset:3px}
+main{max-width:1150px;margin:0 auto;padding:26px clamp(14px,4vw,40px) 65px}
+.kicker{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:#c4a7e6}
+h1{font-size:clamp(26px,5vw,47px);line-height:1.08;margin:9px 0 8px;letter-spacing:-.04em}
+h2{font-size:19px;margin:0 0 5px}
+.intro{max-width:840px;color:#b9c4c5;margin:0 0 10px}
+.headerline{display:flex;gap:20px;justify-content:space-between;align-items:start;flex-wrap:wrap}
+.safety{font-size:12px;border:1px solid #b28d58;color:#f0d7ad;background:#352b22;border-radius:10px;padding:10px;max-width:290px}
+.rib{display:flex;align-items:center;gap:8px;margin:22px 0 14px;flex-wrap:wrap}
+.rib button,.act{border:1px solid #526b73;background:#19343e;color:#eef8f6;border-radius:9px;padding:10px 13px;min-height:44px}
+.rib button:hover,.act:hover{background:#285464}
+.rib button:disabled{opacity:.4;cursor:not-allowed}
+.ticker{background:linear-gradient(120deg,#223440,#282637);border:1px solid #776289;border-radius:14px;padding:15px 20px;display:grid;gap:4px}
+.ticker .big{font-weight:800;font-size:clamp(21px,4vw,34px)}.ticker .sub{font-size:13px;color:#cbcad8}
+.cols{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(270px,1fr);gap:14px;margin-top:14px}
+.card{border:1px solid #40565d;background:#1a282d;border-radius:14px;padding:16px}
+.meta{font-size:12px;color:#b4c8c6}
+.row{border-top:1px solid #34464d;padding:13px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.row:first-of-type{border-top:none}.row strong{font-size:14px}
+.row .tag{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#b0c2bd}
+.pill{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.04em;border:1px solid #718b87;background:#244843;padding:4px 7px;border-radius:999px;margin-right:6px}
+.pill.paused{background:#5a4330;border-color:#ad8153}
+.pill.filled{background:#243850;border-color:#7297ca}
+.pill.withdrawn{background:#5a333a;border-color:#b57384}
+.row button{border:1px solid #91aea8;background:#23474e;color:#e6f9ee;border-radius:7px;padding:9px 11px;min-height:42px}
+.row button[aria-pressed=true]{background:#54503a;border-color:#e8d797}
+.row .details{margin:6px 0 0;font-size:12px;color:#c0d0cd}
+.stack{display:grid;gap:14px}
+.script{font-size:15px;line-height:1.7;background:#14252b;padding:17px;border-left:3px solid #bf9fdb;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:7px}
+.warn{font-size:12px;color:#d7c2b1;margin:7px 0}
+.log{font-size:12px;max-height:250px;overflow:auto;margin:0;padding-left:18px;color:#bacacb}
+.log li{padding:5px 0}
+.commands{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.commands .act{font-size:13px}
+.buttonrow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.step{display:inline-flex;align-items:center;gap:8px;color:#cbb9d4;font-size:12px}
+.dot{height:9px;width:9px;background:#bca0d7;border-radius:50%;display:inline-block}
+.foot{border-top:1px solid #34474d;margin-top:20px;padding-top:14px;color:#a9b9bd;font-size:12px}
+a{color:#a5d8df}
+@media(max-width:700px){.cols{grid-template-columns:1fr}.row{grid-template-columns:minmax(0,1fr)}.row button{justify-self:start}.safety{max-width:none}}
+</style>
+</head>
+<body><main id="radioQueueDemo">
+<div class="headerline">
+<div><div class="kicker">HEAP-CUT-001 / KINSHIP-BROADCAST-QUEUE-001</div>
+<h1>The radio is a live card window</h1>
+<p class="intro">A hypothetical station reads a human-reviewed selection of current needs. Listeners go online to see each card's <em>current</em> status and offer help. The next radio edition changes when the source cards change.</p>
+</div><aside class="safety">FICTIONAL OFFLINE REHEARSAL.<br>No live needs, station connection, on-air control, donations, volunteer signup, or real responses. No Kinship partnership is claimed.</aside>
+</div>
+<div class="rib" aria-label="Simulation timeline controls">
+<span class="step"><i class="dot"></i><strong id="stepLabel">Synthetic minute 0</strong></span>
+<button type="button" id="newEdition">Prepare next candidate edition</button>
+<button type="button" id="advanceTime">Advance mock time +10 min</button>
+<button type="button" id="recheck">Simulate source recheck</button>
+<button type="button" id="reset">Reset demo</button>
+</div>
+<section class="ticker" aria-live="polite">
+<div class="kicker">Station-controlled radio candidate · NOT AIRED</div>
+<div class="big" id="editionHead">3 fictional cards eligible for review</div>
+<div class="sub" id="editionSub">Source cards can change after an edition is drafted. The current online board remains authoritative.</div>
+</section>
+<div class="cols">
+<section class="card" aria-labelledby="boardH">
+<div class="buttonrow"><h2 id="boardH">Current online card board</h2><span class="meta" id="activeCount">0 active</span></div>
+<p class="meta">Click a card to inspect its fictional situation; the volunteer actions below are simulated and remain with an imaginary local steward.</p>
+<div id="cards"></div>
+<div class="commands" aria-label="Simulate card changes">
+<button type="button" class="act" id="offer">Simulate listener offer</button>
+<button type="button" class="act" id="confirm">Simulate recipient confirms fulfillment</button>
+<button type="button" class="act" id="withdraw">Simulate owner withdraws</button>
+<button type="button" class="act" id="newNeed">Add fictional open need</button>
+</div>
+<p class="warn" id="actionMessage" role="status">Select an open card. Simulating an offer doesn't assign work or close the need.</p>
+</section>
+<div class="stack">
+<section class="card" aria-labelledby="scriptH"><h2 id="scriptH">Candidate radio script</h2>
+<p class="meta">A human producer would still have to approve timing, wording, current status, response URL, and actual air. This generator cannot broadcast.</p>
+<div class="script" id="script" aria-live="polite"></div>
+<p class="warn">Audio cannot update retroactively. An older airing must point to a current card-status landing page.</p>
+</section>
+<section class="card" aria-labelledby="logH"><h2 id="logH">Transition ledger</h2><p class="meta">Local simulated actions; not evidence of real people or outcomes.</p><ol class="log" id="ledger"></ol></section>
+</div>
+</div>
+<div class="foot">
+<strong>What this proves:</strong> A rotating edition can truthfully exclude paused, filled, withdrawn or stale cards, retain an older draft as history, and accept new eligible cards on the next snapshot. It does not prove the source needs exist, radio permission, station participation, a live public service, or aid fulfillment. <br>
+<a href="./network-map.html">Return to whole grocery network map</a> ·
+<a href="https://github.com/the-static-collective/static-live/pull/31">KINSHIP-006 producer adapter (draft)</a> ·
+<a href="https://github.com/the-static-collective/planZ/pull/26">HEAP-CUT-001 proposal</a>
+</div>
+</main>
+<script>
+(()=>{
+"use strict";
+const r=document.getElementById("radioQueueDemo");
+if(r.dataset.ready)return;r.dataset.ready="true";
+const el=id=>r.querySelector("#"+id);
+const seed=[
+{id:"DEMO-FOOD-001",summary:"One volunteer driver for a fictional shelf-stable grocery pickup",category:"food_transport",state:"OPEN",consent:true,editorial:true,expires:50,checked:0,revision:1,offers:0},
+{id:"DEMO-SORT-002",summary:"Two volunteer helpers for a fictional grocery sorting table",category:"food_sorting",state:"OPEN",consent:true,editorial:true,expires:90,checked:0,revision:1,offers:0},
+{id:"DEMO-GARDEN-003",summary:"Garden bed prep for a fictional growing workshop",category:"garden_work",state:"OPEN",consent:true,editorial:false,expires:80,checked:0,revision:1,offers:0},
+{id:"DEMO-GOODS-004",summary:"One fictional sealed grocery package awaiting coordinated transport",category:"food_goods",state:"OPEN",consent:true,editorial:true,expires:70,checked:0,revision:1,offers:0},
+{id:"DEMO-RIDE-005",summary:"A fictional nonemergency ride request on hold",category:"mobility_help",state:"PAUSED",consent:true,editorial:true,expires:80,checked:0,revision:1,offers:0}
+];
+let cards=[],minute=0,chosen=null,edition=null,editionNumber=0,ledger=[],extra=0;
+const cardById=id=>cards.find(x=>x.id===id);
+function status(card){
+ if(card.state==="WITHDRAWN")return "WITHDRAWN";
+ if(card.state==="FILLED")return "FILLED";
+ if(card.state==="PAUSED")return "PAUSED";
+ if(minute>=card.expires)return "EXPIRED";
+ if(minute-card.checked>20)return "STALE";
+ return "OPEN";
+}
+const eligible=c=>status(c)==="OPEN" && c.consent && c.editorial;
+function addLog(text){ledger.unshift("Minute "+minute+" · "+text);if(ledger.length>35)ledger.length=35;}
+function preview(){
+ const selected=cards.filter(eligible).sort((a,b)=>a.expires-b.expires||a.id.localeCompare(b.id)).slice(0,3);
+ editionNumber++;
+ edition={number:editionNumber,at:minute,cards:selected.map(c=>({id:c.id,revision:c.revision,summary:c.summary}))};
+ addLog("Edition "+editionNumber+" prepared: "+selected.length+" eligible cards; not station-approved or aired.");
+ draw();
+}
+function revise(c,changes){
+ Object.assign(c,changes);c.revision++;c.checked=minute;
+}
+function pick(id){chosen=id;drawCards();}
+function drawCards(){
+ const target=el("cards");target.textContent="";
+ for(const c of cards){
+ const line=document.createElement("div");line.className="row";
+ const col=document.createElement("div");
+ const p=document.createElement("span");p.className="pill "+status(c).toLowerCase();p.textContent=status(c);col.append(p);
+ const text=document.createElement("strong");text.textContent=c.summary;col.append(text);
+ const details=document.createElement("p");details.className="details";
+ details.textContent=c.id+" · r"+c.revision+" · "+c.category+" · "+(c.editorial?"simulated editorial review: yes":"station review held")+(c.offers?" · "+c.offers+" fictional offers received":"");
+ col.append(details);line.append(col);
+ const button=document.createElement("button");button.type="button";button.textContent=chosen===c.id?"Selected":"Inspect / select";button.setAttribute("aria-pressed",String(chosen===c.id));
+ button.addEventListener("click",()=>pick(c.id));line.append(button);target.append(line);
+ }
+ const open=cards.filter(eligible).length;
+ el("activeCount").textContent=open+" eligible · "+cards.length+" total";
+ el("stepLabel").textContent="Synthetic minute "+minute;
+}
+function draw(){
+ drawCards();
+ const counts=edition?.cards.length??0;
+ el("editionHead").textContent=edition?"Edition "+edition.number+" · "+counts+" cards in dated snapshot":cards.filter(eligible).length+" fictional cards eligible for review";
+ el("editionSub").textContent=edition?"Prepared at synthetic minute "+edition.at+". A later state change does NOT rewrite the script; inspect current board before airing.":"Prepare an edition to freeze the proposal at a moment in simulated time.";
+ const script=el("script");script.textContent="";
+ if(edition){
+ const lines=["FICTIONAL PRODUCER PREVIEW. Not approved for broadcast.","As of synthetic minute "+edition.at+":"];
+ for(const c of edition.cards)lines.push("• "+c.summary+" (card "+c.id+").");
+ lines.push(edition.cards.length?"For current status, check the organizer-approved card board before offering help.":"No currently eligible cards; do not invent urgent needs.");
+ script.textContent=lines.join("\n\n");
+ } else script.textContent="No edition prepared. This is a rehearsal, not a live Kinship rundown.";
+ const log=el("ledger");log.textContent="";
+ for(const v of ledger){const li=document.createElement("li");li.textContent=v;log.append(li);}
+}
+function act(kind){
+ const c=cardById(chosen);
+ if(!c){el("actionMessage").textContent="Select an eligible fictional card first.";return;}
+ if(kind==="offer"){
+ if(!eligible(c)){el("actionMessage").textContent="That card is not currently eligible; no offer can be accepted from the demo.";return;}
+ c.offers++;revise(c,{state:"PAUSED"});
+ addLog(c.id+" received a hypothetical listener offer; owner PAUSED responses pending review. Not assigned.");
+ el("actionMessage").textContent="Fictional offer received; not assigned or fulfilled. Source card now paused.";
+ } else if(kind==="confirm"){
+ if(c.offers<1||c.state!=="PAUSED"){el("actionMessage").textContent="A fictional offer and steward review must precede demo fulfillment.";return;}
+ revise(c,{state:"FILLED"});
+ addLog(c.id+" marked FILLED by a simulated independent recipient confirmation. Not a real aid receipt.");
+ el("actionMessage").textContent="Simulated confirmation closed the card; the next edition will exclude it.";
+ } else if(kind==="withdraw"){
+ if(c.state==="WITHDRAWN"||c.state==="FILLED"){el("actionMessage").textContent="This card has already closed; select another.";return;}
+ revise(c,{state:"WITHDRAWN"});
+ addLog(c.id+" withdrawn by hypothetical source owner. No fresh edition should carry it.");
+ el("actionMessage").textContent="Card withdrawn; previously prepared script remains historical but must not be aired without rechecking.";
+ }
+ draw();
+}
+el("newEdition").addEventListener("click",preview);
+el("advanceTime").addEventListener("click",()=>{minute+=10;addLog("Time advanced; items beyond 20-minute source-check age become stale until rechecked.");draw();});
+el("recheck").addEventListener("click",()=>{for(const c of cards)if(c.state==="OPEN")c.checked=minute;addLog("Synthetic local steward rechecks eligible source cards (does not grant station approval).");draw();});
+el("offer").addEventListener("click",()=>act("offer"));
+el("confirm").addEventListener("click",()=>act("confirm"));
+el("withdraw").addEventListener("click",()=>act("withdraw"));
+el("newNeed").addEventListener("click",()=>{
+ if(extra>=5){el("actionMessage").textContent="Demo bounded at five added cards.";return;}
+ extra++;const id="DEMO-NEW-"+String(extra).padStart(3,"0");
+ const c={id,summary:"New fictional request for help sorting surplus shelf-stable food",category:"food_sorting",state:"OPEN",consent:true,editorial:false,expires:minute+70,checked:minute,revision:1,offers:0};
+ cards.push(c);chosen=id;addLog(id+" entered SOURCE BOARD (not station-approved).");
+ el("actionMessage").textContent="New card appears on the online board but is held from radio: no simulated editorial approval.";
+ draw();
+});
+el("reset").addEventListener("click",()=>{cards=structuredClone(seed);minute=0;chosen=cards[0].id;edition=null;editionNumber=0;ledger=[];extra=0;addLog("Reset to fictional source board; no edition prepared.");el("actionMessage").textContent="Select an open card. This is only a synthetic practice.";draw();});
+el("reset").click();
+})();
+</script>
+</body></html>
