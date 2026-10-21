@@ -130,3 +130,12 @@ Only actual authorised parties can admit real-life work, distribute food, or con
 - Implementation PR: [webZ Abundent Field Byte 001 PR #66](https://github.com/the-static-collective/webZ/pull/66), experimental review branch only, not deployed.
 - planZ shard location: `grand-shards/2026-10-21-abundent-field-common-goods-hands-001.md`.
 - Recovery rule: planZ records this proposal, its source roads and later disposition; source owners determine actual admission. **PLAN != BUILD; BUILD != DEPLOY; SCAN != CONSENT; PROPOSAL != ADMISSION.**
+
+## Reconciliation descendant · October 21, 2026
+
+- **Verified deployed source:** `webZ` `release/needs-001-abundent-live` commit `65539f065db609c97e5c3ca1ca0b2d0f90c7498a`, Vercel `abundent.org` project `webz-field-porch`, production deployment `dpl_8pyC6dqZpWdbvGjDwDh5WirmzJsj`.
+- **Implementation review:** [webZ PR #67 — FIELD CARDS RECONCILIATION](https://github.com/the-static-collective/webZ/pull/67) grafts the portable-card byte onto the **actual garden release** rather than `webZ/main`.
+- **Identity collision avoided:** the existing `/field/` is an 11-world source-observation catalog; the cards correctly live at `/field/cards/`. The original garden home now offers a direct card-door link. The original cards PR #66 remains an experimental source branch, not the deployment base.
+- **Integrity:** new public assets are included in the commit-bound release allowlist, the existing garden SW is regenerated for the one new navigation link, and the card maker keeps its own nested SW scope. No public sharing backend or organizational endorsement.
+- **Preview:** a Vercel **preview deployment** was created from the reconciliation branch; this is not a production promotion. The original production commit/domain alias remain unchanged.
+- **Open physical gates:** actual mobile/physical QR scan test; line-for-line comparison of the 34 provisional card descriptions against the user-provided original PDFs; host/organizer permission and any later publication moderation.
