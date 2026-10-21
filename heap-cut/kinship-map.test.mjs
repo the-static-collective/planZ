@@ -33,7 +33,7 @@ test("all three editorial crossings require consent and Kinship-side decision",(
     assert.ok(m.forbidden.length>=3);
   }
   assert.ok(overlay.mediaDoors.find(x=>x.id==="NEIGHBOR_HELP").preconditions.some(x=>/independent station-owned editorial/.test(x)));
-  assert.ok(overlay.mediaDoors.find(x=>x.id==="OUTCOME_STORY").preconditions.some(x=>/distinct permission/.test(x)));
+  assert.ok(overlay.mediaDoors.find(x=>x.id==="OUTCOME_STORY").preconditions.some(x=>/approval for each medium\/use/.test(x)));
 });
 test("owning sources distinguish existing station from experimental adapters",()=>{
   assert.ok(overlay.sourceDoors.some(x=>x.url.endsWith("/pull/31")));
