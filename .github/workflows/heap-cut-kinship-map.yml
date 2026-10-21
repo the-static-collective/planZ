@@ -1,0 +1,21 @@
+name: HEAP-CUT-001 Kinship map candidate (offline only)
+on:
+  pull_request:
+    paths:
+      - 'heap-cut/**'
+      - '.github/workflows/heap-cut-kinship-map.yml'
+  workflow_dispatch:
+jobs:
+  kinship-map:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate both original network passport and Kinship candidate overlay
+        run: node --test heap-cut/*.test.mjs
+      - name: Verify proposal-only full-network scope
+        run: node heap-cut/inspect-passport.mjs
