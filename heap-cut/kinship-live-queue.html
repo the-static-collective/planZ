@@ -72,6 +72,7 @@ a{color:#a5d8df}
 <p class="meta">Click a card to inspect its fictional situation; the volunteer actions below are simulated and remain with an imaginary local steward.</p>
 <div id="cards"></div>
 <div class="commands" aria-label="Simulate card changes">
+<button type="button" class="act" id="producerReview">Simulate station producer review</button>
 <button type="button" class="act" id="offer">Simulate listener offer</button>
 <button type="button" class="act" id="confirm">Simulate recipient confirms fulfillment</button>
 <button type="button" class="act" id="withdraw">Simulate owner withdraws</button>
@@ -187,6 +188,7 @@ function act(kind){
 el("newEdition").addEventListener("click",preview);
 el("advanceTime").addEventListener("click",()=>{minute+=10;addLog("Time advanced; items beyond 20-minute source-check age become stale until rechecked.");draw();});
 el("recheck").addEventListener("click",()=>{for(const c of cards)if(c.state==="OPEN")c.checked=minute;addLog("Synthetic local steward rechecks eligible source cards (does not grant station approval).");draw();});
+el("producerReview").addEventListener("click",()=>{const c=cardById(chosen);if(!c){el("actionMessage").textContent="Select a card first.";return;}if(status(c)!=="OPEN"||!c.consent){el("actionMessage").textContent="Only a currently open, source-consented fictional card can enter producer review.";return;}revise(c,{editorial:true});addLog(c.id+" marked editorial-approved FOR SIMULATION ONLY; no station approval is claimed.");el("actionMessage").textContent="Simulated producer review recorded. Prepare a fresh candidate edition to include it.";draw();});
 el("offer").addEventListener("click",()=>act("offer"));
 el("confirm").addEventListener("click",()=>act("confirm"));
 el("withdraw").addEventListener("click",()=>act("withdraw"));
