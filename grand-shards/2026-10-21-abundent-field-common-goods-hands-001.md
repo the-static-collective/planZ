@@ -152,3 +152,30 @@ The user approved a **production release** after the Vercel preview could not be
 - Card copy remains adapted, not confirmed verbatim to source PDFs. No public submissions, real aid, co-op endorsement, or receipt verification is claimed.
 
 Next proof: user opens live `field/cards/`, picks a card, makes and saves a local draft, prints/scans a QR, and reports any device-specific failures. Roll back to prior release if the garden regresses.
+
+## FIELD-002 — THE FIRST RETURN CHANGED THE GRAMMAR
+
+**Source:** First real locally exported descendant card received from a user after the public FIELD-001 release. It used the form's `question` field for an actual **observation of an existing routine**, not a question. The source's personal routine is intentionally not committed here.
+
+**Finding:** NOTICE != OFFER. An observed routine can inspire a question; neither noticing nor asking creates a duty, a delivery, an inventory asset or an approved project.
+
+**Proposed loop:**
+```
+SOURCE CARD
+   ↓
+LOCAL OBSERVATION (unverified; held in browser memory and optional private JSON)
+   ↓
+HUMAN WRITES A SEPARATE QUESTION
+   ↓
+UNPUBLISHED DESCENDANT CARD (QR carries ONLY title/question/parent)
+   ↓
+PRINT / PASS / OPTIONAL LOCAL RETURN
+```
+
+**Implementation PR:** [webZ PR #68 — FIELD-002, Observation → Question → Card](https://github.com/the-static-collective/webZ/pull/68), branching from actual deployed garden ancestry. A prior exported `local-*.json` card can be reopened on another device, optionally becoming the parent of a new local descendant. A separately exported observation bundle explicitly states `UNVERIFIED` and `authorization: NONE`.
+
+**Boundary:** Personal source note does not enter the printed card, QR, or share URL; no upload, membership, match, automated offer, recipient identification, assignment, partner authority, or proof of completion. A human-authored *question* can travel through the URL fragment only after validation and a privacy acknowledgement. Future review/publishing is a separate organizational and moderation gate.
+
+**Next demo script:** Ask someone for an existing non-sensitive routine without soliciting names, route addresses, business commitments or private needs. Invite a separate question about possible community usefulness. Print only the question; save any source observation separately and privately if desired. A refusal or a note that no further action is warranted is a complete return.
+
+**Release gate:** CI test proofs plus actual device use and deliberate production promotion; PR or green CI alone does not change the live site.
