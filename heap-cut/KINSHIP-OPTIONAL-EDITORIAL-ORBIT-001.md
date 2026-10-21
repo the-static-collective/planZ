@@ -1,6 +1,12 @@
 # KINSHIP × GROCERY — OPTIONAL EDITORIAL ORBIT 001
 **Dated proposal · 2026-10-21 · HEAP-CUT-001 · independent station permission required**
 
+## Design refinement — a recurring radio card window (Oct 21)
+
+The main requested use is **a rotating Kinship broadcast node of the Right Hands card system**, not merely one-off calendar and story publicity. The source-controlled card set changes whenever a safe local steward revises or closes a need; station producers may prepare **new dated, explicitly reviewed editions** whenever their actual station chooses. Radio reaches listeners, the current online card receives responses, the steward reconciles them, and the next producer edition uses new current state. The on-air sound is a snapshot, not an automatically live feed. Neither the source nor the software can schedule or command Kinship broadcasts.
+
+**New controlling proposal:** [KINSHIP-BROADCAST-QUEUE-001](KINSHIP-BROADCAST-QUEUE-001.md). Try the [fictional rotating-card loop](kinship-live-queue.html) and inspect the standalone [candidate edition generator](kinship-broadcast-loop.mjs). The three earlier outreach doors below remain *secondary possible uses*, not the primary intended workflow.
+
 ## Why this particular connection is promising
 
 A regionally operating radio station may help people **hear** about community food access, public meetings, requests for nonfinancial material help, and verified work that local producers and neighbors elect to share. But an FM transmitter is not a bidirectional delivery network, a household directory, a co-op operator, or a claim on volunteers. Kinship Radio's existing community calendar and independent editorial staff already provide real-world, station-controlled doorways. These are **public station capabilities, not consent to this project**.
