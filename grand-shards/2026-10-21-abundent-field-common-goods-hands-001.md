@@ -139,3 +139,16 @@ Only actual authorised parties can admit real-life work, distribute food, or con
 - **Integrity:** new public assets are included in the commit-bound release allowlist, the existing garden SW is regenerated for the one new navigation link, and the card maker keeps its own nested SW scope. No public sharing backend or organizational endorsement.
 - **Preview:** a Vercel **preview deployment** was created from the reconciliation branch; this is not a production promotion. The original production commit/domain alias remain unchanged.
 - **Open physical gates:** actual mobile/physical QR scan test; line-for-line comparison of the 34 provisional card descriptions against the user-provided original PDFs; host/organizer permission and any later publication moderation.
+
+## RELEASE WITNESS · 2026-10-21 · explicit go-live approval
+
+The user approved a **production release** after the Vercel preview could not be opened on their device.
+
+- Reviewed webZ source: `release/field-cards-reconciled-001` at commit `31f80398c937e5da289d517f50e01cf6470c7c6a`, [PR #67](https://github.com/the-static-collective/webZ/pull/67), still an unmerged review PR.
+- New Vercel production deployment: `dpl_7qqPr3HfCorjQ1fKJ4bNZhx4DVAd` in project `webz-field-porch`, `READY`. Vercel `request_promote` completed, and the Vercel alias API independently confirmed **both `abundent.org` and `www.abundent.org`** mapped to this deployment (`www` redirects to apex).
+- Production card URL: `https://abundent.org/field/cards/`; legacy `https://abundent.org/field/` remains the separate 11-world catalog. Previous production/rollback deployment: `dpl_8pyC6dqZpWdbvGjDwDh5WirmzJsj`.
+- GitHub checks at exact deployed SHA were all green: two complete portal verification runs, music rooms and 2DAY albums. Vercel runtime-error summary reported no errors in the sampled hour.
+- **Not observed:** actual HTML/JS response via external public GET (web reader could not access, local shell had no DNS), real phone interaction, QR scanning or physical printing. Host alias verified is not the same as end-to-end device proof.
+- Card copy remains adapted, not confirmed verbatim to source PDFs. No public submissions, real aid, co-op endorsement, or receipt verification is claimed.
+
+Next proof: user opens live `field/cards/`, picks a card, makes and saves a local draft, prints/scans a QR, and reports any device-specific failures. Roll back to prior release if the garden regresses.
