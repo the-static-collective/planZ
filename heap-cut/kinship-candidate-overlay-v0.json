@@ -5,7 +5,7 @@
   "asOf": "2026-10-21",
   "status": "PROPOSED_UNAUTHORIZED",
   "requiredForCoreNetwork": false,
-  "kind": "INDEPENDENT_MEDIA_AND_NEIGHBOR_HELP_INTERFACE",
+  "kind": "INDEPENDENT_PROPOSED_RECURRING_RADIO_CARD_BROADCAST_NODE",
   "platformName": "Kinship Radio (independent station)",
   "networkAuthority": "NONE",
   "stationApproval": "NOT_ESTABLISHED",
@@ -71,14 +71,17 @@
       "sourceOrgan": "ACCESS",
       "target": "KINSHIP_EDITORIAL_GATE",
       "returnsTo": "RETURN",
-      "proposal": "If a real local steward approves, a material food/transport/tools need may be separately reviewed as an optional radio candidate via a Kinship-006-like adapter.",
+      "proposal": "POTENTIAL recurring radio card-bulletin: a station producer periodically selects a freshly revalidated, separate-radio-consented snapshot of current source-owned public help cards. Listeners open the CURRENT online card for an optional safe response; local stewards update need status, with independent recipient confirmation; Kinship chooses whether and when to broadcast.",
       "preconditions": [
         "No money-only, private prayer, or sensitive beneficiary data",
         "Actual need owner grants current, scoped publication consent",
         "Human checks freshness, safety, service area and safe response route",
         "Radio producer performs independent station-owned editorial review",
         "Aired status is documented by Kinship, not inferred from a compiled pack",
-        "Recipient separately confirms any actual help"
+        "Recipient separately confirms any actual help",
+        "Every edition is a dated snapshot; recheck current source status and radio permission before any intended air",
+        "Stable current-state online route remains useful after a card is fulfilled, paused, expired or withdrawn",
+        "Responding online never assigns volunteer work or proves need fulfillment"
       ],
       "forbidden": [
         "DONOR_DATA",
@@ -86,7 +89,10 @@
         "UNVERIFIED_CROWD_SOLICITATION",
         "RADIO_AS_DELIVERY_RECEIPT",
         "AUTOMATIC_BROADCAST",
-        "MONEY_TO_PENNY_CONVERSION"
+        "MONEY_TO_PENNY_CONVERSION",
+        "REPLAY_STALE_SNAPSHOT_AS_LIVE",
+        "ASSUME_RESPONDENT_IS_ASSIGNED",
+        "AUTO_REFRESH_ON_AIR"
       ],
       "status": "DESIGN_ONLY_NOT_A_HELP_INTAKE"
     },
@@ -139,5 +145,44 @@
     "listenerProfiles": false,
     "financialDonorRecords": false
   },
-  "firstProof": "Produce one wholly synthetic event notice and one fictional HELD food/transport need with a failed-consent case, then ask real organizers whether they want to explore any station-approved path. No sending or broadcasting."
+  "firstProof": "Synthetic rotating card feed: station chooses a mock dated edition, source changes/withdraws/fills a need, listener offer remains unassigned, current page changes, next edition excludes stale or fulfilled need. No sending, live intake or air.",
+  "primaryProposition": "Station-selected periodic broadcast of steward-maintained currently actionable public-safe cards; listeners use an owner-approved online card door to respond; source changes determine the next edition.",
+  "rotatingBroadcast": {
+    "proposalId": "KINSHIP-BROADCAST-QUEUE-001",
+    "spec": "heap-cut/KINSHIP-BROADCAST-QUEUE-001.md",
+    "offlineSimulator": "heap-cut/kinship-live-queue.html",
+    "syntheticGenerator": "heap-cut/kinship-broadcast-loop.mjs",
+    "syntheticFixture": "heap-cut/kinship-rotating-cards-fixture.json",
+    "cardAuthority": "SOURCE_STEWARD_ONLY",
+    "editorialAuthority": "KINSHIP_ONLY_IF_STATION_CHOOSES_TO_PARTICIPATE",
+    "networkAuthority": "NONE",
+    "coreRequired": false,
+    "sourceStates": [
+      "DRAFT",
+      "OWNER_VERIFIED",
+      "OPEN",
+      "PAUSED",
+      "FILLED",
+      "WITHDRAWN",
+      "EXPIRED"
+    ],
+    "stationStates": [
+      "CANDIDATE",
+      "HELD",
+      "DECLINED",
+      "HUMAN_APPROVED",
+      "SCHEDULED",
+      "HUMAN_CONFIRMED_AIRED",
+      "ARCHIVED"
+    ],
+    "broadcastMechanic": "Human-selected dated snapshot of currently actionable cards, not automatically updating FM audio",
+    "responseMechanic": "Recipient or volunteer voluntarily opens currently valid public card and sends offer to source-owning steward, not to station",
+    "stalePolicy": "Expired, changed, consent-revoked or unverified cards omitted from newly generated editions; producer rechecks before real air; old public card URL shows current state.",
+    "publicationCadence": "UNDECIDED_BY_STATION",
+    "emergencyDispatch": false,
+    "automaticBroadcast": false,
+    "liveDataConnection": false,
+    "operatorConsent": "NONE",
+    "proofGate": "A fictional card can change status, be excluded from the next mock edition, and return a synthetic non-assignment response; no real world claims."
+  }
 }
