@@ -127,6 +127,6 @@ Only actual authorised parties can admit real-life work, distribute food, or con
 ## Source roads / return addresses
 
 - Physical seed cards: the two 2026-10-21 PDFs, provided in conversation (not copied into public repositories).
-- Implementation PR to be linked once created: `webZ /field/ Abundent Field Byte 001`.
+- Implementation PR: [webZ Abundent Field Byte 001 PR #66](https://github.com/the-static-collective/webZ/pull/66), experimental review branch only, not deployed.
 - planZ shard location: `grand-shards/2026-10-21-abundent-field-common-goods-hands-001.md`.
 - Recovery rule: planZ records this proposal, its source roads and later disposition; source owners determine actual admission. **PLAN != BUILD; BUILD != DEPLOY; SCAN != CONSENT; PROPOSAL != ADMISSION.**
