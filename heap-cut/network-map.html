@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>HEAP-CUT-001 · Living Grocery Network</title>
+<style>
+:root{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#e5edeb;background:#0b151b;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}a{color:#99dbce}button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid #eadc87;outline-offset:4px}
+.wrap{max-width:1240px;margin:auto;padding:22px clamp(14px,3vw,38px) 48px}
+.top{display:flex;gap:25px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+.kicker{color:#a4d8c3;font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:11px}
+h1{font-size:clamp(26px,4.8vw,45px);margin:8px 0 9px;letter-spacing:-.035em;line-height:1.08}p{line-height:1.5}
+.intro{max-width:740px;color:#acb9bb;margin:0;font-size:15px}
+.status{padding:10px 13px;border-radius:12px;background:#263029;border:1px solid #6a7557;color:#f5eeb9;font-weight:700;max-width:290px;font-size:12px}
+.controls{margin:22px 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#15252d;border:1px solid #31505a;border-radius:999px;padding:11px 13px;font-size:13px;min-height:44px}
+.chip input{accent-color:#75bcaf;width:17px;height:17px}
+.legend{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#a8b7b9}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:5px}
+.board{background:radial-gradient(circle at 48% 28%,#1d3035 0,#101e27 75%);border:1px solid #35535a;border-radius:17px;overflow:hidden;position:relative}
+.board>svg{width:100%;height:auto;display:block}
+.edge{fill:none;stroke-width:2.5;stroke-linecap:round;opacity:.8;vector-effect:non-scaling-stroke}
+.core-edge{stroke:#527d87}
+.opt-edge{stroke:#789d80;stroke-dasharray:6 7}
+.radio-edge{stroke:#d5b4e2;stroke-dasharray:4 6;stroke-width:3}
+.node{cursor:pointer;outline:none}
+.node rect{stroke-width:1.8;rx:13}
+.node.core rect{fill:#18333c;stroke:#66a5b1}
+.node.optional rect{fill:#203828;stroke:#84ba8b}
+.node.radio rect{fill:#3b2b4e;stroke:#cba6e1;stroke-width:3}
+.node .mini{font-size:12px;fill:#cbd8d7;letter-spacing:.04em}
+.node .label{font-size:18px;fill:#fff;font-weight:700}
+.node:focus rect,.node.selected rect{stroke:#f4df87;stroke-width:3}
+.node.disabled{display:none}
+.board-note{position:absolute;right:12px;bottom:10px;font-size:10px;color:#859d9e;background:#122229de;padding:5px 9px;border-radius:20px}
+.grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(270px,1fr);gap:14px;margin-top:14px}
+.panel{background:#14232b;border:1px solid #34515a;border-radius:15px;padding:19px}
+.panel h2{margin:0 0 6px;font-size:19px;letter-spacing:-.02em}.subtle{color:#aabcbf;font-size:13px}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;border-radius:5px;padding:5px 8px;background:#304049;color:#c4dedc;margin:12px 0}
+.panel p{margin:10px 0}.panel .detail{line-height:1.48;font-size:14px}
+.detail strong{color:#fff}.panel a{overflow-wrap:anywhere;font-size:12px}
+.route-choice{width:100%;background:#1d3039;color:#e9efeb;border-radius:9px;border:1px solid #587079;padding:12px;font-size:15px;min-height:45px;margin:8px 0}
+.route-steps{padding-left:21px;line-height:1.6;font-size:14px;color:#d4e4e1}
+.route-steps li{margin-bottom:7px}.warning{border-left:3px solid #d8b6a6;padding:7px 11px;background:#332a2b;font-size:12px;color:#eed7d0}
+.small{font-size:12px;color:#9db4b8;line-height:1.6}.tiny{font-size:11px;color:#8da7aa}
+.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px}
+.action{padding:10px 15px;min-height:44px;background:#214b4e;border:1px solid #66a9a7;border-radius:9px;color:#dff8ed}
+.nodes-list{display:none;padding:13px;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.nodes-list button{min-width:0;text-align:left;padding:13px;border-radius:11px;background:#18333c;color:#eff5f1;border:1px solid #66a5b1;min-height:62px;overflow-wrap:anywhere;font-size:13px}
+.nodes-list button.optional{background:#203828;border-color:#84ba8b}
+.nodes-list button.radio{background:#3b2b4e;border-color:#cba6e1}
+.nodes-list button[aria-pressed="true"]{outline:2px solid #f4df87}
+.nodes-list button.hidden{display:none}
+.caption{margin:10px 2px;color:#9db3b5;font-size:12px}
+footer{margin-top:20px;border-top:1px solid #294047;padding-top:14px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.board>svg{display:none}.nodes-list{display:grid}.legend{margin-left:0;width:100%}.board-note{position:static;text-align:center;border-radius:0;padding:10px}}
+@media(max-width:380px){.nodes-list{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap" id="network-app">
+<div class="top">
+<div>
+<div class="kicker">planZ · HEAP-CUT-001 · 21 October 2026</div>
+<h1>The whole grocery network crosses</h1>
+<p class="intro">A <strong>relational map, not a geographic map</strong>. Seven essential grocery functions, optional community nodes, and a proposed rotating Kinship Radio broadcast-card layer. Every link is a question until independent human authority and evidence establish otherwise.</p>
+</div>
+<div class="status">N0: CONCEIVED<br>N1: structural candidate<br>N2–N5: not established</div>
+</div>
+<div class="controls" role="group" aria-label="Map layers">
+<label class="chip"><input id="layerCore" type="checkbox" checked> Core flows</label>
+<label class="chip"><input id="layerOptions" type="checkbox" checked> Community orbits</label>
+<label class="chip"><input id="layerKinship" type="checkbox" checked> Kinship proposal</label>
+<div class="legend" aria-label="Network legend"><span><i class="dot" style="background:#66a5b1"></i>Required, unverified</span><span><i class="dot" style="background:#84ba8b"></i>Optional, unapproved</span><span><i class="dot" style="background:#cba6e1"></i>Independent media</span></div>
+</div>
+<section class="board" aria-label="Interactive conceptual grocery network map">
+<svg id="netSvg" viewBox="0 0 1160 765" role="img" aria-label="Network diagram. Select a node to inspect responsibilities and gates.">
+<defs><marker id="arrowCore" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" stroke="#527d87" fill="none"/></marker></defs>
+<g id="edges"></g><g id="nodes"></g>
+</svg>
+<div id="nodesList" class="nodes-list" aria-label="Network nodes as accessible buttons"></div>
+<div class="board-note">Schematic only · connections are not partnerships or approvals</div>
+</section>
+<p class="caption">Select any node for its authority boundary. The Kinship layer is an independent outreach hypothesis, never a grocery, volunteer, fundraising or broadcast dependency.</p>
+<div class="grid">
+<section class="panel" aria-live="polite">
+<h2 id="nodeTitle">Governance</h2>
+<div id="nodeBadge" class="badge">CORE · UNKNOWN</div>
+<p id="nodeDetail" class="detail">Who has legitimate authority to make decisions for a proposed cooperative grocery?</p>
+<p id="nodeGate" class="detail"></p>
+<p id="nodeSource" class="small"></p>
+</section>
+<section class="panel">
+<h2>Three proposed media crossings</h2>
+<label class="small" for="routeChoice">Select an illustrative route (no sending or broadcasting):</label>
+<select class="route-choice" id="routeChoice">
+<option value="calendar">Community event → Kinship calendar</option>
+<option value="help">Food / transport need → Kinship review</option>
+<option value="story">Verified outcome → optional story</option>
+</select>
+<ol id="routeSteps" class="route-steps"></ol>
+<p class="warning" id="routeWarning"></p>
+</section>
+</div>
+<div class="actions">
+<button class="action" id="download" type="button">Export this proposal map (.json)</button>
+<a class="action" href="./kinship-portal-preview.html" style="text-decoration:none;background:#2e5750;border-color:#a0d2bb">Open Kinship website/app portal concept →</a>
+<a class="action" href="./kinship-live-queue.html" style="text-decoration:none;background:#443451;border-color:#cba6e1">Open rotating radio-card simulation →</a>
+<span id="exportStatus" class="small" role="status">Offline-only preview. No accounts, analytics, station feed or server connection.</span>
+</div>
+<footer class="small">
+<strong>Source and ownership:</strong>
+<a href="https://github.com/the-static-collective/planZ/pull/26">planZ HEAP-CUT-001</a> ·
+<a href="https://github.com/the-static-collective/static-live/pull/31">KINSHIP-006 draft producer bridge</a> ·
+<a href="https://github.com/the-static-collective/static-live/pull/33">KINSHIP-007 separate media permissions</a> ·
+<a href="https://kinshipradio.org/main/events/month/2026-10/">Kinship official calendar</a>.
+Kinship Radio alone decides its editorial, calendar and volunteer participation. The grocery organizers alone decide their network's governance and operations.
+</footer>
+</main>
+<script>
+(()=>{
+"use strict";
+const root=document.getElementById("network-app");
+if(root.dataset.ready)return;root.dataset.ready="true";
+const NODES=[
+{id:"GOVERNANCE",name:"Governance",group:"core",x:475,y:60,w:210,h:72,tag:"WHO DECIDES?",detail:"A proposed store's actual organizers must establish scope, governance, ownership, and power to authorize or refuse pilots.",gate:"No cooperative decision-maker or partnership has been verified."},
+{id:"SUPPLY",name:"Growers & supply",group:"core",x:175,y:208,w:218,h:72,tag:"PRODUCE",detail:"Growers and distributors would independently define available goods, terms, seasons, safe handling and prices.",gate:"No producer contract, supply quantity or acceptance established."},
+{id:"CUSTODY",name:"Food custody",group:"core",x:469,y:230,w:224,h:72,tag:"SAFETY & STORAGE",detail:"Qualified operators must own receiving, inspection, refrigeration, storage, inventory and stopping unsafe food.",gate:"No licensed operator, storage facility or handling path has been verified."},
+{id:"PLACE",name:"Place & operations",group:"core",x:175,y:378,w:220,h:72,tag:"PREMISES",detail:"Premises owners and operators determine building access, utilities, insurance, permitted uses and necessary labor.",gate:"No site or property is presumed offered to the grocery."},
+{id:"COMMERCE",name:"Grocery commerce",group:"core",x:745,y:234,w:238,h:72,tag:"RETAIL & MONEY",detail:"The actual seller controls POS, purchasing, receipts, settlement, taxes, returns, wages and accounting.",gate:"A voluntary-help receipt is not grocery money or cooperative equity."},
+{id:"ACCESS",name:"Household access",group:"core",x:911,y:393,w:224,h:72,tag:"PEOPLE",detail:"Customers and recipients choose how to purchase, collect, request permissible access support and decline offers.",gate:"No listener, shopper or beneficiary profiles may be silently gathered."},
+{id:"RETURN",name:"Witness & return",group:"core",x:659,y:553,w:241,h:72,tag:"CONFIRM OR DISPUTE",detail:"Recipients and responsible operators separately report, confirm, dispute or correct outcomes; a delivery claim cannot confirm itself.",gate:"No network operation, delivery, or independently confirmed field result is claimed."},
+{id:"GARDEN",name:"The Garden",group:"optional",x:55,y:567,w:198,h:72,tag:"OPTIONAL SITE",detail:"Potential independently owned garden/housing site; owners may permit growing or workshops without ever joining a grocery.",gate:"Land use, family ownership, public access and any partnership are unapproved."},
+{id:"COMMON_TABLE",name:"Common Table",group:"optional",x:299,y:632,w:220,h:72,tag:"OPTIONAL COMMONS",detail:"Independent possibility for food and arts encounters, a stage, workshops and neighbor introductions.",gate:"No premises, event, licensed kitchen or operator is committed."},
+{id:"ABUNDENT",name:"Abundent Field",group:"optional",x:626,y:687,w:222,h:65,tag:"OPTIONAL RETURN",detail:"Potential print-and-discover door for approved public questions with a separate, voluntary return path.",gate:"A public card is not a contract, receipt, co-op membership or permission to access private land."},
+{id:"KINSHIP",name:"Kinship Radio",group:"radio",x:859,y:54,w:252,h:95,tag:"ROTATING CARD BULLETIN · DRAFT",detail:"Potential recurring, producer-controlled broadcast node for the living card system: source stewards update consented public needs, station editors select a dated edition, listeners respond through the current online card, and local stewards confirm what changes. Also possible calendar and approved story notices.",gate:"No Kinship permission or broadcast schedule exists. A reviewed card is not aired; airtime is a dated snapshot, not live state; a listener offer is not fulfillment. Older audio must point to a current-state door.",source:"https://github.com/the-static-collective/static-live/pull/31"}
+];
+const EDGES=[
+["GOVERNANCE","SUPPLY","core"],["GOVERNANCE","PLACE","core"],["GOVERNANCE","COMMERCE","core"],
+["SUPPLY","CUSTODY","core"],["PLACE","CUSTODY","core"],["CUSTODY","COMMERCE","core"],
+["COMMERCE","ACCESS","core"],["ACCESS","RETURN","core"],["RETURN","COMMERCE","core"],["RETURN","GOVERNANCE","core"],
+["GARDEN","SUPPLY","optional"],["COMMON_TABLE","ACCESS","optional"],["ABUNDENT","RETURN","optional"],
+["GOVERNANCE","KINSHIP","radio"],["ACCESS","KINSHIP","radio"],["RETURN","KINSHIP","radio"]
+];
+const ROUTES={
+calendar:{steps:["Actual event host approves public wording, time, public contact and expiry.","A human submits it through the station's official process; Kinship can accept, edit or refuse.","Any verified calendar publication may be reported to the organizers; nothing is auto-posted."],warning:"A calendar draft does not schedule an event or create station approval."},
+help:{steps:["Local steward verifies current material need, safe public scope and beneficiary permission.","If suitable, an eligible KINSHIP-006-style source reference yields a HELD producer candidate—never raw need text.","Kinship separately reviews for station policy, freshness, service area and a safe response channel.","Willing helpers contact the responsible local operator; recipient confirmation remains independent."],warning:"No money-only aid solicitation, prayer records, personal addresses, donor data, automatic broadcast or aid assignment."},
+story:{steps:["A real operation obtains independent recipient/operator confirmation or records a dispute.","Contributors grant distinct permission for story, quotation, photograph and radio use.","A station editor may separately accept or refuse a production; public publication requires separate proof."],warning:"A confirmed food delivery is not consent to share anyone's identity or story."}
+};
+const el=id=>root.querySelector("#"+id);
+const ns="http://www.w3.org/2000/svg";
+const make=(name,attrs={})=>{const n=document.createElementNS(ns,name);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));return n;};
+let selected="GOVERNANCE";
+const byId=Object.fromEntries(NODES.map(n=>[n.id,n]));
+function line(a,b,group){
+const sx=a.x+a.w/2,sy=a.y+a.h/2,tx=b.x+b.w/2,ty=b.y+b.h/2;
+const bend=(group==="radio"?-36:group==="optional"?25:0);
+const d="M"+sx+" "+sy+" Q"+((sx+tx)/2+bend)+" "+((sy+ty)/2-16)+" "+tx+" "+ty;
+return make("path",{d,class:"edge "+(group==="core"?"core-edge":group==="optional"?"opt-edge":"radio-edge"),"data-group":group});
+}
+const edgeRoot=el("edges"),nodeRoot=el("nodes"),mobile=el("nodesList");
+for(const [a,b,g] of EDGES)edgeRoot.append(line(byId[a],byId[b],g));
+for(const n of NODES){
+const g=make("g",{class:"node "+n.group,tabindex:"0",role:"button","aria-label":"Inspect "+n.name,"data-id":n.id});
+g.append(make("rect",{x:n.x,y:n.y,width:n.w,height:n.h}));
+const txt=make("text",{x:n.x+16,y:n.y+23,class:"mini"});txt.textContent=n.tag;g.append(txt);
+const title=make("text",{x:n.x+16,y:n.y+(n.group==="radio"?57:51),class:"label"});title.textContent=n.name;g.append(title);
+g.addEventListener("click",()=>pick(n.id));
+g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(n.id);}});
+nodeRoot.append(g);
+const b=document.createElement("button");b.type="button";b.className=n.group;b.dataset.id=n.id;b.textContent=n.name+" · "+n.tag;b.addEventListener("click",()=>pick(n.id));mobile.append(b);
+}
+function pick(id){
+selected=id;const n=byId[id];if(!n)return;
+el("nodeTitle").textContent=n.name;
+el("nodeBadge").textContent=n.group==="core"?"ESSENTIAL · OWNER UNKNOWN":n.group==="radio"?"RADIO · PROPOSED / UNAUTHORIZED":"OPTIONAL · NOT APPROVED";
+el("nodeDetail").textContent=n.detail;
+el("nodeGate").textContent="Gate: "+n.gate;
+el("nodeSource").textContent=n.source?"Owning draft: "+n.source:"No real-world operator has agreed to this map.";
+root.querySelectorAll("[data-id]").forEach(x=>{const on=x.dataset.id===id;x.classList.toggle("selected",on);if(x.tagName.toLowerCase()==="button")x.setAttribute("aria-pressed",String(on));});
+}
+function visible(n){return n.group==="core"||n.group==="radio"&&el("layerKinship").checked||n.group==="optional"&&el("layerOptions").checked;}
+function redraw(){
+for(const e of edgeRoot.children){
+const g=e.getAttribute("data-group");
+e.style.display=g==="core"&&!el("layerCore").checked||g==="optional"&&!el("layerOptions").checked||g==="radio"&&!el("layerKinship").checked?"none":"";
+}
+for(const n of NODES){
+const on=visible(n);
+root.querySelectorAll('[data-id="'+n.id+'"]').forEach(x=>x.classList.toggle("disabled",!on));
+mobile.querySelectorAll('[data-id="'+n.id+'"]').forEach(x=>x.classList.toggle("hidden",!on));
+}
+if(!visible(byId[selected]))pick("GOVERNANCE");
+}
+function route(){
+const v=el("routeChoice").value;const r=ROUTES[v];const ol=el("routeSteps");ol.textContent="";
+for(const x of r.steps){const li=document.createElement("li");li.textContent=x;ol.append(li);}
+el("routeWarning").textContent=r.warning;
+}
+for(const id of ["layerCore","layerOptions","layerKinship"])el(id).addEventListener("change",redraw);
+el("routeChoice").addEventListener("change",route);
+el("download").addEventListener("click",()=>{
+const doc={
+schema:"static-collective/planz-offline-network-map/v0",
+id:"HEAP-CUT-001",
+asOf:"2026-10-21",
+authority:"NONE",stationApproval:"NOT_ESTABLISHED",claims:"ILLUSTRATIVE_PROPOSAL_ONLY",
+nodes:NODES.map(({x,y,w,h,...rest})=>rest),edges:EDGES.map(([from,to,kind])=>({from,to,kind,status:"PROPOSED"})),
+kinshipOverlay:"kinship-candidate-overlay-v0.json",
+source:"https://github.com/the-static-collective/planZ/pull/26"
+};
+const blob=new Blob([JSON.stringify(doc,null,2)+"\n"],{type:"application/json"});
+const url=URL.createObjectURL(blob);const a=document.createElement("a");
+a.href=url;a.download="heap-cut-001-network-map-proposal.json";root.append(a);a.click();a.remove();
+setTimeout(()=>URL.revokeObjectURL(url),5000);
+el("exportStatus").textContent="Local proposal exported. It contains no private participants or operational authorizations.";
+});
+pick(selected);redraw();route();
+})();
+</script>
+</body>
+</html>

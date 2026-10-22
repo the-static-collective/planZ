@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Neighbor Board · Kinship Website + Listening App Concept (Offline Demo)</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#172c2c;background:#f1f3ef}
+*{box-sizing:border-box}body{margin:0}
+button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #385e98;outline-offset:3px}
+a{color:#18565e}main{max-width:1150px;padding:24px clamp(12px,3vw,32px) 54px;margin:0 auto}
+.eyebrow{font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#396561}
+h1{font-size:clamp(26px,4.5vw,41px);letter-spacing:-.04em;margin:8px 0;line-height:1.08}
+p{line-height:1.5}.intro{color:#546b66;max-width:760px;margin:8px 0 13px}
+.status{font-size:12px;border-radius:9px;background:#fff4d6;border:1px solid #bda867;color:#75551e;padding:11px;max-width:320px}
+.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:22px 0 13px}
+.mode{background:#e4eae5;border:1px solid #a6b9ad;border-radius:12px;padding:5px;display:flex;gap:4px}
+.mode button{border:none;background:transparent;color:#45625b;padding:9px 14px;border-radius:8px;min-height:42px;font-size:13px;font-weight:700}
+.mode button[aria-pressed=true]{background:#183d3d;color:#fff}
+.mini{font-size:12px;color:#526b65}
+.shell{border:1px solid #b5c7c0;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #213c2820}
+.header{background:#163a3e;color:#fff;padding:14px 20px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:14px;letter-spacing:-.02em}.brand .round{display:inline-grid;place-items:center;border:1px solid #97cdc4;border-radius:50%;width:30px;height:30px;margin-right:8px;color:#e1f0e7}
+.banner{display:flex;align-items:center;gap:10px;font-size:12px;color:#d8e9e3}.radio-dot{width:9px;height:9px;border-radius:50%;background:#e5b87c;display:inline-block}
+.hero{background:#eff5ed;padding:23px clamp(14px,3vw,30px) 20px;border-bottom:1px solid #d4e1d4}
+.hero small{color:#59816f;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.hero h2{font-size:clamp(23px,3vw,33px);line-height:1.13;letter-spacing:-.04em;margin:7px 0}
+.hero p{font-size:14px;color:#516d65;margin:8px 0;max-width:570px}
+.stats{display:flex;gap:13px;flex-wrap:wrap;margin-top:17px}
+.metric{padding:10px 15px;background:#fff;border-radius:10px;border:1px solid #cbdcd0;font-size:12px;min-width:112px}
+.metric b{font-size:20px;display:block;color:#1c524c;line-height:1.1}
+.body{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,0.85fr);gap:17px;padding:20px}
+.section-title{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.section-title h3{font-size:18px;letter-spacing:-.02em;margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.filters button{border:1px solid #c3d5cd;color:#346459;background:#f6faf7;font-size:12px;font-weight:700;border-radius:999px;padding:8px 12px;min-height:39px}
+.filters button[aria-pressed=true]{background:#20584e;color:#fff}
+.cards{display:grid;gap:10px}
+.card{border:1px solid #d2ded6;background:#fff;border-radius:12px;padding:14px}
+.card .top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tag{font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#52776d}
+.badge{border-radius:5px;background:#e2f2e5;color:#246042;font-weight:800;font-size:10px;letter-spacing:.08em;padding:5px 8px}
+.badge.paused{background:#fae5bb;color:#865b17}.badge.filled{background:#e1e4f1;color:#52628c}.badge.expired,.badge.withdrawn{background:#f3dbe1;color:#863e4c}
+.card h4{margin:9px 0 6px;font-size:16px;letter-spacing:-.015em}
+.card p{color:#5c706b;font-size:12px;margin:5px 0}
+.card .actions{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.primary{border:1px solid #194b45;border-radius:8px;background:#24564d;color:white;padding:9px 12px;min-height:43px;font-size:13px;font-weight:700}
+.primary:disabled{opacity:.38;cursor:not-allowed}
+.secondary{border:1px solid #bccdc6;border-radius:8px;background:#fff;color:#38645b;padding:9px 12px;min-height:43px;font-size:13px;font-weight:700}
+.panel{background:#f5f8f4;border:1px solid #d4e0d6;border-radius:12px;padding:15px;margin-bottom:12px}
+.panel h3{margin:0 0 8px;font-size:16px}
+.panel p,.panel li{font-size:13px;color:#536960}
+.sample{font-size:13px;white-space:pre-wrap;background:#e6eee6;border-left:3px solid #6e9e87;border-radius:6px;padding:12px;margin:9px 0;line-height:1.55;color:#284b42}
+.info{font-size:12px;color:#6a7867;background:#fff;padding:10px;border-radius:7px}
+.panel button{margin-top:8px}
+.ledger{font-size:12px;padding-left:20px;color:#4c6c61;max-height:195px;overflow:auto}
+.ledger li{margin:6px 0}
+.footbar{background:#f2f6f1;padding:14px 20px;border-top:1px solid #d4e1d6;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#587369;font-size:12px}
+.nav{display:flex;gap:6px}.nav span{background:white;border-radius:8px;padding:7px 9px;border:1px solid #d0dfd5}
+.note{color:#6a7867;margin:10px 2px;font-size:12px}
+.utility{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.utility button{background:#fff;border:1px solid #9bbab0;color:#256056;padding:9px 13px;min-height:42px;border-radius:9px;font-weight:700;font-size:12px}
+#portalPreview[data-layout="app"] .shell{max-width:440px;margin:auto;border-radius:25px}
+#portalPreview[data-layout="app"] .body{grid-template-columns:1fr}
+#portalPreview[data-layout="app"] .nav span:nth-child(2){display:none}
+#portalPreview[data-layout="app"] .banner{font-size:10px}
+#portalPreview[data-layout="app"] .hero{padding:18px 17px}
+#portalPreview[data-layout="app"] .body{padding:13px}
+#portalPreview[data-layout="app"] .stats{gap:7px}
+#portalPreview[data-layout="app"] .metric{min-width:94px;padding:9px}
+#portalPreview[data-layout="app"] .panel{margin-bottom:10px}
+#portalPreview[data-layout="app"] .header{padding:14px}
+footer{margin-top:17px;color:#586e66;font-size:12px}
+@media(max-width:740px){.body{grid-template-columns:1fr}.head{display:block}.status{max-width:none}.header{padding:12px}.hero{padding:18px 14px}.body{padding:13px}.metrics{gap:7px}.metric{min-width:95px}.footbar{padding:10px 13px}}
+</style>
+</head><body>
+<main id="portalPreview" data-layout="website">
+<div class="head"><div><div class="eyebrow">HEAP-CUT-001 · KINSHIP-PORTAL-001 · Proposal</div><h1>A neighbor board within the listening experience</h1>
+<p class="intro">Switch between a website layout and a listening-app layout. Everything below is a local, fictional example. Nothing connects to Kinship's website, mobile application, grocery, or community organizations.</p></div>
+<div class="status"><strong>UNOFFICIAL CONCEPT</strong><br>Not sponsored, deployed, or approved by Kinship Radio. All people, needs, responses and radio mentions below are invented.</div></div>
+<div class="controls">
+<div class="mode" role="group" aria-label="Interface preview size">
+<button id="modeWebsite" type="button" aria-pressed="true">Website view</button>
+<button id="modeApp" type="button" aria-pressed="false">Listening-app view</button>
+</div>
+<div class="utility"><button id="reset" type="button">Reset fictional board</button><button id="newCard" type="button">Simulate new need arriving</button></div>
+<span class="mini">Same source-state model · two proposed entry points</span>
+</div>
+<div class="shell">
+<div class="header"><div class="brand"><span class="round">✦</span> NEIGHBOR BOARD <span style="font-size:10px;font-weight:500;opacity:.7">/ RADIO PORTAL CONCEPT</span></div><div class="banner"><i class="radio-dot"></i> LISTEN · RESPOND · RETURN</div></div>
+<div class="hero"><small>From the morning show · fictional</small><h2>There's room for another helping hand.</h2>
+<p>Discover a current community need or offer a little of what you have. The people coordinating each project decide what happens next.</p>
+<div class="stats"><div class="metric"><b id="metricOpen">2</b>Active sample needs</div><div class="metric"><b id="metricOffers">0</b>Mock replies</div><div class="metric"><b id="metricFilled">1</b>Closed samples</div></div>
+</div>
+<div class="body">
+<section>
+<div class="section-title"><h3>The current card board</h3><span class="mini">Demo clock: <span id="clock">07:10</span> · simulated</span></div>
+<div class="filters" role="group" aria-label="Filter sample cards"><button type="button" data-filter="active" aria-pressed="true">Open now</button><button type="button" data-filter="all" aria-pressed="false">All cards</button><button type="button" data-filter="closed" aria-pressed="false">Closed / paused</button></div>
+<div class="cards" id="cards"></div>
+</section>
+<aside>
+<div class="panel">
+<div class="eyebrow">Broadcast source ≠ live site state</div><h3>Morning Board candidate</h3>
+<p>Only consented, source-current cards approved by a fictional editor appear in this dated rehearsal script.</p>
+<div id="rundown" class="sample" aria-live="polite"></div>
+<button id="rereview" type="button" class="secondary">Refresh fictional producer draft</button>
+<p class="info">A new producer draft does not make anything air. The station would decide if, when, and what to broadcast.</p>
+</div>
+<div class="panel"><h3>Local transition receipts</h3><ol id="ledger" class="ledger" aria-live="polite"></ol></div>
+<div class="panel"><h3>What the real integration needs</h3><p>An approved public URL, actual steward verification, safe response routing, station editorial opt-in, and Kinship/Invubu approval for an app tab or Web View.</p></div>
+</aside>
+</div>
+<div class="footbar"><span>Fictional offline demonstration only · No account · No data sent</span><div class="nav"><span>Website link</span><span>App Web View (if approved)</span><span>Current card state</span></div></div>
+</div>
+<p class="note" id="message" role="status">This demo uses invented cards. "I might help" changes only the local example; it does not contact an organizer.</p>
+<footer><strong>Source:</strong> <a href="./KINSHIP-PORTAL-001.md">Portal design & safety contract</a> · <a href="./kinship-live-queue.html">Rotating radio queue experiment</a> · <a href="https://github.com/the-static-collective/planZ/pull/26">HEAP-CUT-001 draft proposal</a>.</footer>
+</main>
+<script>
+(()=>{"use strict";
+const root=document.getElementById("portalPreview");
+if(root.dataset.ready)return;root.dataset.ready="true";
+const el=id=>root.querySelector("#"+id);
+const seed=[
+{id:"DEMO-FOOD-001",kind:"food pickup",label:"A hand for a grocery pickup",text:"One fictional community steward is seeking help transporting shelf-stable food.",area:"South-central Minnesota (fictional)",state:"OPEN",rev:1,radioApproved:true,offers:0},
+{id:"DEMO-SORT-002",kind:"helpful hands",label:"Help sort community food boxes",text:"Two fictional people could help with a sorting table at a hypothetical community gathering.",area:"South-central Minnesota (fictional)",state:"OPEN",rev:1,radioApproved:true,offers:0},
+{id:"DEMO-GARDEN-003",kind:"garden",label:"A growing-bed workshop",text:"A fictional project might need a few hands to prepare a garden bed.",area:"South-central Minnesota (fictional)",state:"PAUSED",rev:2,radioApproved:false,offers:0},
+{id:"DEMO-GOODS-004",kind:"goods",label:"One grocery package delivered",text:"An imaginary project marks this example as independently confirmed in its own fictional ledger.",area:"South-central Minnesota (fictional)",state:"FILLED",rev:3,radioApproved:false,offers:0}
+];
+let cards=[],timeline=[],filter="active",ticks=0,edition=[],editionVersion=0,added=0;
+const time=()=>{const m=7*60+10+ticks;return String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0");};
+function log(s){timeline.unshift(time()+" · "+s);if(timeline.length>15)timeline.length=15;}
+function open(c){return c.state==="OPEN";}
+function safeText(node,text){node.textContent=text;}
+function render(){
+ const area=el("cards");area.textContent="";
+ const list=cards.filter(c=>filter==="all"||filter==="active"&&open(c)||filter==="closed"&&!open(c));
+ for(const c of list){
+  const card=document.createElement("article");card.className="card";
+  const top=document.createElement("div");top.className="top";
+  const tag=document.createElement("span");tag.className="tag";tag.textContent=c.kind+" · "+c.id;
+  const badge=document.createElement("span");badge.className="badge "+c.state.toLowerCase();badge.textContent=c.state;top.append(tag,badge);card.append(top);
+  const title=document.createElement("h4");title.textContent=c.label;card.append(title);
+  const detail=document.createElement("p");detail.textContent=c.text;card.append(detail);
+  const meta=document.createElement("p");meta.textContent=c.area+" · revision "+c.rev+(c.offers?" · "+c.offers+" imaginary replies":"");card.append(meta);
+  const row=document.createElement("div");row.className="actions";
+  const btn=document.createElement("button");btn.type="button";btn.className="primary";btn.disabled=!open(c);btn.textContent=open(c)?"I might help · demo":"Not accepting responses";
+  btn.addEventListener("click",()=>respond(c.id));row.append(btn);
+  if(c.state==="PAUSED"&&c.offers>0){const confirm=document.createElement("button");confirm.type="button";confirm.className="secondary";confirm.textContent="Confirm mock completion";confirm.addEventListener("click",()=>complete(c.id));row.append(confirm);}
+  card.append(row);area.append(card);
+ }
+ if(list.length===0){const p=document.createElement("p");p.className="mini";p.textContent="No fictional cards in this view.";area.append(p);}
+ el("metricOpen").textContent=cards.filter(open).length;
+ el("metricOffers").textContent=cards.reduce((s,c)=>s+c.offers,0);
+ el("metricFilled").textContent=cards.filter(c=>c.state==="FILLED").length;
+ el("clock").textContent=time();
+ const led=el("ledger");led.textContent="";for(const item of timeline){const li=document.createElement("li");li.textContent=item;led.append(li);}
+}
+function respond(id){
+ const c=cards.find(v=>v.id===id);if(!c||!open(c))return;
+ c.offers++;c.state="PAUSED";c.rev++;
+ log(c.id+" simulated listener interest; paused for fictional steward review.");
+ el("message").textContent="Mock response recorded locally. The card is paused while an imaginary steward considers it. No real help was assigned.";
+ render();
+}
+function complete(id){
+ const c=cards.find(v=>v.id===id);if(!c||c.state!=="PAUSED"||c.offers===0)return;
+ c.state="FILLED";c.rev++;log(c.id+" simulated independent confirmation. Not a real delivery receipt.");
+ el("message").textContent="Fictional need closed. Prepare a new producer draft to see the difference.";
+ render();
+}
+function draft(){
+ edition=cards.filter(c=>open(c)&&c.radioApproved).slice(0,3).map(c=>({id:c.id,title:c.label,rev:c.rev}));
+ editionVersion++;
+ let lines=["SIMULATED · Edition "+editionVersion+" · as of "+time(),"", "This is a sample community bulletin, not approved station copy."];
+ if(edition.length)for(const c of edition)lines.push("• "+c.title+" (card "+c.id+", r"+c.rev+").");
+ else lines.push("No radio-eligible fictional cards are open. Skip the bulletin rather than invent a need.");
+ lines.push("","Current card status always lives on the organizer-approved board. This draft is not an air event.");
+ safeText(el("rundown"),lines.join("\n"));
+ log("Created mock producer edition "+editionVersion+" with "+edition.length+" cards (not aired).");
+ render();
+}
+for(const b of root.querySelectorAll("[data-filter]"))b.addEventListener("click",()=>{filter=b.dataset.filter;for(const x of root.querySelectorAll("[data-filter]"))x.setAttribute("aria-pressed",String(x===b));render();});
+el("modeWebsite").addEventListener("click",()=>switchMode("website"));
+el("modeApp").addEventListener("click",()=>switchMode("app"));
+function switchMode(mode){root.dataset.layout=mode;el("modeWebsite").setAttribute("aria-pressed",String(mode==="website"));el("modeApp").setAttribute("aria-pressed",String(mode==="app"));}
+el("rereview").addEventListener("click",()=>{ticks+=3;draft();el("message").textContent="Producer candidate refreshed in a fictional timeline. It does not publish or broadcast.";});
+el("newCard").addEventListener("click",()=>{
+ if(added>=4){el("message").textContent="The example is limited to four added cards. Reset to try again.";return;}
+ added++;ticks+=2;
+ const c={id:"DEMO-NEW-00"+added,kind:"new need",label:"A newly noticed fictional food sorting task",text:"An imagined steward posts a fresh proposed opportunity. It is NOT radio approved.",area:"South-central Minnesota (fictional)",state:"OPEN",rev:1,radioApproved:false,offers:0};
+ cards.push(c);filter="all";for(const b of root.querySelectorAll("[data-filter]"))b.setAttribute("aria-pressed",String(b.dataset.filter==="all"));
+ log(c.id+" added to imaginary public board; HELD from radio producer list.");
+ el("message").textContent="A new mock card appeared online, but it cannot enter a radio edition without separate station editorial review.";
+ render();
+});
+el("reset").addEventListener("click",()=>{cards=structuredClone(seed);timeline=[];filter="active";ticks=0;edition=[];editionVersion=0;added=0;
+ for(const b of root.querySelectorAll("[data-filter]"))b.setAttribute("aria-pressed",String(b.dataset.filter===filter));
+ el("message").textContent="Reset to invented data. Nothing is stored or sent.";
+ log("Fictional board reset. Source owners and station participants do not exist in the demo.");draft();});
+el("reset").click();
+})();
+</script>
+</body></html>

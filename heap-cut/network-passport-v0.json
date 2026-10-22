@@ -1,0 +1,333 @@
+{
+  "schema": "static-collective/planz-network-passport/v0",
+  "id": "HEAP-CUT-001-WASECA-GROCERY-NETWORK",
+  "created": "2026-10-21",
+  "version": 1,
+  "visibility": "PUBLIC_SAFE_PROPOSAL_FIXTURE",
+  "authority": "NONE",
+  "claim": "WHOLE_NETWORK_PROPOSAL_ONLY",
+  "classification": "N0_CONCEIVED_N1_CANDIDATE",
+  "scope": "Exploration of a proposed local grocery network in Waseca; no partnership, incorporation, store or legal permissions presumed.",
+  "humanQuestion": "Can local people and organizations identify, evaluate and eventually prove one accountable food-access network while retaining independent roles, ownership and refusal?",
+  "sources": [
+    {
+      "type": "project-plan",
+      "ref": "https://github.com/the-static-collective/planZ/pull/23",
+      "relation": "COMMON_TABLE_WASECA_SIBLING"
+    },
+    {
+      "type": "field-plan",
+      "ref": "https://github.com/the-static-collective/planZ/pull/24",
+      "relation": "ABUNDENT_FIELD_SIBLING"
+    },
+    {
+      "type": "optional-site-plan",
+      "ref": "https://github.com/the-static-collective/planZ/pull/25",
+      "relation": "THE_GARDEN_OPTIONAL_NOT_ADOPTED"
+    },
+    {
+      "type": "source-brief",
+      "ref": "https://docs.google.com/document/d/1UqXmD4YuOcsyk6dK0lc0FftNDSTpjRoGCqt_zXzjZdY/edit",
+      "relation": "DISCUSSION_ONLY_NOT_AUTHORIZED"
+    }
+  ],
+  "coreOrgans": [
+    {
+      "id": "GOVERNANCE",
+      "critical": true,
+      "question": "Who may decide whether a grocery pilot, partner or public claim is appropriate?",
+      "authorityNeeded": "prospective grocery governance",
+      "ownerAssigned": null,
+      "ownerConsent": "NOT_ESTABLISHED",
+      "capabilityStatus": "UNKNOWN",
+      "evidence": []
+    },
+    {
+      "id": "SUPPLY",
+      "critical": true,
+      "question": "Which producer/distributor can lawfully and reliably make an offer?",
+      "authorityNeeded": "producer and authorized buyer",
+      "ownerAssigned": null,
+      "ownerConsent": "NOT_ESTABLISHED",
+      "capabilityStatus": "UNKNOWN",
+      "evidence": []
+    },
+    {
+      "id": "CUSTODY",
+      "critical": true,
+      "question": "Who receives, inspects, stores, inventories and stops unsafe food?",
+      "authorityNeeded": "qualified food operator",
+      "ownerAssigned": null,
+      "ownerConsent": "NOT_ESTABLISHED",
+      "capabilityStatus": "UNKNOWN",
+      "evidence": []
+    },
+    {
+      "id": "PLACE",
+      "critical": true,
+      "question": "Which premises, equipment, labor and insurance could actually support operations?",
+      "authorityNeeded": "property or venue owner and operator",
+      "ownerAssigned": null,
+      "ownerConsent": "NOT_ESTABLISHED",
+      "capabilityStatus": "UNKNOWN",
+      "evidence": []
+    },
+    {
+      "id": "COMMERCE",
+      "critical": true,
+      "question": "Who controls purchases, sales, supplier settlement, taxes and returns?",
+      "authorityNeeded": "authorized store operator",
+      "ownerAssigned": null,
+      "ownerConsent": "NOT_ESTABLISHED",
+      "capabilityStatus": "UNKNOWN",
+      "evidence": []
+    },
+    {
+      "id": "ACCESS",
+      "critical": true,
+      "question": "How do shoppers/recipients access the goods and consent to delivery?",
+      "authorityNeeded": "shopper and approved distributor",
+      "ownerAssigned": null,
+      "ownerConsent": "NOT_ESTABLISHED",
+      "capabilityStatus": "UNKNOWN",
+      "evidence": []
+    },
+    {
+      "id": "RETURN",
+      "critical": true,
+      "question": "Who confirms, disputes, corrects and closes outcomes?",
+      "authorityNeeded": "independent recipient and responsible operator",
+      "ownerAssigned": null,
+      "ownerConsent": "NOT_ESTABLISHED",
+      "capabilityStatus": "UNKNOWN",
+      "evidence": []
+    }
+  ],
+  "criticalLinks": [
+    {
+      "id": "L01",
+      "from": "GOVERNANCE",
+      "to": "SUPPLY",
+      "purpose": "supplier eligibility / procurement rules",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L02",
+      "from": "SUPPLY",
+      "to": "CUSTODY",
+      "purpose": "producer offer and custody transfer",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L03",
+      "from": "PLACE",
+      "to": "CUSTODY",
+      "purpose": "suitable receiving/storage conditions",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L04",
+      "from": "CUSTODY",
+      "to": "COMMERCE",
+      "purpose": "inventory and disposition under operator",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L05",
+      "from": "COMMERCE",
+      "to": "ACCESS",
+      "purpose": "sale/pickup or separately authorized distribution",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L06",
+      "from": "ACCESS",
+      "to": "RETURN",
+      "purpose": "recipient confirmation or dispute",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L07",
+      "from": "RETURN",
+      "to": "COMMERCE",
+      "purpose": "refund/reconciliation if commercial",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L08",
+      "from": "RETURN",
+      "to": "GOVERNANCE",
+      "purpose": "non-sensitive findings and corrections",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L09",
+      "from": "GOVERNANCE",
+      "to": "PLACE",
+      "purpose": "facility/operating authority",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    },
+    {
+      "id": "L10",
+      "from": "GOVERNANCE",
+      "to": "COMMERCE",
+      "purpose": "accountability for money and compliance",
+      "status": "PROPOSED",
+      "operatorConsent": "NOT_ESTABLISHED",
+      "receipt": null,
+      "refusalSupported": true
+    }
+  ],
+  "separateLedgerLanes": [
+    {
+      "id": "COMMERCIAL",
+      "custodian": "GROCERY_AUTHORIZED_OPERATOR_ONLY",
+      "mayConvertTo": []
+    },
+    {
+      "id": "AID",
+      "custodian": "SEPARATELY_AUTHORIZED_AID_OPERATOR_ONLY",
+      "mayConvertTo": []
+    },
+    {
+      "id": "NONMONETARY",
+      "custodian": "CONSENTING_ACTORS_AND_LOCAL_STEWARDS_ONLY",
+      "mayConvertTo": []
+    }
+  ],
+  "optionalOrbits": [
+    {
+      "id": "GARDEN",
+      "source": "https://github.com/the-static-collective/planZ/pull/25",
+      "status": "IDEA_NOT_SITE_PERMISSION",
+      "requiredForCore": false
+    },
+    {
+      "id": "COMMON_TABLE",
+      "source": "https://github.com/the-static-collective/planZ/pull/23",
+      "status": "IDEA_NOT_GROCERY_PARTNERSHIP",
+      "requiredForCore": false
+    },
+    {
+      "id": "ABUNDENT_FIELD",
+      "source": "https://github.com/the-static-collective/planZ/pull/24",
+      "status": "PROPOSED_CARD_RETURN",
+      "requiredForCore": false
+    },
+    {
+      "id": "PENNY",
+      "source": "https://github.com/the-static-collective/planZ/pull/16",
+      "status": "OPTIONAL_AID_WITNESS_PROTOTYPE",
+      "requiredForCore": false
+    },
+    {
+      "id": "OTHER_COMMUNITY_PARTNERS",
+      "source": null,
+      "status": "UNKNOWN_INVITATION_ONLY",
+      "requiredForCore": false
+    }
+  ],
+  "crossingGates": [
+    {
+      "id": "N0",
+      "label": "CONCEIVED",
+      "evidenceStatus": "HUMAN_PROPOSAL",
+      "passed": true,
+      "allowedClaim": "One proposed network question was raised."
+    },
+    {
+      "id": "N1",
+      "label": "MODELED",
+      "evidenceStatus": "STRUCTURAL_FIXTURE_NEEDS_REVIEW",
+      "passed": false,
+      "allowedClaim": "All critical categories are provisionally described, with UNKNOWN preserved."
+    },
+    {
+      "id": "N2",
+      "label": "GOVERNED",
+      "evidenceStatus": "NO_EXTERNAL_AUTHORIZATION",
+      "passed": false,
+      "allowedClaim": null
+    },
+    {
+      "id": "N3",
+      "label": "REHEARSED",
+      "evidenceStatus": "NO_WHOLE_NETWORK_SIMULATION",
+      "passed": false,
+      "allowedClaim": null
+    },
+    {
+      "id": "N4",
+      "label": "FIELD_PROVED",
+      "evidenceStatus": "NO_OPERATOR_FIELD_RECEIPT",
+      "passed": false,
+      "allowedClaim": null
+    },
+    {
+      "id": "N5",
+      "label": "NETWORK_RETURNED",
+      "evidenceStatus": "NO_REPEATABLE_MULTI_ACTOR_PROOF",
+      "passed": false,
+      "allowedClaim": null
+    }
+  ],
+  "rehearsal": [
+    {
+      "route": "HAPPY_PATH",
+      "dataClass": "SYNTHETIC_ONLY",
+      "purpose": "Walk hypothetical food supply → lawful reception → inventory → retail settlement → recipient receipt → correction/return."
+    },
+    {
+      "route": "HOLD_PATH",
+      "dataClass": "SYNTHETIC_ONLY",
+      "purpose": "A food safety or transport failure is held without forcing another node into participation."
+    },
+    {
+      "route": "SCOPE_REFUSAL",
+      "dataClass": "SYNTHETIC_ONLY",
+      "purpose": "Grocery or optional site declines; network model preserves refusal without relabeling it as acceptance."
+    }
+  ],
+  "humanDecisionGates": [
+    "ACTUAL_GROCERY_ORGANIZERS",
+    "FOOD_SAFETY_AND_SITE_OPERATORS",
+    "COMMERCIAL_FINANCE_OPERATOR",
+    "HOUSEHOLD_OR_RECIPIENT",
+    "OTHER_NODES_ONLY_IF_SEPARATELY_INVITED"
+  ],
+  "privateDataPolicy": {
+    "publicExactAddresses": false,
+    "publicFamilyDetails": false,
+    "publicContactLists": false,
+    "publicBeneficiaryRecords": false,
+    "publicParticipantTracking": false
+  },
+  "nextAction": "Use the paper map to request corrections and actual scope decisions; do not collect private attendees or claim co-op endorsement."
+}

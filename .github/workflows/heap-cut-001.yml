@@ -1,0 +1,21 @@
+name: HEAP-CUT-001 network passport (structural only)
+
+on:
+  pull_request:
+    paths:
+      - 'heap-cut/**'
+      - '.github/workflows/heap-cut-001.yml'
+  workflow_dispatch:
+
+jobs:
+  network-passport:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test heap-cut/inspect-passport.test.mjs
+      - run: node heap-cut/inspect-passport.mjs
