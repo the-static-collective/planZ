@@ -9,7 +9,7 @@
 >
 > One card network. Many independent doors. Nobody has to give up their authority to participate.
 
-This is the **integrating master shard** of the October 21 concept. It binds—not replaces—[HEAP-CUT-001](../heap-cut/HEAP-CUT-001-WHOLE-GROCERY-NETWORK.md), [KINSHIP-BROADCAST-QUEUE-001](../heap-cut/KINSHIP-BROADCAST-QUEUE-001.md), [KINSHIP-MORNING-BOARD-001](../heap-cut/KINSHIP-MORNING-BOARD-001.md), and [KINSHIP-PORTAL-001](../heap-cut/KINSHIP-PORTAL-001.md). The web/app portal and broadcast tools in this branch are **fictional offline prototypes**, not a deployed service or approved station integration. The station or its app vendor has **not** participated in or authorized this build. The proposed grocery also has not adopted it.
+This is the **integrating master shard** of the October 21 concept. It binds—not replaces—[HEAP-CUT-001](../heap-cut/HEAP-CUT-001-WHOLE-GROCERY-NETWORK.md), [KINSHIP-BROADCAST-QUEUE-001](../heap-cut/KINSHIP-BROADCAST-QUEUE-001.md), [KINSHIP-MORNING-BOARD-001](../heap-cut/KINSHIP-MORNING-BOARD-001.md), and [KINSHIP-PORTAL-001](../heap-cut/KINSHIP-PORTAL-001.md). The web/app portal and broadcast tools in this branch are **fictional offline prototypes**, not a deployed service or approved station integration. **Kinship Radio**, the station under discussion, and its app vendor have **not** participated in or authorized this build. The proposed grocery also has not adopted it.
 
 ---
 
@@ -230,5 +230,7 @@ When that works under real independently consenting owners, *one physical relati
 - [Source brief: Common Goods, Local Hands (Drive)](https://docs.google.com/document/d/1UqXmD4YuOcsyk6dK0lc0FftNDSTpjRoGCqt_zXzjZdY/edit)
 
 **Disposition:** `PROPOSED / HELD` · **No station adoption, live broadcast, production portal, grocery partnership, food custody, financial intake, or human recipient outcome has been established.**
+
+**Non-coercion law:** `GROCERY_ACCESS != RELIGIOUS_PARTICIPATION`; food help is not conditioned on Kinship listenership, church participation or publishing anyone's story.
 
 **Last line: ONE CARD NETWORK. MANY DOORS. ONE HONEST RETURN.**
