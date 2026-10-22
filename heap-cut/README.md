@@ -27,6 +27,8 @@ This directory holds **one complete-network proposal**—a Waseca community-groc
 
 The owner of a need is not a listener analytics record. A station is not a volunteer dispatcher. A shared card address is not one global permission system.
 
+**Review priority:** The [grand shard](../grand-shards/2026-10-21-the-living-neighbor-network-001.md) is the single narrative entrypoint. This bench indexes evidence-bearing parts rather than granting them blanket deployment authority.
+
 **Claim ledger:** `network_model: drafted` · `synthetic_demos: implemented` · `local_operator_approval: unknown` · `Kinship_approval: none` · `station_or_app_integration: none` · `real_delivery: not evidenced`.
 
 ## Run locally
