@@ -1,6 +1,6 @@
 {
   "schema": "planz/public-attention-v1",
-  "edition": "ATTENTION-2026-10-28-003",
+  "edition": "ATTENTION-2026-10-28-004",
   "reviewedOn": "2026-10-28",
   "authority": "INDEX_ONLY",
   "disclosure": "Manually curated organizational plan pointers. planZ does not own local projects. Issue links show a plan exists, not that programs, partners or field acts are approved, funded or completed. This public map contains no resident, donor, contact or shelter-site records.",
@@ -291,6 +291,45 @@
         "BRIDGE-001",
         "GARDEN-TABLE-001",
         "GLOBAL-CROSSING-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "SHELF-001",
+      "title": "One Waseca source-to-shelf handoff — documented demand, unconfirmed logistics fit",
+      "source": "https://github.com/the-static-collective/webZ/issues/175",
+      "region": "Waseca County, Minnesota / separate statewide & global practice comparators",
+      "disposition": "HOLD_AWAITING_RECIPIENT_STEWARD",
+      "tags": [
+        "food",
+        "waseca",
+        "grocery",
+        "rescue",
+        "shelf",
+        "research",
+        "bridge",
+        "graft",
+        "ghot",
+        "planz",
+        "jarvis",
+        "student",
+        "pilot"
+      ],
+      "nextGate": "Ask WANSC whether ONE actual non-sensitive sourcing or receiving handoff is missing; ask Waseca co-op/MSU whether their food rescue work already covers it. Do not initiate a pilot until receiving organization chooses it.",
+      "blockedBy": [
+        "RECIPIENT_WILLINGNESS_UNKNOWN",
+        "DUPLICATION_WITH_COURSE_UNKNOWN",
+        "DONOR_SUPPLY_UNKNOWN",
+        "FOOD_HANDLING_REVIEW",
+        "CARRIER_PERMISSION",
+        "INDEPENDENT_DELIVERY_CONFIRMATION"
+      ],
+      "related": [
+        "BRIDGE-001",
+        "ATLAS-BRIDGE-002",
+        "GARDEN-TABLE-001"
       ],
       "fieldOutcome": "NOT_VERIFIED",
       "executionAllowed": false,
