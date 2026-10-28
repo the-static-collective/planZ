@@ -1,0 +1,12 @@
+{
+  "name": "@the-static-collective/planz",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-attention.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
