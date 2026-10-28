@@ -5,7 +5,8 @@
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "validate": "node scripts/validate-attention.mjs",
-    "triage": "node scripts/triage-return.mjs"
+    "triage": "node scripts/triage-return.mjs",
+    "triage:bridge": "node scripts/triage-bridge.mjs"
   },
   "engines": {
     "node": ">=20"
