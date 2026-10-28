@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "validate": "node scripts/validate-attention.mjs"
+    "validate": "node scripts/validate-attention.mjs",
+    "triage": "node scripts/triage-return.mjs"
   },
   "engines": {
     "node": ">=20"
