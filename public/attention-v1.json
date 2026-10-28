@@ -1,0 +1,226 @@
+{
+  "schema": "planz/public-attention-v1",
+  "edition": "ATTENTION-2026-10-28-001",
+  "reviewedOn": "2026-10-28",
+  "authority": "INDEX_ONLY",
+  "disclosure": "Manually curated organizational plan pointers. planZ does not own local projects. Issue links show a plan exists, not that programs, partners or field acts are approved, funded or completed. This public map contains no resident, donor, contact or shelter-site records.",
+  "entries": [
+    {
+      "id": "REGIONAL-HELP-001",
+      "title": "Waseca–Mankato Neighbor Door",
+      "source": "https://github.com/the-static-collective/planZ/issues/21",
+      "region": "Waseca–Mankato, Minnesota",
+      "disposition": "AWAITING_LOCAL_STEWARD",
+      "tags": [
+        "waseca",
+        "mankato",
+        "food",
+        "pantry",
+        "volunteer",
+        "shelter",
+        "community"
+      ],
+      "nextGate": "Ask one existing local provider to choose and authorize one nonurgent in-kind supply task.",
+      "blockedBy": [
+        "LOCAL_PARTNER_PERMISSION",
+        "RECIPIENT_CONFIRMATION"
+      ],
+      "related": [
+        "GARDEN-TABLE-001",
+        "GLOBAL-CROSSING-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "GARDEN-TABLE-001",
+      "title": "Waseca Garden Table pilot",
+      "source": "https://github.com/the-static-collective/webZ/issues/149",
+      "region": "Waseca, Minnesota",
+      "disposition": "PROPOSED",
+      "tags": [
+        "garden",
+        "grocery",
+        "waseca",
+        "food",
+        "farm",
+        "co-op",
+        "market"
+      ],
+      "nextGate": "Ask one willing organizer and qualified food-service host to review a single safe tabletop trial.",
+      "blockedBy": [
+        "HOST_PERMISSION",
+        "FOOD_SAFETY_REVIEW"
+      ],
+      "related": [
+        "REGIONAL-HELP-001",
+        "GLOBAL-CROSSING-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "GLOBAL-CROSSING-001",
+      "title": "Porchlight Commons Minnesota–Ghana field proof",
+      "source": "https://github.com/the-static-collective/BananaSpork/issues/29",
+      "region": "Minnesota ↔ Ghana (prospective)",
+      "disposition": "AWAITING_LOCAL_STEWARD",
+      "tags": [
+        "ghana",
+        "minnesota",
+        "nima",
+        "accra",
+        "food",
+        "shelf",
+        "energy",
+        "solar",
+        "communication",
+        "shelter",
+        "porchlight",
+        "homelessness",
+        "resources"
+      ],
+      "nextGate": "With local operator permission, compare one real Ghana food need against local sourcing, lawful shipment and knowledge transfer.",
+      "blockedBy": [
+        "LOCAL_OPERATOR_PERMISSION",
+        "ACTUAL_COST_QUOTES",
+        "INDEPENDENT_CONFIRMATION"
+      ],
+      "related": [
+        "REGIONAL-HELP-001",
+        "GARDEN-TABLE-001",
+        "CHANNEL-KITS-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "CHANNEL-KITS-001",
+      "title": "Kinship and Rock Impact optional communications kits",
+      "source": "https://github.com/the-static-collective/planZ/issues/29",
+      "region": "Minnesota / Nigeria / Ghana (independent nodes)",
+      "disposition": "OWNER_REVIEW_REQUIRED",
+      "tags": [
+        "kinship",
+        "radio",
+        "rock",
+        "impact",
+        "nigeria",
+        "ghana",
+        "minnesota",
+        "media",
+        "communication",
+        "church",
+        "music",
+        "podcast"
+      ],
+      "nextGate": "Ask each media owner independently whether a review-only notice or recording workflow is useful; keep Ghana food operations separate.",
+      "blockedBy": [
+        "MEDIA_OWNER_PERMISSION",
+        "EDITORIAL_REVIEW",
+        "RIGHTS_SCOPE"
+      ],
+      "related": [
+        "GLOBAL-CROSSING-001",
+        "KINSHIP-RADIO-001",
+        "ROCK-IMPACT-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "KINSHIP-RADIO-001",
+      "title": "Kinship owner-reviewed community signal",
+      "source": "https://github.com/the-static-collective/static-live/issues/36",
+      "region": "Minnesota",
+      "disposition": "OWNER_REVIEW_REQUIRED",
+      "tags": [
+        "kinship",
+        "radio",
+        "waseca",
+        "mankato",
+        "community",
+        "volunteer",
+        "broadcast",
+        "music"
+      ],
+      "nextGate": "Request producer-defined permission for one nonurgent organization-level public-service notice; no automatic broadcast.",
+      "blockedBy": [
+        "STATION_EDITORIAL_PERMISSION",
+        "PUBLIC_NOTICE_CONSENT"
+      ],
+      "related": [
+        "CHANNEL-KITS-001",
+        "REGIONAL-HELP-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "ROCK-IMPACT-001",
+      "title": "Rock Impact locally owned media house",
+      "source": "https://github.com/the-static-collective/GHoT/issues/97",
+      "region": "Nigeria",
+      "disposition": "OWNER_REVIEW_REQUIRED",
+      "tags": [
+        "rock",
+        "impact",
+        "nigeria",
+        "church",
+        "media",
+        "recording",
+        "podcast",
+        "computer",
+        "offline",
+        "solar"
+      ],
+      "nextGate": "Ask Nigerian media operators whether an offline-first recording and training kit meets their actual workflow.",
+      "blockedBy": [
+        "MINISTRY_OPERATOR_PERMISSION",
+        "MEDIA_RIGHTS",
+        "HARDWARE_POWER_REVIEW"
+      ],
+      "related": [
+        "CHANNEL-KITS-001",
+        "GLOBAL-CROSSING-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "TRAVELING-JUBILEE-001",
+      "title": "Traveling Jubilee voluntary music and care night",
+      "source": "https://github.com/the-static-collective/planZ/issues/13",
+      "region": "Any willing community (no event confirmed)",
+      "disposition": "PROPOSED",
+      "tags": [
+        "festival",
+        "church",
+        "worship",
+        "music",
+        "community",
+        "food",
+        "giving",
+        "travel"
+      ],
+      "nextGate": "Find a willing host and independent safeguarding steward before proposing a real gathering.",
+      "blockedBy": [
+        "HOST_PERMISSION",
+        "SAFEGUARDING_REVIEW"
+      ],
+      "related": [
+        "REGIONAL-HELP-001",
+        "CHANNEL-KITS-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    }
+  ]
+}
