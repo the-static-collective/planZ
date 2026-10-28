@@ -1,6 +1,6 @@
 {
   "schema": "planz/public-attention-v1",
-  "edition": "ATTENTION-2026-10-28-002",
+  "edition": "ATTENTION-2026-10-28-003",
   "reviewedOn": "2026-10-28",
   "authority": "INDEX_ONLY",
   "disclosure": "Manually curated organizational plan pointers. planZ does not own local projects. Issue links show a plan exists, not that programs, partners or field acts are approved, funded or completed. This public map contains no resident, donor, contact or shelter-site records.",
@@ -252,6 +252,43 @@
       ],
       "related": [
         "REGIONAL-HELP-001",
+        "GARDEN-TABLE-001",
+        "GLOBAL-CROSSING-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "ATLAS-BRIDGE-002",
+      "title": "Atlas 002: 89-source candidate composition and GHoT energy commons",
+      "source": "https://github.com/the-static-collective/planZ/issues/33",
+      "region": "Static Collective public Git atlas / proposed community pilots",
+      "disposition": "OWNER_REVIEW_REQUIRED",
+      "tags": [
+        "atlas",
+        "bridge",
+        "ghot",
+        "compute",
+        "energy",
+        "loadout",
+        "cannon",
+        "graft",
+        "public",
+        "food",
+        "civic",
+        "institutions"
+      ],
+      "nextGate": "Review one exact source cut, host/resource owner's informed permission, recipient authority and one source-backed synthetic cross-project test before presenting an integration as executable.",
+      "blockedBy": [
+        "SOURCE_PIN_REVIEW",
+        "DONOR_COMPATIBILITY",
+        "CAPABILITY_OWNER_PERMISSION",
+        "RECEIVER_AUTHORIZATION",
+        "INDEPENDENT_VERIFICATION"
+      ],
+      "related": [
+        "BRIDGE-001",
         "GARDEN-TABLE-001",
         "GLOBAL-CROSSING-001"
       ],
