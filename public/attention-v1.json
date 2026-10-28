@@ -1,6 +1,6 @@
 {
   "schema": "planz/public-attention-v1",
-  "edition": "ATTENTION-2026-10-28-001",
+  "edition": "ATTENTION-2026-10-28-002",
   "reviewedOn": "2026-10-28",
   "authority": "INDEX_ONLY",
   "disclosure": "Manually curated organizational plan pointers. planZ does not own local projects. Issue links show a plan exists, not that programs, partners or field acts are approved, funded or completed. This public map contains no resident, donor, contact or shelter-site records.",
@@ -217,6 +217,43 @@
       "related": [
         "REGIONAL-HELP-001",
         "CHANNEL-KITS-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "BRIDGE-001",
+      "title": "Between Rooms — institution-specific, source-backed bridge proposal",
+      "source": "https://github.com/the-static-collective/planZ/issues/33",
+      "region": "Southern Minnesota / prospective national and global doors",
+      "disposition": "AWAITING_LOCAL_STEWARD",
+      "tags": [
+        "bridge",
+        "institution",
+        "food",
+        "grocery",
+        "waseca",
+        "rochester",
+        "homelessness",
+        "mit",
+        "civic",
+        "relatte",
+        "jarvis",
+        "planz",
+        "community"
+      ],
+      "nextGate": "Ask one willing, authorized local organizer to define one non-sensitive pilot need; then human-review exactly one institution-specific invitation.",
+      "blockedBy": [
+        "LOCAL_STEWARD_PERMISSION",
+        "FIELD_PROBLEM_OWNER",
+        "INSTITUTIONAL_OUTREACH_REVIEW",
+        "INDEPENDENT_CONFIRMATION"
+      ],
+      "related": [
+        "REGIONAL-HELP-001",
+        "GARDEN-TABLE-001",
+        "GLOBAL-CROSSING-001"
       ],
       "fieldOutcome": "NOT_VERIFIED",
       "executionAllowed": false,
