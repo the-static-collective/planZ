@@ -8,7 +8,7 @@ function packet(){
  const body={schema:'cannon.culture-reuse-offer/v1',
   source:{cultureReceipt:'sha256:'+'a'.repeat(64),comicSha256:'sha256:'+'b'.repeat(64),
    pressReceipt:'sha256:'+'c'.repeat(64),ghotReceipt:'ghot-receipt-long-demo',
-   crossing:'crossing-long-demo',received:'received-long-demo',held:'held-long-demo'},
+   crossing:'crossing-long-demo',received:'received-long-demo',held:'held-long-demo-longer'},
   proposal:{kind:'REUSABLE_CULTURAL_METHOD_CANDIDATE',title:'A Room That Remembers',
    candidateMethod:'Use six illustrated panels to show how a neighbor can adapt a useful local method.',
    suggestedUse:'Ask a willing steward whether a public-safe printed learning card is useful.'},
