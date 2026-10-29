@@ -1,0 +1,19 @@
+name: NESTED-SEVEN-003 — original PlanZ source owns recursive creative subcycles
+on:
+  push:
+    branches: ["experiment/nested-seven-planning-cycle-003"]
+    paths: ["reactor/nest-seven*","reactor/NESTED-SEVEN-003.md",".github/workflows/nested-seven-003.yml"]
+  pull_request:
+    paths: ["reactor/nest-seven*","reactor/NESTED-SEVEN-003.md",".github/workflows/nested-seven-003.yml"]
+permissions:
+  contents: read
+jobs:
+  nested-provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Original native recursive PlanZ plus seven-return and bounded nested-cycle tests
+        run: node --test reactor/collide.test.mjs reactor/recursive.test.mjs reactor/return-seven.test.mjs reactor/nest-seven.test.mjs
