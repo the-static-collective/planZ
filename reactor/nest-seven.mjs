@@ -53,8 +53,8 @@ function renderExhibit(tree){
       if(t.stage==="CREATIVE_SOFTWARE_EVIDENCE")return '<p><b>Source-owned software evidence:</b> '+escape(t.owner)+
           '<br><code>'+escape(t.nativeOutputSha256)+'</code></p>';
       if(t.stage==="FOUR_LENS_PLANNING")return '<p><b>Planning perspectives:</b> '+
-          t.lenses.map(k=>'<a href="../../cuts/'+escape(k.id)+'.json">'+escape(k.lens)+'</a>').join(" · ")+'</p>';
-      return '<p><b>Proposed descendant:</b> <a href="../../plans/'+escape(t.planId)+'.json">'+escape(t.planId)+'</a></p>';
+          t.lenses.map(k=>'<a href="../cuts/'+escape(k.id)+'.json">'+escape(k.lens)+'</a>').join(" · ")+'</p>';
+      return '<p><b>Proposed descendant:</b> <a href="../plans/'+escape(t.planId)+'.json">'+escape(t.planId)+'</a></p>';
     }).join("");
     return '<details '+(c.generation===1?'open':'')+'><summary><span class="number">ROUND '+c.generation+
        '</span> '+escape(c.owner)+' <span class="state">HELD / planning-only'+(c.generation===1?' (real prior software evidence)':'')+'</span></summary>'+
@@ -67,7 +67,7 @@ function renderExhibit(tree){
     '<header><p class="tag">PLANZ × CANNON · BOUNDED RECURSIVE INVENTION · HELD</p><h1>THE MACHINE THAT THINKS<br>INSIDE ITS OWN PLANS</h1>'+
     '<p>The first PlanZ invention is the ROOT of this entire planning cycle. Seven actual source-owned creative SOFTWARE results are held inside its first generation. Each result gets four independently preserved planning perspectives and a descendant plan. The descendant receives its own inner planning cycle; no engine is rerun or human approval inferred.</p>'+
     '<p>Original source: <code>'+escape(tree.root.sourcePlanId)+'</code><br>Root cycle: <code>'+escape(tree.root.id)+'</code></p>'+
-    '<p><a href="../../../../one-invention-held/exhibit/index.html">View the earlier seven creative outputs</a> · <a href="../tree.json">Inspect complete nested source tree</a> · <a href="../manifest.json">Inspect proof manifest</a></p></header><h2>Seven independent subcycles inside the root</h2>'+
+    '<p><a href="../../one-invention-held/exhibit/index.html">View the earlier seven creative outputs</a> · <a href="../tree.json">Inspect complete nested source tree</a> · <a href="../manifest.json">Inspect proof manifest</a></p></header><h2>Seven independent subcycles inside the root</h2>'+
     tree.root.children.map(node).join("")+
     '<footer><p>Every original owner remains sovereign. This is a deterministic, bounded plan compiler, not self-directed execution. Source models and project participants have not admitted or executed the resulting ideas. No physical machine, concert, real-world witness, publication or human KEEP is implied.</p></footer></html>\n';
 }
