@@ -1,0 +1,45 @@
+name: REACTOR-001 recursive plan compiler
+
+on:
+  pull_request:
+    paths:
+      - "reactor/**"
+      - "registry/conversation-plan-records-2026-10-16.jsonl"
+      - ".github/workflows/reactor-recursive.yml"
+  push:
+    branches:
+      - "experiment/recursive-plan-reactor-001"
+    paths:
+      - "reactor/**"
+      - "registry/conversation-plan-records-2026-10-16.jsonl"
+      - ".github/workflows/reactor-recursive.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  replay-and-refuse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Original BANANAS-001 owner-native compiler
+        run: node --test reactor/collide.test.mjs
+      - name: REACTOR-001 immutable lineage, hostile tests and bounds
+        run: node --test reactor/recursive.test.mjs
+      - name: Produce independent addressable plan cuts
+        run: node reactor/recursive.mjs --depth 2 --cross-limit 4 --format json --out-dir /tmp/planz-recursive > /tmp/planz-recursive-first.json
+      - name: Cold replay and verify no write-on-existing
+        run: |
+          node reactor/recursive.mjs --depth 2 --cross-limit 4 --format json --out-dir /tmp/planz-recursive > /tmp/planz-recursive-second.json
+          cmp /tmp/planz-recursive-first.json /tmp/planz-recursive-second.json
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const x=JSON.parse(readFileSync("/tmp/planz-recursive-first.json","utf8")); if(x.rounds.length!==2 || x.cuts.length!==x.rounds.reduce((a,b)=>a+b.savedPerspectiveCuts,0) || x.executed || x.admitted) process.exit(1); console.log("Independent cuts:", x.cuts.length, "held plans:", x.proposedPlans.length);'
+      - name: Preserve inspectable held cuts, plans and manifest as CI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: recursive-plan-reactor-001-held-ledger
+          path: /tmp/planz-recursive/
+          retention-days: 30
+          if-no-files-found: error
