@@ -1,0 +1,31 @@
+name: STORY-ROOMS-004 original PlanZ lens return
+on:
+  pull_request:
+    paths:
+      - 'reactor/story-turns.mjs'
+      - 'reactor/story-turns.test.mjs'
+      - '.github/workflows/story-rooms-004.yml'
+  workflow_dispatch:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test reactor/story-turns.test.mjs
+      - name: Run original JAR;VIS source-pinned story packet into native PlanZ
+        run: |
+          git clone --quiet https://github.com/the-static-collective/JAR-VIS.git /tmp/jarvis-story
+          git -C /tmp/jarvis-story checkout --quiet 28d46f26ae373cb20f4fc288c21b891fe97a6f68
+          node /tmp/jarvis-story/tools/story-rooms.mjs demo /tmp/jarvis-story-packet.json
+          node reactor/story-turns.mjs compile /tmp/jarvis-story-packet.json /tmp/planz-story-turns.json
+          node reactor/story-turns.mjs verify /tmp/jarvis-story-packet.json /tmp/planz-story-turns.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: story-rooms-held-planZ-return
+          path: /tmp/planz-story-turns.json
+          if-no-files-found: error
