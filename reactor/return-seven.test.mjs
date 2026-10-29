@@ -70,7 +70,7 @@ test("forged human approval refuses even after attacker recalculates outer recei
   const f=join(x.root,"receipt.json"),old=JSON.parse(readFileSync(f,"utf8"));
   old.files["lineage/return.json"]=hash(format(value));
   const {receiptId,...body}=old;writeFileSync(f,format({...body,receiptId:hash(format(body))}));
-  assert.throws(()=>compileSevenReturn(x.root),/RETURN_AUTHORITY/);
+  assert.throws(()=>compileSevenReturn(x.root),/RETURN_ID_FORGED|RETURN_AUTHORITY/);
  }finally{rmSync(x.root,{recursive:true,force:true})}
 });
 test("source owner identity is mandatory and immutable PlanZ saved outputs refuse tampering",()=>{
