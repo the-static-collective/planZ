@@ -8,7 +8,7 @@ import {join,resolve,relative,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {LENSES} from "./recursive.mjs";
 
-const hash=x=>createHash("sha256").update(typeof x==="string"?x:JSON.stringify(x)).digest("hex");
+const hash=x=>createHash("sha256").update(typeof x==="string"||Buffer.isBuffer(x)?x:JSON.stringify(x)).digest("hex");
 const render=x=>JSON.stringify(x,null,2)+"\n";
 const claim={status:"HELD_EXPERIMENTAL_RETURN",authority:"NONE",humanSelection:"NONE",
  admitted:false,published:false,executed:false,physicalWork:false,
