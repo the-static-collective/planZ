@@ -1,0 +1,16 @@
+name: planZ independent culture return gate
+on:
+  push:
+    branches: ['experiment/culture-return-005']
+  pull_request:
+    paths: ['scripts/triage-culture.mjs','test/culture-return.test.mjs','.github/workflows/culture-return-005.yml']
+permissions:
+  contents: read
+jobs:
+  planz-culture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: npm test
