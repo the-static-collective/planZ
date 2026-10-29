@@ -1,6 +1,6 @@
 {
   "schema": "planz/public-attention-v1",
-  "edition": "ATTENTION-2026-10-28-004",
+  "edition": "ATTENTION-2026-10-28-005",
   "reviewedOn": "2026-10-28",
   "authority": "INDEX_ONLY",
   "disclosure": "Manually curated organizational plan pointers. planZ does not own local projects. Issue links show a plan exists, not that programs, partners or field acts are approved, funded or completed. This public map contains no resident, donor, contact or shelter-site records.",
@@ -330,6 +330,47 @@
         "BRIDGE-001",
         "ATLAS-BRIDGE-002",
         "GARDEN-TABLE-001"
+      ],
+      "fieldOutcome": "NOT_VERIFIED",
+      "executionAllowed": false,
+      "thirdPartyApproval": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "SUITCASE-001",
+      "title": "Suitcase Internet — church/campus/community host nodes",
+      "source": "https://github.com/the-static-collective/webZ/issues/181",
+      "region": "Waseca–Mankato area / globally portable prospect",
+      "disposition": "AWAITING_LOCAL_STEWARD",
+      "tags": [
+        "suitcase",
+        "offline",
+        "mobile",
+        "church",
+        "university",
+        "campus",
+        "co-op",
+        "festival",
+        "power",
+        "ghot",
+        "relatte",
+        "jarvis",
+        "graft",
+        "planz",
+        "host"
+      ],
+      "nextGate": "Choose one real willing host steward. First rehearse signed file crossing on two distinct devices, then review physical consent, safeguarding, power budgets, private-key custody and native reLATTE protocol translation before any actual node.",
+      "blockedBy": [
+        "HOST_PERMISSION_NOT_GIVEN",
+        "REAL_NODE_NOT_INSTALLED",
+        "DEVICE_KEY_RECOVERY_UNBUILT",
+        "CONFIDENTIAL_PACKET_ENCRYPTION_UNBUILT",
+        "NATIVE_RELATTE_INTEGRATION_NOT_PROVEN",
+        "INDEPENDENT_IDENTITY_UNVERIFIED"
+      ],
+      "related": [
+        "BRIDGE-001",
+        "SHELF-001",
+        "ATLAS-BRIDGE-002"
       ],
       "fieldOutcome": "NOT_VERIFIED",
       "executionAllowed": false,
