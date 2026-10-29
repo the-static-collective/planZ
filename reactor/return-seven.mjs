@@ -70,7 +70,7 @@ function collectSource(root){
    typeof row.id==="string"&&row.id.startsWith("return-")&&!seen.has(row.id),"RETURN_ID");
   seen.add(row.id);
   const {id,...payload}=row;
-  requireProof(frozen("return",render(payload))===id,"RETURN_ID_FORGED");
+  requireProof("return-"+hash(render(payload)).slice(0,24)===id,"RETURN_ID_FORGED");
   requireProof(row.originalPlanId===receipt.sourcePlanId&&
    row.originalBookReceiptId===receipt.sourceBookReceiptId&&
    row.status==="HELD_UNVALIDATED"&&row.authority==="NONE"&&
