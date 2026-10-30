@@ -1,0 +1,20 @@
+name: PLANZ-MINUTE-001 new creative goal dynamic bounded return planner
+on:
+  push:
+    branches: [experiment/minute-mail-plan-001]
+  pull_request:
+    paths:
+      - reactor/minute-mail.mjs
+      - reactor/minute-mail.test.mjs
+      - .github/workflows/minute-mail-plan.yml
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  dynamic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: false}
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: node --test reactor/minute-mail.test.mjs reactor/production-return.test.mjs
