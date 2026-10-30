@@ -1,0 +1,26 @@
+name: planZ production-return bounded evidence-driven creative planner
+on:
+  push:
+    branches: [experiment/production-return-001]
+  pull_request:
+    paths:
+      - reactor/production-return.mjs
+      - reactor/production-return.test.mjs
+      - .github/workflows/production-return.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-owned-plan-return:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify source-owned four-round production planner with actual evidence gate
+        run: |
+          node --check reactor/production-return.mjs
+          node --test reactor/production-return.test.mjs reactor/recursive.test.mjs
