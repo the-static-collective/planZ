@@ -1,0 +1,29 @@
+name: planZ MOTIF-021 Classical Planner
+on:
+  push:
+    branches:
+      - research/motif021-classical-plan
+  pull_request:
+    paths:
+      - 'scripts/motif-classical.mjs'
+      - 'test/motif-classical.test.mjs'
+      - 'plans/MOTIF-021-classical.json'
+      - 'intake/MOTIF-021/**'
+      - '.github/workflows/motif021-classical.yml'
+jobs:
+  classical-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Execute new and existing source-owner tests
+        run: npm test
+      - name: Replay stored classical plan and export machine receipt
+        run: node scripts/motif-classical.mjs > motif021-planz-classical-plan.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: planz-motif021-classical-procedure
+          path: motif021-planz-classical-plan.json
+          retention-days: 14
