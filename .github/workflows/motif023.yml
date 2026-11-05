@@ -1,0 +1,20 @@
+name: planZ-023 Evidence Replanning
+on:
+  push:
+    branches:
+      - research/023-observation-replanning
+  pull_request:
+    paths:
+      - 'scripts/motif023-replan.mjs'
+      - 'test/motif023-replan.test.mjs'
+      - '.github/workflows/motif023.yml'
+jobs:
+  classical-evidence-replanner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Execute new finite search and all native owner regressions
+        run: npm test
