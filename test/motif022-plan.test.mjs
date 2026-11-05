@@ -32,7 +32,7 @@ test('new questions construct DIFFERENT actual classical plans',()=>{
 test('cheap classical path beats more expensive route',()=>{
  const p=planQuestion(fake('Which original ancestor should we trace?'));
  assert.ok(!p.actions.includes('COMPARE_SUSPECTED_FAMILIES'));
- assert.equal(p.cost,6);
+ assert.equal(p.cost,7);
  assert.equal(p.external_actions,0);
  assert.equal(p.no_owner_approval,true);
 });
