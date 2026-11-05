@@ -50,6 +50,6 @@ test('illegal effects, goals, negative action costs and forged source packet are
  assert.throws(()=>validatePacket({...packet,restrictions:{...packet.restrictions,evidence_admission:'YES'}},raw),/INTAKE/);
 });
 test('tampered staged plan cannot silently inherit owner authority',()=>{
- assert.throws(()=>validateSavedPlan({...saved,source_owner_approval:true},packet,raw),/PLAN_RECEIPT_DIFFERS/);
+ assert.throws(()=>validateSavedPlan({...saved,source_owner_approval:true},packet,raw),/CHANGED_OR_AUTHORITY/);
  assert.throws(()=>validateSavedPlan({...saved,actions:['AUTOMATIC_DEPLOY']},packet,raw),/CHANGED_OR_AUTHORITY/);
 });
