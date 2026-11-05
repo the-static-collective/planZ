@@ -93,3 +93,21 @@ test('packet scope forgery, altered receipt, owner admission, feedback forgery H
   gaps:['UNCERTIFIED_SOURCE_FAMILY'],authority:'none',external_actions:0
  }),/UNVERIFIED/);
 });
+
+test('single-repo observations cause a DIFFERENT next classical research collection',()=>{
+ const packet=makeSample('Where is original Maxhinal custody?',1);
+ const plan=planEvidence(packet);
+ const feedback={
+  schema:'graft.motif023.capability-observation/v0',
+  source_plan_receipt:plan.receipt_sha256,
+  source_alex_receipt:packet.receipt_sha256,
+  authority:'none',external_actions:0,
+  independent_custody_confirmed:false,source_coverage_complete:false,
+  gaps:['UNCERTIFIED_SOURCE_FAMILY','SOURCE_SCOPE_PARTIAL','SINGLE_REPO_SAMPLE']
+ };
+ const next=replanAfterObservation(packet,plan,feedback);
+ assert.equal(next.selected_next_discriminator,'EXPAND_BOUNDED_PUBLIC_SOURCE_COVERAGE');
+ assert.deepEqual(next.next_source_collections,
+  ['the-static-collective/planZ','the-static-collective/GRAFT']);
+ assert.equal(next.new_collection_not_in_initial_query,true);
+});
