@@ -1,0 +1,70 @@
+{
+  "schema": "planz.fellowship-human-field-kit/v1",
+  "id": "FELLOWSHIP-DEC04-2026-001",
+  "scope": "HUMAN_OPERATOR_REVIEW_DRAFT",
+  "event_date": "2026-12-04",
+  "cadence": "EVERY_OTHER_FRIDAY_BASELINE_LATER_DATES_RECONFIRM",
+  "source": "USER_DIRECT_REPORT_2026-11-05",
+  "known": [
+    {
+      "id": "VENUE_USE",
+      "value": "GRANTED_PER_USER_REPORT",
+      "source": "USER_DIRECT_REPORT_2026-11-05"
+    },
+    {
+      "id": "CORE_ORGANIZERS",
+      "value": "USER_AND_PAULA_PER_USER_REPORT",
+      "source": "USER_DIRECT_REPORT_2026-11-05"
+    },
+    {
+      "id": "FIRST_EVENT_DATE",
+      "value": "2026-12-04",
+      "source": "USER_PREVIOUS_REPORT"
+    }
+  ],
+  "participant_role_status": {
+    "paula": "CORE_ORGANIZER_USER_REPORTED",
+    "user": "CORE_ORGANIZER_USER_REPORTED",
+    "pastor_prayer": "RECONFIRM_EXACT_PROGRAM",
+    "deb_supper": "RECONFIRM_ROLE_AND_SAFE_FOOD",
+    "pastor_son_music": "OPTIONAL_RECONFIRM"
+  },
+  "schedule": {
+    "17:00": "SUPPER_IF_CONFIRMED_ELSE_WELCOME_CONVERSATION",
+    "19:00": "PRAYER_IF_CONFIRMED",
+    "19:30": "TWENTY_MINUTE_ACOUSTIC_CORE_RECONFIRM",
+    "19:55": "FELLOWSHIP_OPTIONAL_EXTRA_MUSIC",
+    "20:30": "CLOSE_CLEANUP_PROPOSED",
+    "all_times": "PROPOSALS_NOT_VENUE_COMMITMENTS"
+  },
+  "remaining_human_gates": [
+    "EXACT_ROOM_ACCESS",
+    "HOST_PUBLICITY_APPROVAL",
+    "SAFETY_ACCESSIBILITY_CAPACITY",
+    "PRAYER_ROLE",
+    "FOOD_HANDLER_AND_SERVING_IF_FOOD",
+    "MUSIC_AND_AUDIO",
+    "CLEANUP_AND_CLOSE",
+    "DONATIONS_ONLY_IF_APPROVED",
+    "MEDIA_CONSENT_IF_RECORDING"
+  ],
+  "minimum_deliverable": "WELCOME + APPROVED_PRAYER_OR_MUSIC + CONVERSATION + SAFE_CLOSE",
+  "optional_modules": [
+    "MEAL",
+    "DJ",
+    "VENDORS",
+    "PANTRY_DISTRIBUTION",
+    "GIVING_TREE",
+    "GAMES",
+    "TICKETS",
+    "DONATIONS",
+    "PHOTOGRAPHY",
+    "LIVESTREAM"
+  ],
+  "public_announcement_authorized": false,
+  "funds_collection_authorized_by_this_file": false,
+  "participation_by_named_others_verified": false,
+  "source_project_authority": "EVENT_OWNER_HUMANS_ONLY",
+  "ready_for_live_public_distribution": false,
+  "status_last_updated": "2026-11-05"
+}
