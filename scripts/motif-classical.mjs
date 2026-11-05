@@ -33,7 +33,7 @@ const GOAL=['CANDIDATE_TESTABLE','RECEIPT_READY'];
 const FORBIDDEN=new Set([
  'PRIVATE_CONTENT_PUBLISHED','REAL_SOURCE_INDEPENDENCE_ESTABLISHED',
  'AUTHORITY_GRANTED','DEPLOYED_PRODUCTION','AUTOMATED_EXTERNAL_CONTACT',
- 'EVIDENCE_ADMITTED','REAL_HUMAN_CONSENT'];
+ 'EVIDENCE_ADMITTED','REAL_HUMAN_CONSENT']);
 const gitBlob=bytes=>createHash('sha1').update(
  Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
 const sorted=s=>[...s].sort();
