@@ -1,17 +1,17 @@
-# THE PACT — live two-player cloud room (v0.3)
+# THE PACT — live two-player cloud room (v0.4)
 
 THE PACT is a cooperative and competitive **game planner**, not an authority or a universal human-worth scoring system. This folder stores the deployed Supabase Edge source, schema, and an explicit boundary to **Human-Witness** and **Full Measure — World Layer**.
 
 ## Live status
 
 - HTTPS application: `https://kbhqacsdvjsstzyplqij.supabase.co/functions/v1/pact-room`
-- Backend: Supabase `pantry-gate`, Edge Function `pact-room`, deployed version 3 (2026-11-21).
-- Complete source: [edge.ts](edge.ts). Older snapshots are `edge-v03.ts`, `edge-v031.ts`, and `edge-v033.ts`.
+- Backend: Supabase `pantry-gate`, Edge Function `pact-room`, deployed version 4 (2026-11-21).
+- Complete source: [edge.ts](edge.ts). The correct community Bible-audio integration is documented in [WITNESS-AUDIO-BRIDGE-001.md](WITNESS-AUDIO-BRIDGE-001.md). Older snapshots are `edge-v03.ts`, `edge-v031.ts`, and `edge-v033.ts`.
 - Tables: `public.pact_v1_rooms`, `public.pact_v1_seats`, `public.pact_v1_events`. Additive v0.3 migration extends the accepted event types: `quest.refuse`, `impact.report`, `impact.review`.
 - The hosted app uses two independent 256-bit bearer access links in URL fragments (one per player). **Never publish real room tokens, token digests or link fragments**. The server stores hashes only. The HTTP endpoint uses its own bearer check; `verify_jwt=false` is appropriate only because the function does that.
 - Server-side admin key remains in server-only environment. Direct Data API access is revoked for `anon` and `authenticated`; RLS is enabled with no public policies.
 
-## v0.3 crossing: Human-Witness and Full Measure
+## v0.3 peer-evidence crossing: Human-Witness semantics (not the WITNESS Bible project)
 
 Reference contracts:
 
@@ -51,6 +51,10 @@ This checks a subject snapshot's **self-consistency**, not source authenticity. 
 ### Full Measure local admission
 
 An external importer can **review** a PACT packet but must not directly write canonical Full Measure state. A receiver needs independent source/subject verification, authenticated steward, local project and pledge linkage, separate beneficiary confirmation, measurable before/after value, and local human authorization. The importer must preserve refusal, unresolved uncertainty, and the distinction between a reviewed report and an observed outcome.
+
+## v0.4 community WITNESS audio bridge
+
+The [WITNESS community audio Bible](https://github.com/the-static-collective/WITNESS), distinct from Human-Witness, is now connected by **local WITNESS package import, locally verified audio digests, and explicitly shared metadata-only recording references**. The PACT tab does not upload the actual audio. A second seat may self-attest a listen or acknowledge metadata; a link may be withdrawn without altering the canonical WITNESS recording. This contributes review candidates to Full Measure with zero automatic Deeds, Harvests, or Capacity. See [the exact integration boundary](WITNESS-AUDIO-BRIDGE-001.md). Full Measure's separate WITNESS draft lens is [PR #59](https://github.com/the-static-collective/full-measure-world-layer/pull/59).
 
 ## Tested, with limits
 
