@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS public.pact_v1_events (
   id uuid NOT NULL UNIQUE,
   room_id uuid NOT NULL REFERENCES public.pact_v1_rooms(id) ON DELETE CASCADE,
   actor text NOT NULL CHECK (actor IN ('you','paula')),
-  type text NOT NULL CHECK (type IN ('quest.create','quest.edit','quest.remove','quest.submit','quest.verify','quest.reopen','stake.propose','stake.accept','grace.use','cheer.add','help.offer')),
+  type text NOT NULL CHECK (type IN ('quest.create','quest.edit','quest.remove','quest.submit','quest.verify','quest.reopen','quest.refuse','impact.report','impact.review','stake.propose','stake.accept','grace.use','cheer.add','help.offer')),
   data jsonb NOT NULL DEFAULT '{}'::jsonb CHECK (jsonb_typeof(data) = 'object'),
   week text NOT NULL CHECK (week ~ '^20[0-9]{2}-[0-9]{2}-[0-9]{2}$'),
   at timestamptz NOT NULL DEFAULT now(),
