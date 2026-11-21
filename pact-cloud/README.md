@@ -5,8 +5,8 @@ THE PACT is a cooperative and competitive **game planner**, not an authority or 
 ## Live status
 
 - HTTPS application: `https://kbhqacsdvjsstzyplqij.supabase.co/functions/v1/pact-room`
-- Backend: Supabase `pantry-gate`, Edge Function `pact-room`, deployed version 2 (2026-11-21).
-- Complete source: [edge.ts](edge.ts). Older snapshots are `edge-v03.ts` and `edge-v031.ts`.
+- Backend: Supabase `pantry-gate`, Edge Function `pact-room`, deployed version 3 (2026-11-21).
+- Complete source: [edge.ts](edge.ts). Older snapshots are `edge-v03.ts`, `edge-v031.ts`, and `edge-v033.ts`.
 - Tables: `public.pact_v1_rooms`, `public.pact_v1_seats`, `public.pact_v1_events`. Additive v0.3 migration extends the accepted event types: `quest.refuse`, `impact.report`, `impact.review`.
 - The hosted app uses two independent 256-bit bearer access links in URL fragments (one per player). **Never publish real room tokens, token digests or link fragments**. The server stores hashes only. The HTTP endpoint uses its own bearer check; `verify_jwt=false` is appropriate only because the function does that.
 - Server-side admin key remains in server-only environment. Direct Data API access is revoked for `anon` and `authenticated`; RLS is enabled with no public policies.
@@ -60,6 +60,7 @@ An external importer can **review** a PACT packet but must not directly write ca
 - Self-confirming a pending quest returns HTTP 409.
 - Local unit-style checks rejected subject-hash mismatch, premature impact report, and self-review of impact.
 - Real room remained at 2 player seats and 0 events after test cleanup.
+- UI write handling now waits for the cloud response before clearing quest, stake, or cheer inputs; failed writes are not presented as successes.
 
 **Not fully browser-tested:** The end-to-end phone UI, copied candidate packet, refusal/resubmission UI, and World tab interaction. An automation browser had insufficient credit. Mobile clients should verify the path together before using real stakes. Polling is 15 seconds while the tab is visible; no push notification, offline write queue, photo evidence upload or real-time socket.
 
