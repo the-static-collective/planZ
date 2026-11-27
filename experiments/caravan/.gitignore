@@ -1,0 +1,6 @@
+# Default-deny untracked data and key material in this prototype folder.
+*
+!*/
+!.gitignore
+!NODE-ALIVE.md
+# All existing source files are already tracked. Add new source deliberately with git add -f.
