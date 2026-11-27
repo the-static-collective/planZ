@@ -1,0 +1,23 @@
+CARAVAN 001 / FIRST SIGNAL / FIELD CARD
+Host permission: __________________  Operator: __________________
+Date / venue: ______________________  Backup operator: ___________
+Private Wi-Fi name: _________________  Local URL: ________________
+[ ] Host approves venue, dedicated LAN, power and privacy boundaries.
+[ ] Synthetic demo; guest portal available on two independently held phones.
+[ ] WAN disconnected; both phones can load page and play tone.
+[ ] Original adult contributor approves recording, attribution and local playback separately.
+[ ] Import audio private; local approval explicitly granted; play on second phone.
+[ ] Separate permission for recipient-specific review package; receiver holds or refuses.
+[ ] Revoke local sharing; new requests denied (existing copies cannot be recalled).
+[ ] Stop host; back up data; restart and restore independently.
+[ ] Record observed failures, time, costs, unresolved limitations.
+No private case data, minors, radio transmission, automatic publication or new partner enrollment.
+Observed outcomes: ______________________________________________
+Remaining uncertainty: _________________________________________
+
+003 LIBRARY: Import a trusted resource with library.py add and supply title, credit,
+rights and category. Confirm permission independently before library.py allow ID.
+Guest search and reading/download work on the same portal. Revoke with library.py
+revoke ID. Stop all processes before backing up the complete data directory.
+
+004 CROSSING: exchange public cards; compare fingerprints in person. Never share crossing-key.pem. Offer only public-safe explicitly consented material. Receiver holds or refuses; no automatic public distribution. Parcels are plaintext. See README for commands.
