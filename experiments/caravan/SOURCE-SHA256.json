@@ -1,0 +1,22 @@
+{
+  "FIELD-CARD.txt": "09ee32266276b390646b23cf8351ff33419e9986ce78ec5e9ff2aa0a785dffea",
+  "README.md": "ebf3546e477dbc59d8c467fc2fcd993837fb6630b14bec4b70590aa9379fd9eb",
+  "airwaves.py": "09e65822b3a11a574e5ab3051c99a40679c23648cb6a5bbed8efa3f3fb02637a",
+  "caravan.py": "2a252867e178f1152f43338dfe4606af88c4a26a1f730c590d9b2f45bf1e0fc6",
+  "crossing.py": "bd4b5bb03ca57e377e043c4e4a0cf86985a02991f95733e2fc70d5a64f61513e",
+  "examples/welcome.txt": "9d48a04d6bb0db8d205d17bfe742c00ba1a04b202bd5b6d90a0f95dd2ac7227d",
+  "library.py": "3f2a63262115e95bfedeb42fce1cb7cb566605e47d5b41c73423a2f2957eb10d",
+  "requirements-crossing.txt": "7e8d915abc71df3417a5e87d4923d3723b68032160297dc382a855ae2324f3b5",
+  "seed.py": "c2eb18b2fe5b3c2597adf42c327a7221c7613fe61128e7b53969bdbb3ddc30e5",
+  "start-unix.sh": "5f56b19e1844ce3fe5357c188c27dcf2d8b177541fa32cfbac13d78726754d6b",
+  "start-windows.cmd": "3bf0ab36a5bf33e7342f85cafb3be7208680af9ad43d845efd24f44356b50c7c",
+  "test-results.txt": "e1dc0544f5f6615584b2a836f3f139c1fcd419ad4bd904e736575fe1b9ed0843",
+  "test_airwaves.py": "c3c52266f7203a3f55e67c07794037cf39454754436ec45b1555d9a7221e6d37",
+  "test_caravan.py": "e461cfd5c8da14a753a51c53cc4ba8644ea2e14011046f901203f4a52b6dfa6e",
+  "test_crossing.py": "a9dce0a883ac199539fe65bd0e9be937d1403305acc4556404b760c4aabc82a3",
+  "test_library.py": "07546d89d552ffe7ceefae3ca528bf4e08763301dfc3b7a0a680635b35f5f5c3",
+  "test_seed.py": "1661845d6e0f05949e23f673e3f98b3439a46d579ad44e5b4d4cb5f294c7c147",
+  "test_voice.py": "669864381de8a02efdb2edc7322be4e5ce82b7a736ac8331355de9e321316274",
+  "verify_source.py": "52640ae7a3c8f2c3032f7af1b983c30a79b7f9e39167fb4ea5910d9f36a9c408",
+  "voice.py": "32c105bc7089f74c0146fe1f40ea1aeefe041a31774aadaadeeaa2c7515aad3d"
+}
